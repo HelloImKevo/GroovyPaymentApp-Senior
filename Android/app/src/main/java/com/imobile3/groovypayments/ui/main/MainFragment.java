@@ -16,6 +16,8 @@ import com.imobile3.groovypayments.R;
 
 public class MainFragment extends Fragment {
 
+    public static final String TAG = MainFragment.class.getSimpleName();
+
     private MainViewModel mViewModel;
 
     public static MainFragment newInstance() {

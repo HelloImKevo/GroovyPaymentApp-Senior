@@ -4,6 +4,8 @@ Just a skeleton shell app with lots of method stubs and possibly even intentiona
 ## This App is intended for Senior candidates. 
 There are Android and iOS variants of this mobile payment app in the respective directories.
 
+![Main Activity](ScreenMocks/GroovyMobilePayments-01.png)
+
 Useful git commands for quickly traversing repos:
 ```
 # Pushing from a local repository to GitHub hosted remote
