@@ -8,4 +8,94 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
+
+    <!-- Button -->
+    <style name="Button" parent="android:Widget.Button">
+        <item name="android:background">@null</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/text_size_medium</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:paddingLeft">@dimen/padding_button_side</item>
+        <item name="android:paddingRight">@dimen/padding_button_side</item>
+        <item name="android:textColor">@color/text_white_states</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">@dimen/button_height</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Button.Blue" parent="@style/Button">
+        <item name="android:background">@drawable/btn_blue_states</item>
+    </style>
+
+    <style name="Button.Blue.Weighted" parent="@style/Button.Blue">
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_width">0dp</item>
+    </style>
+
+    <style name="Button.Gray" parent="@style/Button">
+        <item name="android:background">@drawable/btn_gray</item>
+    </style>
+
+    <style name="Button.Gray.Weighted" parent="@style/Button.Gray">
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_width">0dp</item>
+    </style>
+
+    <style name="Button.Green" parent="@style/Button">
+        <item name="android:background">@color/green_emerald</item>
+    </style>
+
+    <style name="Button.Red" parent="@style/Button">
+        <item name="android:background">@color/red_thunderbird</item>
+    </style>
+
+    <!-- TextView (Dark) -->
+    <style name="TextView.Label" parent="android:Widget.TextView">
+        <item name="android:textSize">@dimen/text_size_medium</item>
+        <item name="android:textColor">@color/black_space</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="TextView.Label.SingleLine" parent="@style/TextView.Label">
+        <item name="android:singleLine">true</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="TextView.Label.AllCaps.SingleLine" parent="@style/TextView.Label">
+        <item name="android:textAllCaps">true</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="TextView.Label.Bold" parent="@style/TextView.Label">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextView.Label.Italic" parent="@style/TextView.Label">
+        <item name="android:textStyle">italic</item>
+    </style>
+
+    <style name="TextView.Label.AllCaps" parent="@style/TextView.Label">
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="TextView.Label.SingleLine.Bold" parent="@style/TextView.Label.SingleLine">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- TextView (Light) -->
+    <style name="TextView.Label.Light" parent="@style/TextView.Label">
+        <item name="android:textColor">@color/white_cararra</item>
+    </style>
+
+    <style name="TextView.Label.Light.Bold" parent="@style/TextView.Label.Bold">
+        <item name="android:textColor">@color/white_cararra</item>
+    </style>
+
 </resources>

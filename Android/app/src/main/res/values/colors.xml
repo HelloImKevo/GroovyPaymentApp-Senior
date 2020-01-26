@@ -3,4 +3,61 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+
+    <!-- Neutrals (Light / Dark) -->
+    <color name="white_cararra">#f2f1ef</color>
+    <color name="gray_pumice">#d2d7d3</color>
+    <color name="gray_silver">#bfbfbf</color>
+    <color name="gray_slate">#545454</color>
+    <color name="black_darken">#1d1d1d</color>
+
+    <!-- Flat UI Color Spectrum -->
+    <color name="blue_chambray">#3a539b</color>
+    <color name="blue_dodger_blue">#19b5fe</color>
+    <color name="blue_royal_blue">#4183d7</color>
+    <color name="green_emerald">#3fc380</color>
+    <color name="green_eucalyptus">#26a65b</color>
+    <color name="green_shamrock">#2ecc71</color>
+    <color name="orange_buttercup">#f39c12</color>
+    <color name="orange_california">#f89406</color>
+    <color name="orange_ecstasy">#f9690e</color>
+    <color name="purple_honey_flower">#674172</color>
+    <color name="purple_plum">#913d88</color>
+    <color name="purple_wisteria">#9b59b6</color>
+    <color name="red_cinnabar">#e74c3c</color>
+    <color name="red_old_brick">#96281b</color>
+    <color name="red_pomegranate">#f22613</color>
+    <color name="red_thunderbird">#d91e18</color>
+    <color name="yellow_ripe_lemon">#f7ca19</color>
+    <color name="yellow_saffron">#f4d03f</color>
+
+    <color name="text_white_disabled">#bbb</color>
+    <color name="text_white_pressed">#cdcdcd</color>
+
+    <color name="bg_off_white">#f3f3f3</color>
+    <color name="bg_gray_light">#979797</color>
+
+    <!-- Futurist Palette -->
+    <color name="gray_be">#c3cad0</color>
+    <color name="white_tea">#e6e4d7</color>
+    <color name="black_disturbing">#130600</color>
+    <color name="gray_one">#92887f</color>
+    <color name="red_take_flight">#b42515</color>
+
+    <!-- SciFi Palette -->
+    <color name="yellow_polished_gold">#fdb514</color>
+    <color name="yellow_spoof">#ffd24d</color>
+    <color name="purple_universe">#7041e2</color>
+    <color name="purple_magic">#931abe</color>
+    <color name="gray_down_pour">#95979b</color>
+    <color name="gray_stay_with_me">#6b706f</color>
+    <color name="blue_voyager_sky">#63acbf</color>
+    <color name="blue_vimeo">#86c9ef</color>
+    <color name="blue_atlantis">#2cb7e7</color>
+    <color name="green_planetary_halo">#8bb347</color>
+    <color name="green_summer_grass">#78cb96</color>
+    <color name="green_aegean_sea">#9bd6be</color>
+    <color name="green_dewmist_delight">#dfedcb</color>
+    <color name="white_cocaine">#f7f4e8</color>
+    <color name="black_space">#0a0909</color>
 </resources>

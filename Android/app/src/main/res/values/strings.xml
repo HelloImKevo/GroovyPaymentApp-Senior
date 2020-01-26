@@ -1,5 +1,12 @@
 <resources>
-    <string name="app_name">GroovyMobilePayments</string>
+    <string name="app_name">Groovy Mobile Payments</string>
+
+    <!-- Common -->
+    <string name="common_ok">OK</string>
+    <string name="common_cancel">Cancel</string>
+    <string name="common_back">Back</string>
+    <string name="common_ask">Ask</string>
+    <string name="common_change">Change</string>
 
     <!-- Login -->
     <string name="prompt_email">Email</string>
@@ -10,4 +17,15 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
+
+    <!-- Progress / Tasks -->
+    <string-array name="progress_dialog_messages">
+        <item>Crunching numbers&#8230;</item>
+        <item>Evaluating data&#8230;</item>
+        <item>Analyzing values&#8230;</item>
+        <item>Running algorithms&#8230;</item>
+        <item>Checking with Banks&#8230;</item>
+        <item>Using Machine Learning&#8230;</item>
+        <item>Counting beans&#8230;</item>
+    </string-array>
 </resources>
