@@ -17,4 +17,13 @@ git clone git@github.com:USERNAME/FORKED-PROJECT.git
 
 ## GitHub Standard Fork & Pull Request Workflow 
 Useful link about project forks:
-https://gist.github.com/Chaser324/ce0505fbed06b947d962
+https://gist.github.com/Chaser324/ce0505fbed06b947d962  
+
+## AOSP Java Code Style Guidelines
+* Consistency
+* Readability
+* Well-Organized
+* Self-Documenting Code
+* Appropriate Use of Annotations
+* Use / Address Analyzer Warnings
+https://source.android.com/setup/contribute/code-style  
