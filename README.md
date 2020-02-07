@@ -20,10 +20,10 @@ Useful link about project forks:
 https://gist.github.com/Chaser324/ce0505fbed06b947d962  
 
 ## AOSP Java Code Style Guidelines
-* Consistency
-* Readability
-* Well-Organized
-* Self-Documenting Code
-* Appropriate Use of Annotations
-* Use / Address Analyzer Warnings
+* Consistency  
+* Readability  
+* Well-Organized  
+* Self-Documenting Code  
+* Appropriate Use of Annotations  
+* Use / Address Analyzer Warnings  
 https://source.android.com/setup/contribute/code-style  
