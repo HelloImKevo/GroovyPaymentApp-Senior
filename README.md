@@ -8,8 +8,11 @@ There are Android and iOS variants of this mobile payment app in the respective 
 
 # Useful References
 
+### Stripe
+https://stripe.com/docs/development  
+
 ### Retrofit
-https://square.github.io/retrofit/  
+https://square.github.io/retrofit  
 
 ### Gson
 https://github.com/google/gson  
