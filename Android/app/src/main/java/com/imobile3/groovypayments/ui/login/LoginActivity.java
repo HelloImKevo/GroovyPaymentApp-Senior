@@ -36,7 +36,8 @@ public class LoginActivity extends BaseActivity {
 
         final EditText usernameEditText = findViewById(R.id.username);
         final EditText passwordEditText = findViewById(R.id.password);
-        final Button loginButton = findViewById(R.id.login);
+        final Button loginButton = findViewById(R.id.btn_login);
+        final Button btnSkipLogin = findViewById(R.id.btn_skip_login);
         final ProgressBar loadingProgressBar = findViewById(R.id.loading);
 
         loginViewModel.getLoginFormState().observe(this, new Observer<LoginFormState>() {
@@ -68,11 +69,7 @@ public class LoginActivity extends BaseActivity {
                 if (loginResult.getSuccess() != null) {
                     updateUiWithUser(loginResult.getSuccess());
                 }
-                setResult(Activity.RESULT_OK);
-
-                // Complete and destroy login activity once successful
-                finish();
-                startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                handleLoginSuccess();
             }
         });
 
@@ -115,6 +112,8 @@ public class LoginActivity extends BaseActivity {
                         passwordEditText.getText().toString());
             }
         });
+
+        btnSkipLogin.setOnClickListener(v -> handleLoginSuccess());
     }
 
     private void updateUiWithUser(LoggedInUserView model) {
@@ -125,5 +124,13 @@ public class LoginActivity extends BaseActivity {
 
     private void showLoginFailed(@StringRes Integer errorString) {
         Toast.makeText(getApplicationContext(), errorString, Toast.LENGTH_SHORT).show();
+    }
+
+    private void handleLoginSuccess() {
+        setResult(Activity.RESULT_OK);
+
+        // Complete and destroy login activity once successful
+        finish();
+        startActivity(new Intent(LoginActivity.this, MainActivity.class));
     }
 }
