@@ -31,6 +31,9 @@
     <dimen name="button_width">120dp</dimen>
     <dimen name="button_height">56dp</dimen>
 
+    <!-- Icons -->
+    <dimen name="default_icon_size">128dp</dimen>
+
     <!-- Miscellaneous -->
     <dimen name="progress_dialog_width">260dp</dimen>
     <dimen name="card_view_corner_radius">1dp</dimen>
