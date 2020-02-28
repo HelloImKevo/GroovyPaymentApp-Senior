@@ -6,7 +6,7 @@ There are Android and iOS variants of this mobile payment app in the respective 
 
 Login Screen                                             | Main Activity
 :-------------------------------------------------------:|:---------------------------------------------------------:
-![Login Screen](ScreenMocks/GroovyMobilePayments-01.png) | ![Main Activity](ScreenMocks/GroovyMobilePayments-02.png)
+![Login Screen](ScreenMocks/GroovyMobilePayments-01-Login.png) | ![Main Activity](ScreenMocks/GroovyMobilePayments-02-MainFragment.png)
 
 # Useful References
 
