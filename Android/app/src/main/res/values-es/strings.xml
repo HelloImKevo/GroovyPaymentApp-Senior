@@ -5,6 +5,9 @@
     <string name="common_ok">OK</string>
     <string name="common_cancel">Cancelar</string>
     <string name="common_back">Atrás</string>
-    <string name="common_ask">Pedir</string>
     <string name="common_change">Cambio</string>
+    <string name="common_order_entry">Entrada de Pedido</string>
+    <string name="common_management">Administración</string>
+    <string name="common_time_tracking">Seguimiento del Tiempo</string>
+    <string name="common_under_construction">En Obra</string>
 </resources>

@@ -16,7 +16,7 @@ import android.widget.Toast;
 
 import com.imobile3.groovypayments.R;
 import com.imobile3.groovypayments.ui.BaseActivity;
-import com.imobile3.groovypayments.ui.main.MainActivity;
+import com.imobile3.groovypayments.ui.main.MainDashboardActivity;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;
@@ -131,6 +131,6 @@ public class LoginActivity extends BaseActivity {
 
         // Complete and destroy login activity once successful
         finish();
-        startActivity(new Intent(LoginActivity.this, MainActivity.class));
+        startActivity(new Intent(LoginActivity.this, MainDashboardActivity.class));
     }
 }

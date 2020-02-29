@@ -26,6 +26,11 @@
     <dimen name="padding_large">16dp</dimen>
     <dimen name="padding_xlarge">20dp</dimen>
     <dimen name="padding_xxlarge">26dp</dimen>
+    <dimen name="margin_xsmall">1dp</dimen>
+    <dimen name="margin_small">2dp</dimen>
+    <dimen name="margin_medium">4dp</dimen>
+    <dimen name="margin_large">8dp</dimen>
+    <dimen name="margin_xlarge">16dp</dimen>
 
     <!-- Buttons -->
     <dimen name="button_width">120dp</dimen>
@@ -34,8 +39,25 @@
     <!-- Icons -->
     <dimen name="default_icon_size">128dp</dimen>
 
+    <!-- Main Navigation -->
+    <dimen name="main_nav_bar_height">64dp</dimen>
+    <dimen name="main_nav_bar_progress_dimens">50dp</dimen>
+    <dimen name="main_nav_bar_back_icon_padding">14dp</dimen>
+    <dimen name="main_nav_bar_logo_padding">10dp</dimen>
+
+    <!-- Main Dashboard Activity -->
+    <dimen name="main_dashboard_icon_size">96dp</dimen>
+    <dimen name="main_dashboard_button_large_width">168dp</dimen>
+    <dimen name="main_dashboard_button_large_height">136dp</dimen>
+    <dimen name="main_dashboard_button_icon_padding">16dp</dimen>
+    <dimen name="main_dashboard_button_margin">4dp</dimen>
+    <dimen name="main_dashboard_margin_extra_small">4dp</dimen>
+
     <!-- Miscellaneous -->
     <dimen name="progress_dialog_width">260dp</dimen>
     <dimen name="card_view_corner_radius">1dp</dimen>
     <dimen name="detail_view_side_padding">16dp</dimen>
+    <dimen name="grid_item_border_width">1dp</dimen>
+    <dimen name="icon_ring_border_bg_dimens">40dp</dimen>
+    <dimen name="minimum_touch_height">48dp</dimen>
 </resources>

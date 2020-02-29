@@ -20,7 +20,7 @@
         </activity>
 
         <activity
-            android:name=".ui.main.MainActivity"
+            android:name=".ui.main.MainDashboardActivity"
             android:permission="${applicationId}.permission.START_ACTIVITY"
             android:screenOrientation="behind"
             android:windowSoftInputMode="stateHidden|adjustPan" />

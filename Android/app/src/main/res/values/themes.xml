@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+
+        <!-- Colors -->
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="colorAccent">@color/black_space</item>
+        <item name="android:colorPrimary" tools:targetApi="21">@color/primary</item>
+        <item name="android:colorPrimaryDark" tools:targetApi="21">@color/primary_dark</item>
+
+        <!-- Window/Background-->
+        <item name="android:windowAnimationStyle">@null</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <!-- Base dialog theme -->
+    <style name="DialogTheme" parent="Theme.AppCompat.Light.Dialog">
+
+        <!-- Colors -->
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="android:colorPrimary" tools:targetApi="21">@color/primary</item>
+        <item name="android:colorPrimaryDark" tools:targetApi="21">@color/primary_dark</item>
+    </style>
+</resources>

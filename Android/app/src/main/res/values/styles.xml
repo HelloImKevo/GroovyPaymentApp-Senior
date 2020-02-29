@@ -1,17 +1,5 @@
 <resources>
 
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
-    </style>
-
-    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
-
-    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
-
     <!-- Button -->
     <style name="Button" parent="android:Widget.Button">
         <item name="android:background">@null</item>
@@ -89,13 +77,37 @@
         <item name="android:textStyle">bold</item>
     </style>
 
+    <style name="TextView.Bold.Large" parent="@style/TextView.Label">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/text_size_large</item>
+    </style>
+
+    <style name="TextView.Large" parent="@style/TextView.Label">
+        <item name="android:textSize">@dimen/text_size_large</item>
+    </style>
+
     <!-- TextView (Light) -->
-    <style name="TextView.Label.Light" parent="@style/TextView.Label">
+    <style name="TextView.Light" parent="@style/TextView.Label">
         <item name="android:textColor">@color/white_cararra</item>
     </style>
 
-    <style name="TextView.Label.Light.Bold" parent="@style/TextView.Label.Bold">
+    <style name="TextView.Light.Large" parent="@style/TextView.Light">
+        <item name="android:textSize">@dimen/text_size_large</item>
+    </style>
+
+    <style name="TextView.Light.Bold" parent="@style/TextView.Light">
+        <item name="android:textStyle">bold</item>
         <item name="android:textColor">@color/white_cararra</item>
+    </style>
+
+    <style name="TextView.Light.Large.Bold" parent="@style/TextView.Light">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/text_size_large</item>
+    </style>
+
+    <style name="TextView.Light.Header.Bold" parent="@style/TextView.Light">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/text_size_header</item>
     </style>
 
 </resources>

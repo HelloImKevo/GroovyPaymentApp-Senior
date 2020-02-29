@@ -1,8 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <!-- Primary -->
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+    <color name="primary">#7c7b80</color>
+    <color name="primary_dark">#505052</color>
+    <color name="disabled">#D9D9D9</color>
+    <color name="background">#e0e0e0</color>
+    <color name="edit_text_stroke">#cbcbcb</color>
+    <color name="button_text_pressed">#f0f0f0</color>
+
+    <!-- Highlight -->
+    <color name="transparent_highlight">#40000000</color>
+    <color name="selected_transparent_highlight">#66000000</color>
 
     <!-- Neutrals (Light / Dark) -->
     <color name="white_cararra">#f2f1ef</color>

@@ -1,7 +1,10 @@
 package com.imobile3.groovypayments.ui;
 
+import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 
+import com.imobile3.groovypayments.R;
 import com.imobile3.groovypayments.logging.LogHelper;
 
 import androidx.annotation.IdRes;
@@ -15,6 +18,13 @@ import java.util.logging.Level;
 public abstract class BaseActivity extends AppCompatActivity {
 
     public final String TAG = getClass().getSimpleName();
+
+    protected MainNavBar mMainNavBar;
+
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -31,11 +41,34 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
     /**
+     * Invoke after setting the content view for activity.
+     */
+    protected void setUpMainNavBar() {
+        mMainNavBar = findViewById(R.id.main_nav_bar);
+        if (mMainNavBar != null) {
+            hideNativeActionBar();
+
+            // Back Arrow
+            mMainNavBar.getBackButton().setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // Handle in subclass
+                    onBackPressed();
+                }
+            });
+        }
+    }
+
+    /**
      * Shows the back or home button, if available.
      */
     protected void showBackButton() {
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        if (mMainNavBar != null) {
+            mMainNavBar.showBackButton();
+        } else {
+            if (getSupportActionBar() != null) {
+                getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            }
         }
     }
 
@@ -64,5 +97,11 @@ public abstract class BaseActivity extends AppCompatActivity {
         getSupportFragmentManager().beginTransaction()
                 .remove(fragment)
                 .commitNow();
+    }
+
+    private void hideNativeActionBar() {
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
     }
 }

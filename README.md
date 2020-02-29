@@ -4,9 +4,9 @@ Just a skeleton shell app with lots of method stubs and possibly even intentiona
 ## This App is intended for Senior candidates. 
 There are Android and iOS variants of this mobile payment app in the respective directories.
 
-Login Screen                                             | Main Activity
+Login Screen                                             | Main Dashboard
 :-------------------------------------------------------:|:---------------------------------------------------------:
-![Login Screen](ScreenMocks/GroovyMobilePayments-01-Login.png) | ![Main Activity](ScreenMocks/GroovyMobilePayments-02-MainFragment.png)
+![Login Screen](ScreenMocks/GroovyMobilePayments-01-Login.png) | ![Main Dashboard](ScreenMocks/GroovyMobilePayments-03-MainDashboard.png)
 
 # Useful References
 

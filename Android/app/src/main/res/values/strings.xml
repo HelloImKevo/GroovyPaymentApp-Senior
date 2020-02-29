@@ -5,8 +5,11 @@
     <string name="common_ok">OK</string>
     <string name="common_cancel">Cancel</string>
     <string name="common_back">Back</string>
-    <string name="common_ask">Ask</string>
     <string name="common_change">Change</string>
+    <string name="common_order_entry">Order Entry</string>
+    <string name="common_management">Management</string>
+    <string name="common_time_tracking">Time Tracking</string>
+    <string name="common_under_construction">Under Construction</string>
 
     <!-- Login -->
     <string name="prompt_email">Email</string>
