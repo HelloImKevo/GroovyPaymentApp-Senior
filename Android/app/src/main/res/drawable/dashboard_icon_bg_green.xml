@@ -44,7 +44,7 @@
                 android:width="2dp"
                 android:color="@color/green_emerald" />
             <solid
-                android:color="@android:color/transparent">
+                android:color="@color/green_emerald">
             </solid>
         </shape>
     </item>

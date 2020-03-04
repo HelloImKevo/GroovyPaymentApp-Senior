@@ -43,7 +43,7 @@
     <dimen name="main_nav_bar_height">64dp</dimen>
     <dimen name="main_nav_bar_progress_dimens">50dp</dimen>
     <dimen name="main_nav_bar_back_icon_padding">14dp</dimen>
-    <dimen name="main_nav_bar_logo_padding">10dp</dimen>
+    <dimen name="main_nav_bar_logo_padding">8dp</dimen>
 
     <!-- Main Dashboard Activity -->
     <dimen name="main_dashboard_icon_size">96dp</dimen>

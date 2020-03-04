@@ -40,9 +40,8 @@
                 android:layout_centerVertical="true"
                 android:layout_marginStart="@dimen/margin_medium"
                 android:layout_marginEnd="@dimen/margin_medium"
-                android:background="@drawable/button_bg_outline_selector_inverse"
-                android:padding="@dimen/main_nav_bar_back_icon_padding"
-                android:tint="@color/black_space"
+                android:padding="10dp"
+                android:tint="@android:color/white"
                 android:visibility="gone"
                 app:srcCompat="@drawable/ic_back"
                 tools:visibility="visible" />
@@ -114,7 +113,7 @@
             app:layout_constraintEnd_toStartOf="@id/guideline_end_title"
             app:layout_constraintStart_toEndOf="@id/guideline_start_title"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/logo_standard_small"
+            app:srcCompat="@drawable/logo_white_small"
             tools:visibility="visible" />
 
         <androidx.constraintlayout.widget.Guideline

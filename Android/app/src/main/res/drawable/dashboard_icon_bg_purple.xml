@@ -40,11 +40,8 @@
                 android:width="@dimen/icon_ring_border_bg_dimens"
                 android:height="@dimen/icon_ring_border_bg_dimens">
             </size>
-            <stroke
-                android:width="2dp"
-                android:color="@color/purple_magic" />
             <solid
-                android:color="@android:color/transparent">
+                android:color="@color/purple_magic">
             </solid>
         </shape>
     </item>

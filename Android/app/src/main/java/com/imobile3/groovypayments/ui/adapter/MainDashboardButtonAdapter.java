@@ -14,12 +14,12 @@ import org.jetbrains.annotations.NotNull;
 
 import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
-import androidx.core.widget.ImageViewCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-public class MainDashboardButtonAdapter extends RecyclerView.Adapter<MainDashboardButtonAdapter.ViewHolder> {
+public class MainDashboardButtonAdapter
+        extends RecyclerView.Adapter<MainDashboardButtonAdapter.ViewHolder> {
 
     private Context mContext;
     private AdapterCallback mCallbacks;
@@ -50,15 +50,21 @@ public class MainDashboardButtonAdapter extends RecyclerView.Adapter<MainDashboa
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         MainDashboardButton button = mButtons.get(position);
+        // Primary list item container pressed / default state.
         holder.container.setBackground(
                 StateListHelper.getBgColorSelector(mContext, button.colorResource));
+
+        // Configure the icon and background circle.
         holder.icon.setImageResource(button.iconResource);
         holder.icon.setBackground(
                 ContextCompat.getDrawable(mContext, button.backgroundResource));
-        ImageViewCompat.setImageTintList(holder.icon,
-                StateListHelper.getTextColorSelector(mContext, button.colorResource));
+
+        // Configure label and description.
         holder.label.setText(mContext.getString(button.labelResource));
         holder.label.setTextColor(
+                StateListHelper.getTextColorSelector(mContext, button.colorResource));
+        holder.description.setText(mContext.getString(button.descriptionResource));
+        holder.description.setTextColor(
                 StateListHelper.getTextColorSelector(mContext, button.colorResource));
     }
 
@@ -70,13 +76,14 @@ public class MainDashboardButtonAdapter extends RecyclerView.Adapter<MainDashboa
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         ViewGroup container;
         ImageView icon;
-        TextView label;
+        TextView label, description;
 
         ViewHolder(View itemView) {
             super(itemView);
             container = itemView.findViewById(R.id.container);
             icon = itemView.findViewById(R.id.icon);
             label = itemView.findViewById(R.id.label);
+            description = itemView.findViewById(R.id.description);
             container.setOnClickListener(this);
         }
 

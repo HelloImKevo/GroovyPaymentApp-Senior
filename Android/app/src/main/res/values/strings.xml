@@ -22,6 +22,13 @@
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
 
+    <!-- Main Dashboard -->
+    <string name="order_entry_description">Browse the store inventory or sell products to the
+        customer.</string>
+    <string name="management_description">Manage your Point-of-Sale settings.</string>
+    <string name="time_tracking_description">Clock in / out and view your recent activity.</string>
+    <string name="placeholder_description">This is a temporary placeholder.</string>
+
     <!-- Progress / Tasks -->
     <string-array name="progress_dialog_messages">
         <item>Crunching numbers&#8230;</item>

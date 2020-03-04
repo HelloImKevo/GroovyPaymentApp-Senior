@@ -27,7 +27,7 @@
             android:scaleType="fitCenter"
             tools:background="@drawable/dashboard_icon_bg_red"
             tools:src="@drawable/ic_bag_coins"
-            tools:tint="@color/red_cinnabar" />
+            tools:tint="@android:color/white" />
 
         <View
             android:layout_width="2dp"
@@ -54,7 +54,7 @@
 
             <TextView
                 android:id="@+id/description"
-                style="@style/TextView.Label.SingleLine"
+                style="@style/TextView.Label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -62,7 +62,7 @@
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/icon"
-                tools:text="Sell something to the customer."
+                tools:text="Sell something to the customer. Some additional text."
                 tools:textColor="@color/red_cinnabar" />
         </LinearLayout>
     </LinearLayout>
