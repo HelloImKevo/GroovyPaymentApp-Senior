@@ -14,6 +14,10 @@ Under Construction                                       | Under Construction
 
 # Useful References
 
+### Game-Icons.net  
+Many thanks to the contributors and maintainers over at game-icons.net - it has been an extremely helpful resource in prototyping mobile applications.  
+https://game-icons.net  
+
 ### Stripe
 https://stripe.com/docs/development  
 
