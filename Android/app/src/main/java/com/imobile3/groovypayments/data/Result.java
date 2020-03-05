@@ -1,13 +1,17 @@
 package com.imobile3.groovypayments.data;
 
+import androidx.annotation.NonNull;
+
 /**
  * A generic class that holds a result success w/ data or an error exception.
  */
 public class Result<T> {
+
     // Hide the private constructor to limit subclass types (Success, Error)
     private Result() {
     }
 
+    @NonNull
     @Override
     public String toString() {
         if (this instanceof Result.Success) {
@@ -20,8 +24,7 @@ public class Result<T> {
         return "";
     }
 
-    // Success sub-class
-    public final static class Success<T> extends Result {
+    public final static class Success<T> extends Result<T> {
         private T data;
 
         public Success(T data) {
@@ -33,8 +36,7 @@ public class Result<T> {
         }
     }
 
-    // Error sub-class
-    public final static class Error extends Result {
+    public final static class Error<T> extends Result<T> {
         private Exception error;
 
         public Error(Exception error) {

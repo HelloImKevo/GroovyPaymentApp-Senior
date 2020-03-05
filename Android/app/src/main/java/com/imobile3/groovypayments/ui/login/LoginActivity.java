@@ -31,8 +31,6 @@ public class LoginActivity extends BaseActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_activity);
-        loginViewModel = ViewModelProviders.of(this, new LoginViewModelFactory())
-                .get(LoginViewModel.class);
 
         final EditText usernameEditText = findViewById(R.id.username);
         final EditText passwordEditText = findViewById(R.id.password);
@@ -114,6 +112,12 @@ public class LoginActivity extends BaseActivity {
         });
 
         btnSkipLogin.setOnClickListener(v -> handleLoginSuccess());
+    }
+
+    @Override
+    protected void initViewModel() {
+        loginViewModel = ViewModelProviders.of(this, new LoginViewModelFactory())
+                .get(LoginViewModel.class);
     }
 
     private void updateUiWithUser(LoggedInUserView model) {

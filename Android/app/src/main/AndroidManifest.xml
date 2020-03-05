@@ -15,15 +15,27 @@
         android:theme="@style/AppTheme">
 
         <activity android:name=".ui.login.LoginActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
         <activity
             android:name=".ui.main.MainDashboardActivity"
+            android:permission="${applicationId}.permission.START_ACTIVITY"
+            android:screenOrientation="behind"
+            android:windowSoftInputMode="stateHidden|adjustPan">
+
+            <intent-filter android:label="Main Dashboard">
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".ui.orderentry.OrderEntryActivity"
             android:permission="${applicationId}.permission.START_ACTIVITY"
             android:screenOrientation="behind"
             android:windowSoftInputMode="stateHidden|adjustPan" />

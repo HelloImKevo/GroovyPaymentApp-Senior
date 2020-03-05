@@ -26,6 +26,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        initViewModel();
     }
 
     @Override
@@ -41,6 +42,8 @@ public abstract class BaseActivity extends AppCompatActivity {
         }
         return true;
     }
+
+    protected abstract void initViewModel();
 
     /**
      * Invoke after setting the content view for activity.

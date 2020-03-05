@@ -1,5 +1,6 @@
 package com.imobile3.groovypayments.ui.main;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.imobile3.groovypayments.R;
@@ -8,6 +9,7 @@ import com.imobile3.groovypayments.logging.LogHelper;
 import com.imobile3.groovypayments.ui.BaseActivity;
 import com.imobile3.groovypayments.ui.adapter.MainDashboardButton;
 import com.imobile3.groovypayments.ui.adapter.MainDashboardButtonAdapter;
+import com.imobile3.groovypayments.ui.orderentry.OrderEntryActivity;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -34,7 +36,7 @@ public class MainDashboardActivity extends BaseActivity {
                 new MainDashboardButtonAdapter.AdapterCallback() {
                     @Override
                     public void onButtonClick(MainDashboardButton button) {
-                        onDashboardButtonClick(button);
+                        handleDashboardButtonClick(button);
                     }
                 });
         mLaunchButtonsRecyclerView = findViewById(R.id.grid_launch_buttons);
@@ -72,9 +74,17 @@ public class MainDashboardActivity extends BaseActivity {
         mMainNavBar.showSubtitle("Where would you like to go?");
     }
 
-    private void onDashboardButtonClick(@NonNull MainDashboardButton button) {
+    @Override
+    protected void initViewModel() {
+        // Nothing to do here, yet.
+    }
+
+    private void handleDashboardButtonClick(@NonNull MainDashboardButton button) {
         switch (button) {
             case OrderEntry:
+                startActivity(new Intent(this, OrderEntryActivity.class));
+                break;
+
             case Management:
             case TimeTracking:
             case Placeholder1:
