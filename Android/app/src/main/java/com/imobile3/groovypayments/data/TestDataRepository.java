@@ -3,6 +3,8 @@ package com.imobile3.groovypayments.data;
 import com.imobile3.groovypayments.data.entities.ProductEntity;
 import com.imobile3.groovypayments.data.entities.ProductTaxJunctionEntity;
 import com.imobile3.groovypayments.data.entities.TaxEntity;
+import com.imobile3.groovypayments.data.utils.ProductBuilder;
+import com.imobile3.groovypayments.data.utils.TaxBuilder;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -16,7 +18,8 @@ import java.util.Random;
 public class TestDataRepository {
 
     public enum Environment {
-        InstrumentationTest
+        InstrumentationTest,
+        GroovyDemo
     }
 
     //region Singleton Implementation
@@ -151,6 +154,56 @@ public class TestDataRepository {
             result.setCost(50L);
             results.add(result);
         }
+        // Generate Point-of-Sale Demo inventory.
+        else if (Environment.GroovyDemo == environment) {
+            results.add(ProductBuilder.build(101L,
+                    "Tasty Chicken Sandwich", 750L, 200L));
+
+            results.add(ProductBuilder.build(102L,
+                    "10-Pack of AA Batteries", 899L, 125L));
+
+            results.add(ProductBuilder.build(103L,
+                    "Metal Folding Chair", 2250L, 400L));
+
+            results.add(ProductBuilder.build(104L,
+                    "Coffee Mug w/ Custom Design", 1275L, 300L));
+
+            results.add(ProductBuilder.build(105L,
+                    "Google I/O Novelty T-Shirt", 1750L, 75L));
+
+            results.add(ProductBuilder.build(106L,
+                    "Super Nintendo Entertainment System", 15000L, 3000L));
+
+            results.add(ProductBuilder.build(107L,
+                    "25-Pack of Snickers Candy Bars", 1500L, 350L));
+
+            results.add(ProductBuilder.build(108L,
+                    "Hand-Made Wood-Carved Tiki Mask", 2000L, 400L));
+
+            results.add(ProductBuilder.build(109L,
+                    "Paper-Mate Gel Pen (0.5)", 299L, 65L));
+
+            results.add(ProductBuilder.build(110L,
+                    "Wagh Bakri Instant Masala Tea", 699L, 125L));
+
+            results.add(ProductBuilder.build(111L,
+                    "Pine Tree Air Freshener", 199L, 10L));
+
+            results.add(ProductBuilder.build(112L,
+                    "Can of Tomato Soup", 99L, 15L));
+
+            results.add(ProductBuilder.build(113L,
+                    "Trail Mix w/ Peanuts", 199L, 10L));
+
+            results.add(ProductBuilder.build(114L,
+                    "Claw Hammer", 499L, 75L));
+
+            results.add(ProductBuilder.build(115L,
+                    "Phillips Screwdriver", 125L, 18L));
+
+            results.add(ProductBuilder.build(116L,
+                    "Coca Cola (300 mL)", 125L, 10L));
+        }
 
         return results;
     }
@@ -163,15 +216,23 @@ public class TestDataRepository {
         if (Environment.InstrumentationTest == environment) {
             result = new TaxEntity();
             result.setId(1L);
-            result.setName("5% Federal Tax");
+            result.setName("5% Test Tax");
             result.setRate(new BigDecimal("0.05"));
             results.add(result);
 
             result = new TaxEntity();
             result.setId(2L);
-            result.setName("7.5% State Tax");
+            result.setName("7.5% Test Tax");
             result.setRate(new BigDecimal("0.075"));
             results.add(result);
+        }
+        // Generate Point-of-Sale Demo taxes.
+        else if (Environment.GroovyDemo == environment) {
+            results.add(TaxBuilder.build(201L,
+                    "5% Federal Tax", "0.05"));
+
+            results.add(TaxBuilder.build(202L,
+                    "7.5% State Tax", "0.075"));
         }
 
         return results;

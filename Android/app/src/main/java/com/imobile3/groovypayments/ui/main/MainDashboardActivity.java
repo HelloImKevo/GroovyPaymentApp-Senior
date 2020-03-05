@@ -3,6 +3,8 @@ package com.imobile3.groovypayments.ui.main;
 import android.os.Bundle;
 
 import com.imobile3.groovypayments.R;
+import com.imobile3.groovypayments.data.GroovyDemoManager;
+import com.imobile3.groovypayments.logging.LogHelper;
 import com.imobile3.groovypayments.ui.BaseActivity;
 import com.imobile3.groovypayments.ui.adapter.MainDashboardButton;
 import com.imobile3.groovypayments.ui.adapter.MainDashboardButtonAdapter;
@@ -13,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
 
 public class MainDashboardActivity extends BaseActivity {
 
@@ -42,6 +45,17 @@ public class MainDashboardActivity extends BaseActivity {
         if (savedInstanceState == null) {
             // showFragmentNow(R.id.container, MainFragment.newInstance(), MainFragment.TAG);
         }
+
+        // Reset the database every time this activity is created (until we design
+        // a superior solution).
+        GroovyDemoManager.getInstance().resetDatabase(
+                new GroovyDemoManager.ResetDatabaseCallback() {
+                    @Override
+                    public void onDatabaseReset() {
+                        LogHelper.writeWithTrace(Level.INFO, TAG,
+                                "Groovy Demo Database successfully reset");
+                    }
+                });
     }
 
     @Override
