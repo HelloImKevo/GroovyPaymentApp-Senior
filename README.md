@@ -64,9 +64,10 @@ https://gist.github.com/Chaser324/ce0505fbed06b947d962
 
 ## Task ID: 001  
 ### Estimated LOE (Level of Effort): 2 Hours  
-The application currently crashes when a `Placeholder` button is clicked on the main dashboard. Design an alert dialog that is shown with an `"Under Construction"` type of message.  
 
-| Requirements | <div style="width:300px">Business Mocks</div> |
+[//]: # (The bold styling is added to the headers to explicitly add non-breaking space elements to increase column width)
+
+| **        Requirements        ** | **        Business Mocks        ** |
 | :--- | :---: |
 | The application currently **crashes** when a `Placeholder` button is clicked on the main dashboard. Design an alert dialog that is shown with an `"Under Construction"` type of message instead of crashing. | ![Construction Dialog](ScreenMocks/GroovyMobilePayments-04-UnderConstruction.png) |
 
@@ -74,17 +75,19 @@ The application currently crashes when a `Placeholder` button is clicked on the 
 // TODO: Add requirements / screen mocks
 ```
 
-<table>
+<html>
+    <table>
 
-    <!-- Table Headers -->
-    <tr>
-        <td><strong>Requirements</strong></td>
-        <td><strong>Screen Mocks</strong></td>
-    </tr>
+        <!-- Table Headers -->
+        <tr>
+            <td><strong>Requirements</strong></td>
+            <td><strong>Screen Mocks</strong></td>
+        </tr>
 
-    <!-- Table Cell Contents -->
-    <tr>
-        <td><p>The application currently crashes when a `Placeholder` button is clicked on the main dashboard. Design an alert dialog that is shown with an `"Under Construction"` type of message.</p></td>
-        <td><img src="ScreenMocks/GroovyMobilePayments-04-UnderConstruction.png" width=300></td>
-    </tr>
-</table>
+        <!-- Table Cell Contents -->
+        <tr>
+            <td><p>The application currently crashes when a `Placeholder` button is clicked on the main dashboard. Design an alert dialog that is shown with an `"Under Construction"` type of message.</p></td>
+            <td><img src="ScreenMocks/GroovyMobilePayments-04-UnderConstruction.png" width=300></td>
+        </tr>
+    </table>
+</html>
