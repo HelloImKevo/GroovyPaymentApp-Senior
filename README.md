@@ -1,12 +1,12 @@
 # SkeletonPaymentApp-Senior
 Just a skeleton shell app with lots of method stubs and possibly even intentional compiler errors.
 
-## This App is intended for Senior candidates. 
+## This App is intended for Senior candidates.
 There are Android and iOS variants of this mobile payment app in the respective directories.
 
 Login Screen                                             | Main Dashboard
 :-------------------------------------------------------:|:---------------------------------------------------------:
-![Login Screen](ScreenMocks/GroovyMobilePayments-01-Login.png) | ![Main Dashboard](ScreenMocks/GroovyMobilePayments-03-MainDashboard.png)
+![Login Screen](ScreenMocks/GroovyMobilePayments-01-Login.png) | ![Main Dashboard](ScreenMocks/GroovyMobilePayments-05-MainDashboard.png)
 
 Under Construction                                       | Under Construction
 :-------------------------------------------------------:|:---------------------------------------------------------:
@@ -62,14 +62,14 @@ https://gist.github.com/Chaser324/ce0505fbed06b947d962
 
 # Business Requirements Document (BRD)  
 
-## Task ID: 001  
-### Estimated LOE (Level of Effort): 2 Hours  
+## Task ID: #001  
+#### Estimated LOE (Level of Effort): 2 Hours  
 
-[//]: # (The bold styling is added to the headers to explicitly add non-breaking space elements to increase column width)
+[//]: # (Line breaks must be added to control text wrapping for multi-line rows, otherwise the image will get squashed)
 
-| **        Requirements        ** | **        Business Mocks        ** |
-| :--- | :---: |
-| The application currently **crashes** when a `Placeholder` button is clicked on the main dashboard. Design an alert dialog that is shown with an `"Under Construction"` type of message instead of crashing. | ![Construction Dialog](ScreenMocks/GroovyMobilePayments-04-UnderConstruction.png) |
+| Requirements | Business Mocks |
+| :--- | --- |
+| The application currently **crashes** when a `Placeholder` button is clicked on the main dashboard.<br>Design an alert dialog that is shown with an `"Under Construction"` type of message instead of crashing. | ![Construction Dialog](ScreenMocks/GroovyMobilePayments-04-UnderConstruction.png) |
 
 ```
 // TODO: Add requirements / screen mocks
