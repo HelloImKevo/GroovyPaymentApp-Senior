@@ -66,7 +66,16 @@ https://gist.github.com/Chaser324/ce0505fbed06b947d962
 ### Estimated LOE (Level of Effort): 2 Hours  
 The application currently crashes when a `Placeholder` button is clicked on the main dashboard. Design an alert dialog that is shown with an `"Under Construction"` type of message.  
 
+| Requirements | Business Mocks |
+| :--- | :---: |
+| The application currently **crashes** when a `Placeholder` button is clicked on the main dashboard. Design an alert dialog that is shown with an `"Under Construction"` type of message instead of crashing. | ![Construction Dialog](ScreenMocks/GroovyMobilePayments-04-UnderConstruction.png) |
+
+```
+// TODO: Add requirements / screen mocks
+```
+
 <table>
+
     <!-- Table Headers -->
     <tr>
         <td><strong>Requirements</strong></td>
@@ -79,13 +88,3 @@ The application currently crashes when a `Placeholder` button is clicked on the 
         <td><img src="ScreenMocks/GroovyMobilePayments-04-UnderConstruction.png" width=300></td>
     </tr>
 </table>
-
-Requirements                                       | Business Mock
-:-------------------------------------------------:|:---------------------------------------------------------:
-The application currently crashes when a `Placeholder` button is clicked | ![Construction Dialog](ScreenMocks/GroovyMobilePayments-04-UnderConstruction.png)
-on the main dashboard. Design an alert dialog that is shown with an      |
-`"Under Construction"` type of message.                                  |
-
-```
-// TODO: Add requirements / screen mocks
-```
