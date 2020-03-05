@@ -6,10 +6,12 @@ import android.view.View;
 
 import com.imobile3.groovypayments.R;
 import com.imobile3.groovypayments.logging.LogHelper;
+import com.imobile3.groovypayments.ui.dialog.CommonAlertDialog;
 
 import androidx.annotation.IdRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.StringRes;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
@@ -104,4 +106,86 @@ public abstract class BaseActivity extends AppCompatActivity {
             getSupportActionBar().hide();
         }
     }
+
+    //region Alert Dialogs
+
+    protected void showAlertDialog(
+            @StringRes int title,
+            @StringRes int message,
+            @StringRes int neutralText) {
+        showAlertDialog(getString(title), getString(message), getString(neutralText));
+    }
+
+    protected void showAlertDialog(
+            @StringRes int title,
+            @NonNull String message,
+            @StringRes int neutralText) {
+        showAlertDialog(getString(title), message, getString(neutralText));
+    }
+
+    protected void showAlertDialog(
+            String title,
+            String message,
+            String neutralText) {
+        CommonAlertDialog dialog = new CommonAlertDialog(this);
+        dialog.setTitle(title);
+        dialog.setMessage(message);
+        dialog.setNeutralButton(neutralText, null);
+        dialog.show();
+    }
+
+    protected void showAlertDialog(
+            @StringRes int title,
+            @StringRes int message,
+            @StringRes int negativeText,
+            View.OnClickListener negativeListener,
+            @StringRes int positiveText,
+            View.OnClickListener positiveListener) {
+        showAlertDialog(getString(title), getString(message),
+                getString(negativeText), negativeListener,
+                getString(positiveText), positiveListener);
+    }
+
+    protected void showAlertDialog(
+            String title, String message,
+            String negativeText,
+            View.OnClickListener negativeListener,
+            String positiveText,
+            View.OnClickListener positiveListener) {
+        showAlertDialog(title, message,
+                negativeText, negativeListener,
+                positiveText, positiveListener,
+                CommonAlertDialog.Style.STANDARD);
+    }
+
+    protected void showAlertDialog(
+            String title,
+            String message,
+            String negativeText,
+            View.OnClickListener negativeListener,
+            String positiveText,
+            View.OnClickListener positiveListener,
+            @NonNull CommonAlertDialog.Style style) {
+        CommonAlertDialog dialog = new CommonAlertDialog(this);
+        dialog.setTitle(title);
+        dialog.setMessage(message);
+        dialog.setStyle(style);
+        dialog.setNegativeButton(negativeText, negativeListener);
+        dialog.setPositiveButton(positiveText, positiveListener);
+        dialog.show();
+    }
+
+    protected void showAlertDialog(
+            String title,
+            String message,
+            View.OnClickListener positiveListener) {
+        CommonAlertDialog dialog = new CommonAlertDialog(this);
+        dialog.setTitle(title);
+        dialog.setMessage(message);
+        dialog.setNegativeButton(getString(R.string.common_cancel), null);
+        dialog.setPositiveButton(getString(R.string.common_ok), positiveListener);
+        dialog.show();
+    }
+
+    //endregion
 }

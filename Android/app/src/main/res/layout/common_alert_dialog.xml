@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_alert_dialog"
+    android:minWidth="360dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/label_title"
+        style="@style/TextView.Label.AllCaps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/margin_xlarge"
+        android:layout_marginBottom="@dimen/margin_xlarge"
+        android:gravity="center_vertical"
+        android:textSize="@dimen/text_size_large"
+        android:textStyle="bold"
+        tools:text="Alert Title" />
+
+    <TextView
+        android:id="@+id/label_message"
+        style="@style/TextView.Label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_alert_dialog_message"
+        android:ellipsize="end"
+        android:gravity="start|center_vertical"
+        android:lineSpacingMultiplier="1.2"
+        android:padding="@dimen/padding_xlarge"
+        android:textSize="@dimen/text_size_medium"
+        tools:text="Lorem ipsum dolor sit amet" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_xlarge"
+        android:layout_marginBottom="@dimen/margin_xlarge"
+        android:paddingStart="@dimen/padding_medium"
+        android:paddingEnd="@dimen/padding_medium">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_negative"
+                style="@style/Button.Gray.Weighted"
+                tools:text="No" />
+
+            <Button
+                android:id="@+id/btn_positive"
+                style="@style/Button.Blue.Weighted"
+                android:layout_marginStart="@dimen/margin_medium"
+                tools:text="Yes" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_neutral"
+            style="@style/Button.Gray"
+            android:layout_width="match_parent"
+            android:background="@color/gray_down_pour"
+            tools:text="Neutral"
+            tools:visibility="gone" />
+    </RelativeLayout>
+</LinearLayout>

@@ -1,13 +1,13 @@
 package com.imobile3.groovypayments.ui.main;
 
 import android.os.Bundle;
-import android.widget.Toast;
 
 import com.imobile3.groovypayments.R;
 import com.imobile3.groovypayments.ui.BaseActivity;
 import com.imobile3.groovypayments.ui.adapter.MainDashboardButton;
 import com.imobile3.groovypayments.ui.adapter.MainDashboardButtonAdapter;
 
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -31,8 +31,7 @@ public class MainDashboardActivity extends BaseActivity {
                 new MainDashboardButtonAdapter.AdapterCallback() {
                     @Override
                     public void onButtonClick(MainDashboardButton button) {
-                        Toast.makeText(MainDashboardActivity.this,
-                                "Under construction!", Toast.LENGTH_SHORT).show();
+                        onDashboardButtonClick(button);
                     }
                 });
         mLaunchButtonsRecyclerView = findViewById(R.id.grid_launch_buttons);
@@ -57,6 +56,21 @@ public class MainDashboardActivity extends BaseActivity {
         mMainNavBar.showBackButton();
         mMainNavBar.showLogo();
         mMainNavBar.showSubtitle("Where would you like to go?");
+    }
+
+    private void onDashboardButtonClick(@NonNull MainDashboardButton button) {
+        switch (button) {
+            case OrderEntry:
+            case Management:
+            case TimeTracking:
+            case Placeholder1:
+            case Placeholder2:
+                showAlertDialog(
+                        R.string.common_under_construction,
+                        R.string.under_construction_alert_message,
+                        R.string.common_acknowledged);
+                break;
+        }
     }
 
     private List<MainDashboardButton> getDashboardButtons() {

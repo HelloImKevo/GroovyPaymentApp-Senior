@@ -8,6 +8,10 @@ Login Screen                                             | Main Dashboard
 :-------------------------------------------------------:|:---------------------------------------------------------:
 ![Login Screen](ScreenMocks/GroovyMobilePayments-01-Login.png) | ![Main Dashboard](ScreenMocks/GroovyMobilePayments-03-MainDashboard.png)
 
+Under Construction                                       | Under Construction
+:-------------------------------------------------------:|:---------------------------------------------------------:
+![Construction Dialog](ScreenMocks/GroovyMobilePayments-04-UnderConstruction.png) | ![Construction Dialog](ScreenMocks/GroovyMobilePayments-04-UnderConstruction.png)
+
 # Useful References
 
 ### Stripe
@@ -57,6 +61,30 @@ Useful link about project forks:
 https://gist.github.com/Chaser324/ce0505fbed06b947d962  
 
 # Business Requirements Document (BRD)  
+
+## Task ID: 001  
+### Estimated LOE (Level of Effort): 2 Hours  
+The application currently crashes when a `Placeholder` button is clicked on the main dashboard. Design an alert dialog that is shown with an `"Under Construction"` type of message.  
+
+<table>
+    <!-- Table Headers -->
+    <tr>
+        <td><strong>Requirements</strong></td>
+        <td><strong>Screen Mocks</strong></td>
+    </tr>
+
+    <!-- Table Cell Contents -->
+    <tr>
+        <td><p>The application currently crashes when a `Placeholder` button is clicked on the main dashboard. Design an alert dialog that is shown with an `"Under Construction"` type of message.</p></td>
+        <td><img src="ScreenMocks/GroovyMobilePayments-04-UnderConstruction.png" width=300></td>
+    </tr>
+</table>
+
+Requirements                                       | Business Mock
+:-------------------------------------------------:|:---------------------------------------------------------:
+The application currently crashes when a `Placeholder` button is clicked | ![Construction Dialog](ScreenMocks/GroovyMobilePayments-04-UnderConstruction.png)
+on the main dashboard. Design an alert dialog that is shown with an      |
+`"Under Construction"` type of message.                                  |
 
 ```
 // TODO: Add requirements / screen mocks

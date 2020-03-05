@@ -10,6 +10,7 @@
     <string name="common_management">Management</string>
     <string name="common_time_tracking">Time Tracking</string>
     <string name="common_under_construction">Under Construction</string>
+    <string name="common_acknowledged">Acknowledged</string>
 
     <!-- Login -->
     <string name="prompt_email">Email</string>
@@ -28,6 +29,8 @@
     <string name="management_description">Manage your Point-of-Sale settings.</string>
     <string name="time_tracking_description">Clock in / out and view your recent activity.</string>
     <string name="placeholder_description">This is a temporary placeholder.</string>
+    <string name="under_construction_alert_message">This area of the application is still
+        under construction. Feel free to demonstrate your skills and build it.</string>
 
     <!-- Progress / Tasks -->
     <string-array name="progress_dialog_messages">

@@ -15,7 +15,7 @@
     </style>
 
     <style name="Button.Blue" parent="@style/Button">
-        <item name="android:background">@drawable/btn_blue_states</item>
+        <item name="android:background">@color/blue_dodger_blue</item>
     </style>
 
     <style name="Button.Blue.Weighted" parent="@style/Button.Blue">
@@ -24,7 +24,7 @@
     </style>
 
     <style name="Button.Gray" parent="@style/Button">
-        <item name="android:background">@drawable/btn_gray</item>
+        <item name="android:background">@color/gray_stay_with_me</item>
     </style>
 
     <style name="Button.Gray.Weighted" parent="@style/Button.Gray">
