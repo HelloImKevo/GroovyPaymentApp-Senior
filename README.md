@@ -8,9 +8,9 @@ Login Screen                                             | Main Dashboard
 :-------------------------------------------------------:|:---------------------------------------------------------:
 ![Login Screen](ScreenMocks/GroovyMobilePayments-01-Login.png) | ![Main Dashboard](ScreenMocks/GroovyMobilePayments-05-MainDashboard.png)
 
-Under Construction                                       | Under Construction
-:-------------------------------------------------------:|:---------------------------------------------------------:
-![Construction Dialog](ScreenMocks/GroovyMobilePayments-04-UnderConstruction.png) | ![Construction Dialog](ScreenMocks/GroovyMobilePayments-04-UnderConstruction.png)
+| Order Entry | Under Construction |
+| :---: | :---: |
+![Order Entry](ScreenMocks/GroovyMobilePayments-06-OrderEntry.png) | ![Construction Dialog](ScreenMocks/GroovyMobilePayments-04-UnderConstruction.png)
 
 # Useful References
 
@@ -66,14 +66,21 @@ https://gist.github.com/Chaser324/ce0505fbed06b947d962
 
 # Business Requirements Document (BRD)  
 
-## Task ID: #001  
+## Task ID: #001 - Main Dashboard Crash  
 #### Estimated LOE (Level of Effort): 2 Hours  
 
 [//]: # (Line breaks must be added to control text wrapping for multi-line rows, otherwise the image will get squashed)
 
-| Requirements | Business Mocks |
+| Requirements | Business Mock |
 | :--- | --- |
-| The application currently **crashes** when a `Placeholder` button is clicked on the main dashboard.<br>Design an alert dialog that is shown with an `"Under Construction"` type of message instead of crashing. | ![Construction Dialog](ScreenMocks/GroovyMobilePayments-04-UnderConstruction.png) |
+| The application currently **crashes** when a `Placeholder` button is clicked on the<br>main dashboard.<br><br>Design an alert dialog that is shown with an `"Under Construction"` type of message<br>instead of crashing. | ![Construction Dialog](ScreenMocks/GroovyMobilePayments-04-UnderConstruction.png) |
+
+## Task ID: #002 - Product List Facelift  
+#### Estimated LOE (Level of Effort): 2 Hours  
+
+| Requirements | Business Mock |
+| :--- | --- |
+| Users of this application have complained that the Product list looks very bland.<br><br>Update the style of the products to match the mock as closely as possible (or use<br>your creativity to implement a better design). | ![Construction Dialog](ScreenMocks/GroovyMobilePayments-06-OrderEntry.png) |
 
 ```
 // TODO: Add requirements / screen mocks
