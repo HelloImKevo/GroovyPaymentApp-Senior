@@ -2,6 +2,7 @@ package com.imobile3.groovypayments.data.model;
 
 import com.imobile3.groovypayments.data.enums.GroovyColor;
 import com.imobile3.groovypayments.data.enums.GroovyIcon;
+import com.imobile3.groovypayments.data.enums.GroovyPaymentType;
 
 public class PaymentType {
 
@@ -9,6 +10,7 @@ public class PaymentType {
      * Example: Cash, Credit, Check.
      */
     private String mName;
+    private GroovyPaymentType mType;
     private GroovyIcon mIcon;
     private GroovyColor mColor;
 
@@ -21,6 +23,14 @@ public class PaymentType {
 
     public void setName(String name) {
         mName = name;
+    }
+
+    public GroovyPaymentType getType() {
+        return mType;
+    }
+
+    public void setType(GroovyPaymentType type) {
+        mType = type;
     }
 
     public GroovyIcon getIcon() {

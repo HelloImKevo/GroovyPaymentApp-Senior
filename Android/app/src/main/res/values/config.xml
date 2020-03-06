@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Miscellaneous Configuration Values -->
+<resources>
+    <!-- Boolean Flags -->
+    <bool name="tablet_configuration">false</bool>
+
+    <!-- Animation Values -->
+    <item name="anim_duration" format="integer" type="integer">500</item>
+</resources>

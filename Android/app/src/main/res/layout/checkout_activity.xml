@@ -27,6 +27,22 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             tools:listitem="@layout/payment_type_list_item" />
+
+        <include
+            android:id="@+id/pay_with_cash_view"
+            layout="@layout/checkout_pay_with_cash_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+        <include
+            android:id="@+id/pay_with_credit_view"
+            layout="@layout/checkout_pay_with_credit_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            tools:visibility="gone" />
     </FrameLayout>
 
     <View
