@@ -2,6 +2,7 @@
 <resources>
     <string name="app_name">Pagos Móviles Groovy</string>
 
+    <!-- Common -->
     <string name="common_ok">OK</string>
     <string name="common_cancel">Cancelar</string>
     <string name="common_back">Atrás</string>
@@ -10,4 +11,8 @@
     <string name="common_management">Administración</string>
     <string name="common_time_tracking">Seguimiento del Tiempo</string>
     <string name="common_under_construction">En Obra</string>
+
+    <!-- Payment Types -->
+    <string name="credit">Crédito</string>
+    <string name="cash">Efectivo</string>
 </resources>

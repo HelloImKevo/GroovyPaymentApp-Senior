@@ -18,16 +18,17 @@ public enum GroovyIcon {
     OpenedFoodCan(9, R.drawable.ic_opened_food_can),
     Pencil(10, R.drawable.ic_pencil),
     Person(11, R.drawable.ic_person),
-    PineTree(12, R.drawable.ic_pine_tree),
-    RetroController(13, R.drawable.ic_retro_controller),
-    Sandwich(14, R.drawable.ic_sandwich),
-    ScrollUnfurled(15, R.drawable.ic_scroll_unfurled),
-    Stopwatch(16, R.drawable.ic_stopwatch),
-    Strongbox(17, R.drawable.ic_strongbox),
-    TShirt(18, R.drawable.ic_t_shirt),
-    Teapot(19, R.drawable.ic_teapot),
-    WoodenChair(20, R.drawable.ic_wooden_chair),
-    WrappedSweet(21, R.drawable.ic_wrapped_sweet);
+    PiggyBank(12, R.drawable.ic_piggy_bank),
+    PineTree(13, R.drawable.ic_pine_tree),
+    RetroController(14, R.drawable.ic_retro_controller),
+    Sandwich(15, R.drawable.ic_sandwich),
+    ScrollUnfurled(16, R.drawable.ic_scroll_unfurled),
+    Stopwatch(17, R.drawable.ic_stopwatch),
+    Strongbox(18, R.drawable.ic_strongbox),
+    TShirt(19, R.drawable.ic_t_shirt),
+    Teapot(20, R.drawable.ic_teapot),
+    WoodenChair(21, R.drawable.ic_wooden_chair),
+    WrappedSweet(22, R.drawable.ic_wrapped_sweet);
 
     public final int id;
     @DrawableRes

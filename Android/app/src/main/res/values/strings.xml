@@ -32,6 +32,10 @@
     <string name="under_construction_alert_message">This area of the application is still
         under construction. Feel free to demonstrate your skills and build it.</string>
 
+    <!-- Payment Types -->
+    <string name="credit">Credit</string>
+    <string name="cash">Cash</string>
+
     <!-- Progress / Tasks -->
     <string-array name="progress_dialog_messages">
         <item>Crunching numbers&#8230;</item>

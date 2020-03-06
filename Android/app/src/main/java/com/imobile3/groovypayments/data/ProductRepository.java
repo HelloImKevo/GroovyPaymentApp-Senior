@@ -1,7 +1,8 @@
 package com.imobile3.groovypayments.data;
 
 /**
- * A repository holds a reference to a data source.
+ * A repository holds a reference to different kinds of data sources
+ * (web services, local database or cached data).
  */
 public class ProductRepository {
 

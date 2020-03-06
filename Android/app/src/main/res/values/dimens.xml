@@ -58,6 +58,11 @@
     <dimen name="product_list_icon_padding">8dp</dimen>
     <dimen name="product_list_item_height">80dp</dimen>
 
+    <!-- Checkout -->
+    <dimen name="payment_type_list_icon_size">112dp</dimen>
+    <dimen name="payment_type_list_icon_padding">8dp</dimen>
+    <dimen name="payment_type_list_item_height">140dp</dimen>
+
     <!-- Miscellaneous -->
     <dimen name="progress_dialog_width">260dp</dimen>
     <dimen name="card_view_corner_radius">1dp</dimen>

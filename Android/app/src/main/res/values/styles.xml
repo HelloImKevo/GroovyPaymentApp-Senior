@@ -81,6 +81,11 @@
         <item name="android:textSize">@dimen/text_size_small</item>
     </style>
 
+    <style name="TextView.XLarge.Bold" parent="@style/TextView.Label">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/text_size_xlarge</item>
+    </style>
+
     <style name="TextView.Bold.Large" parent="@style/TextView.Label">
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">@dimen/text_size_large</item>
@@ -92,7 +97,7 @@
 
     <!-- TextView (Light) -->
     <style name="TextView.Light" parent="@style/TextView.Label">
-        <item name="android:textColor">@color/white_cararra</item>
+        <item name="android:textColor">@android:color/white</item>
     </style>
 
     <style name="TextView.Light.Large" parent="@style/TextView.Light">

@@ -1,11 +1,15 @@
 package com.imobile3.groovypayments.ui.orderentry;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import com.imobile3.groovypayments.R;
 import com.imobile3.groovypayments.data.model.Product;
+import com.imobile3.groovypayments.rules.CurrencyRules;
 import com.imobile3.groovypayments.ui.BaseActivity;
 import com.imobile3.groovypayments.ui.adapter.ProductListAdapter;
+import com.imobile3.groovypayments.ui.checkout.CheckoutActivity;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.ViewModelProviders;
@@ -13,6 +17,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class OrderEntryActivity extends BaseActivity {
 
@@ -51,8 +56,16 @@ public class OrderEntryActivity extends BaseActivity {
     protected void setUpMainNavBar() {
         super.setUpMainNavBar();
         mMainNavBar.showBackButton();
-        mMainNavBar.showLogo();
+        mMainNavBar.showTitle(new CurrencyRules().getCartTotal(this, Locale.US));
         mMainNavBar.showSubtitle("Add products to the order.");
+        mMainNavBar.showCheckoutButton();
+        mMainNavBar.getCheckoutButton().setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        handleCheckoutClick();
+                    }
+                });
     }
 
     @Override
@@ -73,5 +86,10 @@ public class OrderEntryActivity extends BaseActivity {
 
     private void handleProductClick(@NonNull Product product) {
         // TODO: Handle product click. Example: Add product to the cart.
+    }
+
+    private void handleCheckoutClick() {
+        // TODO: Check whether the order total is $0.00.
+        startActivity(new Intent(this, CheckoutActivity.class));
     }
 }

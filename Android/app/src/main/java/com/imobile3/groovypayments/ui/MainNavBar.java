@@ -16,6 +16,7 @@ public class MainNavBar extends RelativeLayout {
     private ProgressBar mProgressBar, mProgressBarRight;
     private TextView mTitle, mSubtitle;
     private ImageView mBtnBack, mBtnLock, mImgLogo, mBtnOverflowMenu;
+    private ImageView mBtnCheckout;
 
     public MainNavBar(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -33,6 +34,7 @@ public class MainNavBar extends RelativeLayout {
 
         mBtnBack = view.findViewById(R.id.btn_back);
         mImgLogo = view.findViewById(R.id.logo);
+        mBtnCheckout = view.findViewById(R.id.btn_checkout);
 
         mTitle = view.findViewById(R.id.title);
         mSubtitle = view.findViewById(R.id.subtitle);
@@ -59,5 +61,13 @@ public class MainNavBar extends RelativeLayout {
 
     public void showLogo() {
         mImgLogo.setVisibility(View.VISIBLE);
+    }
+
+    public ImageView getCheckoutButton() {
+        return mBtnCheckout;
+    }
+
+    public void showCheckoutButton() {
+        mBtnCheckout.setVisibility(View.VISIBLE);
     }
 }

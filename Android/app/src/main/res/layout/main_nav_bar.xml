@@ -69,7 +69,7 @@
                 android:tint="@color/black_space"
                 android:visibility="gone"
                 app:srcCompat="@drawable/ic_lock"
-                tools:visibility="visible" />
+                tools:visibility="gone" />
 
             <ImageView
                 android:id="@+id/btn_nav_menu"
@@ -82,6 +82,18 @@
                 android:tint="@color/black_space"
                 android:visibility="gone"
                 app:srcCompat="@drawable/ic_overflow_main_nav"
+                tools:visibility="visible" />
+
+            <ImageView
+                android:id="@+id/btn_checkout"
+                android:layout_width="@dimen/minimum_touch_height"
+                android:layout_height="@dimen/minimum_touch_height"
+                android:layout_marginStart="@dimen/margin_medium"
+                android:layout_marginEnd="@dimen/margin_large"
+                android:padding="2dp"
+                android:tint="@android:color/white"
+                android:visibility="gone"
+                app:srcCompat="@drawable/ic_piggy_bank"
                 tools:visibility="visible" />
 
             <ProgressBar
@@ -138,7 +150,7 @@
             app:layout_constraintStart_toEndOf="@+id/guideline_start_title"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="$25.00"
-            tools:visibility="visible" />
+            tools:visibility="gone" />
 
         <TextView
             android:id="@+id/status_text"
