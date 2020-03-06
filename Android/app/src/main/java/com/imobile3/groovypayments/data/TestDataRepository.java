@@ -3,6 +3,8 @@ package com.imobile3.groovypayments.data;
 import com.imobile3.groovypayments.data.entities.ProductEntity;
 import com.imobile3.groovypayments.data.entities.ProductTaxJunctionEntity;
 import com.imobile3.groovypayments.data.entities.TaxEntity;
+import com.imobile3.groovypayments.data.enums.GroovyColor;
+import com.imobile3.groovypayments.data.enums.GroovyIcon;
 import com.imobile3.groovypayments.data.utils.ProductBuilder;
 import com.imobile3.groovypayments.data.utils.TaxBuilder;
 
@@ -136,73 +138,118 @@ public class TestDataRepository {
 
     @NonNull
     public List<ProductEntity> getProducts(@NonNull Environment environment) {
-        ProductEntity result;
         List<ProductEntity> results = new ArrayList<>();
 
         if (Environment.InstrumentationTest == environment) {
-            result = new ProductEntity();
-            result.setId(1L);
-            result.setName("Grilled Chicken Sandwich");
-            result.setUnitPrice(850L);
-            result.setCost(200L);
-            results.add(result);
+            results.add(ProductBuilder.build(1L,
+                    "Grilled Chicken Sandwich",
+                    "",
+                    850L, 200L,
+                    GroovyIcon.Sandwich, GroovyColor.Yellow));
 
-            result = new ProductEntity();
-            result.setId(2L);
-            result.setName("Ultra Rare Pet Rock");
-            result.setUnitPrice(1499L);
-            result.setCost(50L);
-            results.add(result);
+            results.add(ProductBuilder.build(2L,
+                    "Ultra Rare Pet Rock",
+                    "",
+                    1499L, 50L,
+                    GroovyIcon.Sandwich, GroovyColor.Blue));
         }
         // Generate Point-of-Sale Demo inventory.
         else if (Environment.GroovyDemo == environment) {
             results.add(ProductBuilder.build(101L,
-                    "Tasty Chicken Sandwich", 750L, 200L));
+                    "Tasty Chicken Sandwich",
+                    "Chicken, lettuce, tomato and mayo",
+                    750L, 200L,
+                    GroovyIcon.Sandwich, GroovyColor.Yellow));
 
             results.add(ProductBuilder.build(102L,
-                    "10-Pack of AA Batteries", 899L, 125L));
+                    "10-Pack of AA Batteries",
+                    "Medium-quality batteries",
+                    899L, 125L,
+                    GroovyIcon.BatteryPack, GroovyColor.Gray));
 
             results.add(ProductBuilder.build(103L,
-                    "Metal Folding Chair", 2250L, 400L));
+                    "Metal Folding Chair",
+                    "Weighs approximately 12 lbs.",
+                    2250L, 400L,
+                    GroovyIcon.WoodenChair, GroovyColor.Blue));
 
             results.add(ProductBuilder.build(104L,
-                    "Coffee Mug w/ Custom Design", 1275L, 300L));
+                    "Coffee Mug w/ Custom Design",
+                    "Requires at least 48 hours to fulfill custom order",
+                    1275L, 300L,
+                    GroovyIcon.CoffeeMug, GroovyColor.Red));
 
             results.add(ProductBuilder.build(105L,
-                    "Google I/O Novelty T-Shirt", 1750L, 75L));
+                    "Google I/O Novelty T-Shirt",
+                    "Depicts the little green android dude",
+                    1750L, 75L,
+                    GroovyIcon.TShirt, GroovyColor.Orange));
 
             results.add(ProductBuilder.build(106L,
-                    "Super Nintendo Entertainment System", 15000L, 3000L));
+                    "Super Nintendo Entertainment System",
+                    "The classic SNES console w/ Super Mario World",
+                    15000L, 3000L,
+                    GroovyIcon.RetroController, GroovyColor.Purple));
 
             results.add(ProductBuilder.build(107L,
-                    "25-Pack of Snickers Candy Bars", 1500L, 350L));
+                    "25-Pack of Snickers Candy Bars",
+                    "",
+                    1500L, 350L,
+                    GroovyIcon.WrappedSweet, GroovyColor.Orange));
 
             results.add(ProductBuilder.build(108L,
-                    "Hand-Made Wood-Carved Tiki Mask", 2000L, 400L));
+                    "Hand-Made Wood-Carved Tiki Mask",
+                    "This mask is definitely not cursed",
+                    2000L, 400L,
+                    GroovyIcon.CeremonialMask, GroovyColor.Red));
 
             results.add(ProductBuilder.build(109L,
-                    "Paper-Mate Gel Pen (0.5)", 299L, 65L));
+                    "Paper-Mate Gel Pen (0.5)",
+                    "",
+                    299L, 65L,
+                    GroovyIcon.Pencil, GroovyColor.Blue));
 
             results.add(ProductBuilder.build(110L,
-                    "Wagh Bakri Instant Masala Tea", 699L, 125L));
+                    "Wagh Bakri Instant Masala Tea",
+                    "Simply add boiling water",
+                    699L, 125L,
+                    GroovyIcon.Teapot, GroovyColor.Yellow));
 
             results.add(ProductBuilder.build(111L,
-                    "Pine Tree Air Freshener", 199L, 10L));
+                    "Pine Tree Air Freshener",
+                    "Great for hanging from a rear-view mirror",
+                    199L, 10L,
+                    GroovyIcon.PineTree, GroovyColor.Green));
 
             results.add(ProductBuilder.build(112L,
-                    "Can of Tomato Soup", 99L, 15L));
+                    "Can of Tomato Soup",
+                    "High-quality preservatives give this a 10-year shelf-life",
+                    99L, 15L,
+                    GroovyIcon.OpenedFoodCan, GroovyColor.Orange));
 
             results.add(ProductBuilder.build(113L,
-                    "Trail Mix w/ Peanuts", 199L, 10L));
+                    "Trail Mix w/ Peanuts",
+                    "Also has chocolate candies and raisins",
+                    199L, 10L,
+                    GroovyIcon.Sandwich, GroovyColor.Orange));
 
             results.add(ProductBuilder.build(114L,
-                    "Claw Hammer", 499L, 75L));
+                    "Claw Hammer",
+                    "Used for hammering stuff, like a disposable cell phone",
+                    499L, 75L,
+                    GroovyIcon.HammerNails, GroovyColor.Purple));
 
             results.add(ProductBuilder.build(115L,
-                    "Phillips Screwdriver", 125L, 18L));
+                    "Phillips Screwdriver",
+                    "",
+                    125L, 18L,
+                    GroovyIcon.HammerNails, GroovyColor.Blue));
 
             results.add(ProductBuilder.build(116L,
-                    "Coca Cola (300 mL)", 125L, 10L));
+                    "Coca Cola (300 mL)",
+                    "",
+                    125L, 10L,
+                    GroovyIcon.CoffeeMug, GroovyColor.Red));
         }
 
         return results;

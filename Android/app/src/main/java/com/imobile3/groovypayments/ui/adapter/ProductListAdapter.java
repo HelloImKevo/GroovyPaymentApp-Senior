@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.imobile3.groovypayments.R;
 import com.imobile3.groovypayments.data.model.Product;
+import com.imobile3.groovypayments.rules.ProductRules;
 import com.imobile3.groovypayments.utils.StateListHelper;
 
 import org.jetbrains.annotations.NotNull;
@@ -20,6 +21,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class ProductListAdapter
         extends RecyclerView.Adapter<ProductListAdapter.ViewHolder> {
@@ -52,22 +54,23 @@ public class ProductListAdapter
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        // TODO: Update the look and feel of product list items
-        Product button = mItems.get(position);
+        Product item = mItems.get(position);
+        ProductRules rules = new ProductRules(item);
+
         // Primary list item container pressed / default state.
         holder.container.setBackground(
-                StateListHelper.getBgColorSelector(mContext, R.color.orange_california));
+                StateListHelper.getBgColorSelector(mContext, rules.getColor().colorRes));
 
         // Configure the icon and background circle.
-        holder.icon.setImageResource(R.drawable.ic_person);
+        holder.icon.setImageResource(rules.getIcon().drawableRes);
         holder.icon.setBackground(
-                ContextCompat.getDrawable(mContext, R.drawable.dashboard_icon_bg_red));
+                ContextCompat.getDrawable(mContext, rules.getColor().colorRes));
 
         // Configure label and description.
-        holder.label.setText(button.getName());
+        holder.label.setText(item.getName());
         holder.label.setTextColor(
                 StateListHelper.getTextColorSelector(mContext, R.color.black_space));
-        holder.description.setText(mContext.getString(R.string.placeholder_description));
+        holder.description.setText(rules.getDescription(Locale.US));
         holder.description.setTextColor(
                 StateListHelper.getTextColorSelector(mContext, R.color.gray_down_pour));
     }

@@ -15,6 +15,12 @@ public class ProductEntity {
     private String mName;
 
     /**
+     * Optional note about this product (a short description).
+     */
+    @ColumnInfo(name = "note")
+    private String mNote;
+
+    /**
      * What is the price-per-unit (in pennies) that we charge the customer?
      */
     @ColumnInfo(name = "unit_price")
@@ -25,6 +31,18 @@ public class ProductEntity {
      */
     @ColumnInfo(name = "cost")
     private long mCost;
+
+    /**
+     * See: GroovyIcon enum.
+     */
+    @ColumnInfo(name = "icon_id")
+    private int mIconId;
+
+    /**
+     * See: GroovyColor enum.
+     */
+    @ColumnInfo(name = "color_id")
+    private int mColorId;
 
     public ProductEntity() {
     }
@@ -45,6 +63,14 @@ public class ProductEntity {
         mName = name;
     }
 
+    public String getNote() {
+        return mNote;
+    }
+
+    public void setNote(String note) {
+        mNote = note;
+    }
+
     public long getUnitPrice() {
         return mUnitPrice;
     }
@@ -59,5 +85,21 @@ public class ProductEntity {
 
     public void setCost(long cost) {
         mCost = cost;
+    }
+
+    public int getIconId() {
+        return mIconId;
+    }
+
+    public void setIconId(int iconId) {
+        mIconId = iconId;
+    }
+
+    public int getColorId() {
+        return mColorId;
+    }
+
+    public void setColorId(int colorId) {
+        mColorId = colorId;
     }
 }
