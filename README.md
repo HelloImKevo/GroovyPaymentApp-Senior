@@ -80,25 +80,12 @@ https://gist.github.com/Chaser324/ce0505fbed06b947d962
 
 | Requirements | Business Mock |
 | :--- | --- |
-| Users of this application have complained that the Product list looks very bland.<br><br>Update the style of the products to match the mock as closely as possible (or use<br>your creativity to implement a better design). | ![Construction Dialog](ScreenMocks/GroovyMobilePayments-06-OrderEntry.png) |
+| Users of this application have complained that the Product list looks very bland.<br><br>Update the style of the products to match this mock as closely as possible (or use<br>your creativity to implement a better design). | ![Order Entry](ScreenMocks/GroovyMobilePayments-06-OrderEntry.png) |
 
-```
-// TODO: Add requirements / screen mocks
-```
+## Task ID: #003 - Language Translation of Your Choice
+#### Estimated LOE (Level of Effort): 3 Hours  
 
-<html>
-    <table>
-
-        <!-- Table Headers -->
-        <tr>
-            <td><strong>Requirements</strong></td>
-            <td><strong>Screen Mocks</strong></td>
-        </tr>
-
-        <!-- Table Cell Contents -->
-        <tr>
-            <td><p>The application currently crashes when a `Placeholder` button is clicked on the main dashboard. Design an alert dialog that is shown with an `"Under Construction"` type of message.</p></td>
-            <td><img src="ScreenMocks/GroovyMobilePayments-04-UnderConstruction.png" width=300></td>
-        </tr>
-    </table>
-</html>
+| Requirements | Business Mock |
+| :--- | --- |
+| Google Play Store users have left us lots of negative feedback because the application<br>only supports English and Spanish.<br><br>For this task, localize all of the app's string resources to another language<br>of your choice. Go through the app and extract any hard-coded strings as necessary.<br><br>**You do not need to worry about the names and descriptions of database entities.** | ![Spanish](ScreenMocks/GroovyMobilePayments-08-Spanish.png) |
+| The system language can be changed at Runtime under System settings. | ![System Language](ScreenMocks/GroovyMobilePayments-07-SystemLanguage.png) |
