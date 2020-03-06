@@ -67,7 +67,7 @@ public class CheckoutActivity extends BaseActivity {
         super.setUpMainNavBar();
         mMainNavBar.showBackButton();
         mMainNavBar.showLogo();
-        mMainNavBar.showSubtitle("How will you pay?");
+        mMainNavBar.showSubtitle(getString(R.string.checkout_subtitle));
     }
 
     @Override

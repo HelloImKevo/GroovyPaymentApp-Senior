@@ -57,7 +57,7 @@ public class OrderEntryActivity extends BaseActivity {
         super.setUpMainNavBar();
         mMainNavBar.showBackButton();
         mMainNavBar.showTitle(new CurrencyRules().getCartTotal(this, Locale.US));
-        mMainNavBar.showSubtitle("Add products to the order.");
+        mMainNavBar.showSubtitle(getString(R.string.order_entry_subtitle));
         mMainNavBar.showCheckoutButton();
         mMainNavBar.getCheckoutButton().setOnClickListener(
                 new View.OnClickListener() {

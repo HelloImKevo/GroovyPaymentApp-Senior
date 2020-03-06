@@ -71,7 +71,7 @@ public class MainDashboardActivity extends BaseActivity {
         super.setUpMainNavBar();
         mMainNavBar.showBackButton();
         mMainNavBar.showLogo();
-        mMainNavBar.showSubtitle("Where would you like to go?");
+        mMainNavBar.showSubtitle(getString(R.string.main_dashboard_subtitle));
     }
 
     @Override

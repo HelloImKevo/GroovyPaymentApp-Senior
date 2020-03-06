@@ -11,6 +11,35 @@
     <string name="common_management">Administración</string>
     <string name="common_time_tracking">Seguimiento del Tiempo</string>
     <string name="common_under_construction">En Obra</string>
+    <string name="common_acknowledged">Admitido</string>
+
+    <!-- Login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Contraseña</string>
+    <string name="action_sign_in">Ingresa o Registro</string>
+    <string name="skip_login">Saltar Iniciar sesión</string>
+    <string name="action_sign_in_short">Registrarse</string>
+    <string name="welcome">"¡Bienvenido! "</string>
+    <string name="invalid_username">No es un nombre de usuario válido</string>
+    <string name="invalid_password">La contraseña debe tener >5 caracteres</string>
+    <string name="login_failed">"Error de inicio de sesion"</string>
+
+    <!-- Main Dashboard -->
+    <string name="order_entry_description">Explore el inventario de la tienda o venda
+        productos al cliente.</string>
+    <string name="management_description">Administre su configuración de punto de venta.</string>
+    <string name="time_tracking_description">Registre la entrada / salida y vea su actividad
+        reciente.</string>
+    <string name="placeholder_description">Este es un marcador de posición temporal.</string>
+    <string name="under_construction_alert_message">Esta área de la aplicación aún está en
+        construcción. Siéntase libre de demostrar sus habilidades y construirlo.</string>
+    <string name="main_dashboard_subtitle">¿Dónde te gustaría ir?</string>
+
+    <!-- Order Entry -->
+    <string name="order_entry_subtitle">Añadir productos al pedido.</string>
+
+    <!-- Checkout -->
+    <string name="checkout_subtitle">¿Cómo vas a pagar?</string>
 
     <!-- Payment Types -->
     <string name="credit">Crédito</string>

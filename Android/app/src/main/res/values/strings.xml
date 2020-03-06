@@ -31,6 +31,13 @@
     <string name="placeholder_description">This is a temporary placeholder.</string>
     <string name="under_construction_alert_message">This area of the application is still
         under construction. Feel free to demonstrate your skills and build it.</string>
+    <string name="main_dashboard_subtitle">Where would you like to go?</string>
+
+    <!-- Order Entry -->
+    <string name="order_entry_subtitle">Add products to the order.</string>
+
+    <!-- Checkout -->
+    <string name="checkout_subtitle">How will you pay?</string>
 
     <!-- Payment Types -->
     <string name="credit">Credit</string>
