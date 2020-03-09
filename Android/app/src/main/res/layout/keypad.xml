@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_centerHorizontal="true"
+    android:layout_gravity="center_horizontal"
+    android:orientation="horizontal">
+
+    <!-- Row 1 -->
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <Button
+            style="@style/Button.Keypad"
+            android:text="@string/keypad_1" />
+
+        <Button
+            style="@style/Button.Keypad"
+            android:text="@string/keypad_2" />
+
+        <Button
+            style="@style/Button.Keypad"
+            android:text="@string/keypad_3" />
+    </TableRow>
+
+    <!-- Row 2 -->
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <Button
+            style="@style/Button.Keypad"
+            android:text="@string/keypad_4" />
+
+        <Button
+            style="@style/Button.Keypad"
+            android:text="@string/keypad_5" />
+
+        <Button
+            style="@style/Button.Keypad"
+            android:text="@string/keypad_6" />
+    </TableRow>
+
+    <!-- Row 3 -->
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <Button
+            style="@style/Button.Keypad"
+            android:text="@string/keypad_7" />
+
+        <Button
+            style="@style/Button.Keypad"
+            android:text="@string/keypad_8" />
+
+        <Button
+            style="@style/Button.Keypad"
+            android:text="@string/keypad_9" />
+    </TableRow>
+
+    <!-- Row 4 -->
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <Button
+            style="@style/Button.Keypad"
+            android:layout_column="0"
+            android:text="@string/keypad_00" />
+
+        <Button
+            style="@style/Button.Keypad"
+            android:layout_column="1"
+            android:text="@string/keypad_0" />
+
+        <ImageButton
+            style="@style/Button.Keypad"
+            android:padding="@dimen/padding_medium"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_keyboard_arrow_left_black" />
+    </TableRow>
+</TableLayout>

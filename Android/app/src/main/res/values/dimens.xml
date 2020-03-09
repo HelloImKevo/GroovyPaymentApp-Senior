@@ -16,6 +16,7 @@
     <dimen name="text_size_header">28sp</dimen>
     <dimen name="text_size_xheader">40sp</dimen>
     <dimen name="text_size_huge">56sp</dimen>
+    <dimen name="text_size_keypad">32sp</dimen>
 
     <!-- Padding / Margins -->
     <dimen name="padding_button_side">10dp</dimen>

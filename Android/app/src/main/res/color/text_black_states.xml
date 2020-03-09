@@ -1,0 +1,9 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Disabled -->
+    <item android:color="@color/gray_down_pour" android:state_enabled="false" />
+    <!-- Pressed -->
+    <item android:color="@color/gray_stay_with_me" android:state_pressed="true" />
+    <!-- Default -->
+    <item android:color="@color/black_space" />
+</selector>
