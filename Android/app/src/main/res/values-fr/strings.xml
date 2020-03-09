@@ -11,6 +11,7 @@
     <string name="common_time_tracking">Suivi du Temp</string>
     <string name="common_under_construction">En Construction</string>
     <string name="common_acknowledged">Reconnu</string>
+    <string name="common_order_history">Historique des commandes</string>
 
     <!-- Login -->
     <string name="prompt_email">Email</string>
@@ -29,6 +30,8 @@
     <string name="management_description">Gérer les réglages du Point de Vente.</string>
     <string name="time_tracking_description">Pointer / dépointer et voir votre activité
         récente.</string>
+    <string name="order_history_description">Jetez un œil aux commandes historiques exécutées
+        sur ce point de vente.</string>
     <string name="placeholder_description">Ceci est un espace réservé temporaire.</string>
     <string name="under_construction_alert_message">Cette zone de l\'application se trouve
         en construction. N\'hésitez pas à démontrer vos compétences en la construisant.</string>

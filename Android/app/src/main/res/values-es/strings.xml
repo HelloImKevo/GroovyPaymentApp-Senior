@@ -12,6 +12,7 @@
     <string name="common_time_tracking">Seguimiento del Tiempo</string>
     <string name="common_under_construction">En Obra</string>
     <string name="common_acknowledged">Admitido</string>
+    <string name="common_order_history">Historial de pedidos</string>
 
     <!-- Login -->
     <string name="prompt_email">Email</string>
@@ -30,6 +31,8 @@
     <string name="management_description">Administre su configuración de punto de venta.</string>
     <string name="time_tracking_description">Registre la entrada / salida y vea su actividad
         reciente.</string>
+    <string name="order_history_description">Eche un vistazo a los pedidos históricos cumplidos
+        en este punto de venta.</string>
     <string name="placeholder_description">Este es un marcador de posición temporal.</string>
     <string name="under_construction_alert_message">Esta área de la aplicación aún está en
         construcción. Siéntase libre de demostrar sus habilidades y construirlo.</string>

@@ -29,6 +29,13 @@ public enum MainDashboardButton {
             R.color.blue_dodger_blue,
             R.drawable.dashboard_icon_bg_light_blue),
 
+    OrderHistory(
+            R.string.common_order_history,
+            R.string.order_history_description,
+            R.drawable.ic_bookmarklet,
+            R.color.orange_california,
+            R.drawable.dashboard_icon_bg_orange),
+
     Placeholder1(
             R.string.common_under_construction,
             R.string.placeholder_description,

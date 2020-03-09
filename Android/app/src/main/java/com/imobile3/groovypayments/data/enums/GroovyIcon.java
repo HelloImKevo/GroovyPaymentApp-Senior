@@ -28,7 +28,9 @@ public enum GroovyIcon {
     TShirt(19, R.drawable.ic_t_shirt),
     Teapot(20, R.drawable.ic_teapot),
     WoodenChair(21, R.drawable.ic_wooden_chair),
-    WrappedSweet(22, R.drawable.ic_wrapped_sweet);
+    WrappedSweet(22, R.drawable.ic_wrapped_sweet),
+    Bookmarklet(23, R.drawable.ic_bookmarklet),
+    ;
 
     public final int id;
     @DrawableRes
