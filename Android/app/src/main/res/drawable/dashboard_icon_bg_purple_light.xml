@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Disabled -->
+    <item android:state_enabled="false">
+        <shape android:shape="oval">
+            <size
+                android:width="@dimen/icon_ring_border_bg_dimens"
+                android:height="@dimen/icon_ring_border_bg_dimens">
+            </size>
+            <stroke
+                android:width="2dp"
+                android:color="@color/disabled" />
+            <solid
+                android:color="@android:color/transparent">
+            </solid>
+        </shape>
+    </item>
+
+    <!-- Pressed -->
+    <item android:state_pressed="true">
+        <shape android:shape="oval">
+            <size
+                android:width="@dimen/icon_ring_border_bg_dimens"
+                android:height="@dimen/icon_ring_border_bg_dimens">
+            </size>
+            <stroke
+                android:width="2dp"
+                android:color="@android:color/white" />
+            <solid
+                android:color="@android:color/transparent">
+            </solid>
+        </shape>
+    </item>
+
+    <!-- Default -->
+    <item>
+        <shape android:shape="oval">
+            <size
+                android:width="@dimen/icon_ring_border_bg_dimens"
+                android:height="@dimen/icon_ring_border_bg_dimens">
+            </size>
+            <solid
+                android:color="@color/purple_wisteria">
+            </solid>
+        </shape>
+    </item>
+</selector>

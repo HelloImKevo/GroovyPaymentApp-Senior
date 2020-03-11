@@ -36,6 +36,13 @@ public enum MainDashboardButton {
             R.color.orange_california,
             R.drawable.dashboard_icon_bg_orange),
 
+    SecretFunctions(
+            R.string.common_secret_functions,
+            R.string.secret_functions_description,
+            R.drawable.ic_stealth_hood,
+            R.color.purple_wisteria,
+            R.drawable.dashboard_icon_bg_purple_light),
+
     Placeholder1(
             R.string.common_under_construction,
             R.string.placeholder_description,

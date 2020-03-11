@@ -30,6 +30,7 @@ public enum GroovyIcon {
     WoodenChair(21, R.drawable.ic_wooden_chair),
     WrappedSweet(22, R.drawable.ic_wrapped_sweet),
     Bookmarklet(23, R.drawable.ic_bookmarklet),
+    StealthHood(24, R.drawable.ic_stealth_hood),
     ;
 
     public final int id;

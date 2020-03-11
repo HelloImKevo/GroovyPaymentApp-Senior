@@ -12,6 +12,7 @@
     <string name="common_under_construction">Under Construction</string>
     <string name="common_acknowledged">Acknowledged</string>
     <string name="common_order_history">Order History</string>
+    <string name="common_secret_functions">Secret Functions</string>
 
     <!-- Login -->
     <string name="prompt_email">Email</string>
@@ -31,6 +32,8 @@
     <string name="time_tracking_description">Clock in / out and view your recent activity.</string>
     <string name="order_history_description">Take a look at historical orders fulfilled on this
         Point-of-Sale.</string>
+    <string name="secret_functions_description">Super secret area where you can perform special
+        functions, like resetting the Demo Database.</string>
     <string name="placeholder_description">This is a temporary placeholder.</string>
     <string name="under_construction_alert_message">This area of the application is still
         under construction. Feel free to demonstrate your skills and build it.</string>

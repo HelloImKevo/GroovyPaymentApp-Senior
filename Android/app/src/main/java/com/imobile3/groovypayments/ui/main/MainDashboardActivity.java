@@ -86,6 +86,7 @@ public class MainDashboardActivity extends BaseActivity {
                 break;
 
             case OrderHistory:
+            case SecretFunctions:
             case Management:
             case TimeTracking:
             case Placeholder1:
@@ -102,6 +103,7 @@ public class MainDashboardActivity extends BaseActivity {
         List<MainDashboardButton> dashboardButtons = new ArrayList<>();
         dashboardButtons.add(MainDashboardButton.OrderEntry);
         dashboardButtons.add(MainDashboardButton.OrderHistory);
+        dashboardButtons.add(MainDashboardButton.SecretFunctions);
         dashboardButtons.add(MainDashboardButton.Management);
         dashboardButtons.add(MainDashboardButton.TimeTracking);
         dashboardButtons.add(MainDashboardButton.Placeholder1);
