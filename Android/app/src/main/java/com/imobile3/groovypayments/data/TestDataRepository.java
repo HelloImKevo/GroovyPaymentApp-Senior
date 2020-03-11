@@ -142,6 +142,15 @@ public class TestDataRepository {
 
     //region Public Utilities
 
+    private final long CART_ID_1 = 801L;
+    private final long CART_ID_2 = 802L;
+    private final long CART_ID_3 = 803L;
+    private final long CART_ID_4 = 804L;
+    private final long CART_ID_5 = 805L;
+    private final long CART_ID_6 = 806L;
+    private final long CART_ID_7 = 807L;
+    private final long CART_ID_8 = 808L;
+
     @NonNull
     public List<CartEntity> getCarts(@NonNull Environment environment) {
         List<CartEntity> results = new ArrayList<>();
@@ -155,6 +164,17 @@ public class TestDataRepository {
                     new Date(185000000L),
                     700L, 150L, 850L));
         }
+        // Generate Point-of-Sale Demo order history.
+        else if (Environment.GroovyDemo == environment) {
+            results.add(CartBuilder.build(CART_ID_1, new Date(1857000000L)));
+            results.add(CartBuilder.build(CART_ID_2, new Date(1858000000L)));
+            results.add(CartBuilder.build(CART_ID_3, new Date(1859000000L)));
+            results.add(CartBuilder.build(CART_ID_4, new Date(1860000000L)));
+            results.add(CartBuilder.build(CART_ID_5, new Date(1861000000L)));
+            results.add(CartBuilder.build(CART_ID_6, new Date(1862000000L)));
+            results.add(CartBuilder.build(CART_ID_7, new Date(1863000000L)));
+            results.add(CartBuilder.build(CART_ID_8, new Date(1864000000L)));
+        }
 
         return results;
     }
@@ -164,6 +184,8 @@ public class TestDataRepository {
             @NonNull Environment environment,
             @NonNull CartEntity cart) {
         List<CartProductEntity> results = new ArrayList<>();
+
+        final long cartId = cart.getId();
 
         if (Environment.InstrumentationTest == environment) {
             results.add(CartProductBuilder.build((cart.getId() * 2) + 1L,
@@ -176,6 +198,58 @@ public class TestDataRepository {
                     "Test Soda",
                     125L, 1));
         }
+        // Generate Point-of-Sale Demo order history.
+        else if (Environment.GroovyDemo == environment) {
+            if (CART_ID_1 == cartId) {
+                results.add(CartProductBuilder.build(100002L, cartId,
+                        "Cotton Candy", 399L, 1));
+
+                results.add(CartProductBuilder.build(100003L, cartId,
+                        "Giant Lollipop", 499L, 1));
+            } else if (CART_ID_2 == cartId) {
+                results.add(CartProductBuilder.build(100004L, cartId,
+                        "Cappuccino", 599L, 1));
+
+                results.add(CartProductBuilder.build(100005L, cartId,
+                        "Caramel Macchiato", 750L, 2));
+            } else if (CART_ID_3 == cartId) {
+                results.add(CartProductBuilder.build(100006L, cartId,
+                        "Bacon Cookie", 375L, 2));
+
+                results.add(CartProductBuilder.build(100007L, cartId,
+                        "Chocolate Cookie", 125L, 2));
+            } else if (CART_ID_4 == cartId) {
+                results.add(CartProductBuilder.build(100008L, cartId,
+                        "Oatmeal Cookie", 375L, 2));
+
+                results.add(CartProductBuilder.build(100009L, cartId,
+                        "Fortune Cookie", 35L, 1));
+            } else if (CART_ID_5 == cartId) {
+                results.add(CartProductBuilder.build(100010L, cartId,
+                        "Cheese Cake Slice", 575L, 1));
+
+                results.add(CartProductBuilder.build(100011L, cartId,
+                        "Tiramisu Slice", 625L, 1));
+            } else if (CART_ID_6 == cartId) {
+                results.add(CartProductBuilder.build(100012L, cartId,
+                        "Frozen Yogurt (Cup)", 325L, 1));
+
+                results.add(CartProductBuilder.build(100013L, cartId,
+                        "Strawberry Ice Cream (Bowl)", 875L, 1));
+            } else if (CART_ID_7 == cartId) {
+                results.add(CartProductBuilder.build(100014L, cartId,
+                        "Batman Comic Book", 950L, 1));
+
+                results.add(CartProductBuilder.build(100015L, cartId,
+                        "Latte (S)", 275L, 1));
+            } else if (CART_ID_8 == cartId) {
+                results.add(CartProductBuilder.build(100016L, cartId,
+                        "Beef Pho", 850L, 1));
+
+                results.add(CartProductBuilder.build(100017L, cartId,
+                        "Pork and Tripe Pho", 775L, 1));
+            }
+        }
 
         return results;
     }
@@ -186,6 +260,8 @@ public class TestDataRepository {
             @NonNull CartEntity cart) {
         List<CartTaxEntity> results = new ArrayList<>();
 
+        final long cartId = cart.getId();
+
         if (Environment.InstrumentationTest == environment) {
             results.add(CartTaxBuilder.build((cart.getId() * 2) + 101L,
                     cart.getId(),
@@ -194,6 +270,16 @@ public class TestDataRepository {
             results.add(CartTaxBuilder.build((cart.getId() * 2) + 102L,
                     cart.getId(),
                     "Test Tax 4%", "0.04"));
+        }
+        // Generate Point-of-Sale Demo order history.
+        else if (Environment.GroovyDemo == environment) {
+            results.add(CartTaxBuilder.build((cartId * 2) + 7001L,
+                    cartId,
+                    "5% Restaurant Tax", "0.05"));
+
+            results.add(CartTaxBuilder.build((cartId * 2) + 7002L,
+                    cartId,
+                    "7.5% Federal Tax", "0.075"));
         }
 
         return results;

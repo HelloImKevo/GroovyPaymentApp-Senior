@@ -12,6 +12,17 @@ public final class CartBuilder {
     }
 
     @NonNull
+    public static CartEntity build(long id, Date dateCreated) {
+        CartEntity result = new CartEntity();
+        result.setId(id);
+        result.setDateCreated(dateCreated);
+        result.setSubtotal(0L);
+        result.setTaxTotal(0L);
+        result.setGrandTotal(0L);
+        return result;
+    }
+
+    @NonNull
     public static CartEntity build(
             long id,
             Date dateCreated,

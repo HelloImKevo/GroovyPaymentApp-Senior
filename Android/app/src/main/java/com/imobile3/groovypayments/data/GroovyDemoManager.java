@@ -5,9 +5,14 @@ import android.os.AsyncTask;
 import android.util.Log;
 
 import com.imobile3.groovypayments.MainApplication;
+import com.imobile3.groovypayments.calculation.CartCalculator;
+import com.imobile3.groovypayments.data.entities.CartEntity;
+import com.imobile3.groovypayments.data.entities.CartProductEntity;
+import com.imobile3.groovypayments.data.entities.CartTaxEntity;
 import com.imobile3.groovypayments.data.entities.ProductEntity;
 import com.imobile3.groovypayments.data.entities.ProductTaxJunctionEntity;
 import com.imobile3.groovypayments.data.entities.TaxEntity;
+import com.imobile3.groovypayments.data.model.Cart;
 import com.imobile3.groovypayments.data.model.Product;
 import com.imobile3.groovypayments.logging.LogHelper;
 
@@ -21,6 +26,8 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.RejectedExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
+
+import static com.imobile3.groovypayments.data.TestDataRepository.Environment;
 
 public final class GroovyDemoManager {
 
@@ -84,12 +91,12 @@ public final class GroovyDemoManager {
             // We need some sweet multi-threading action to speed things up!
             final ExecutorService executorService = Executors.newFixedThreadPool(4);
 
-            // We only have one inventory worker right now.
-            int howManyWorkers = 1;
+            int howManyWorkers = 2;
             final CountDownLatch signal = new CountDownLatch(howManyWorkers);
 
             try {
                 executorService.execute(new InventoryWorker(signal));
+                executorService.execute(new OrderHistoryWorker(signal));
             } catch (RejectedExecutionException e) {
                 // If a task is rejected or interrupted, we'll have some of our expected
                 // demo records missing from the database (example: products with no taxes).
@@ -173,6 +180,77 @@ public final class GroovyDemoManager {
                     "\n" + productResults.size() + " products" +
                     "\n" + taxResults.size() + " taxes" +
                     "\n" + productTaxJunctionsResults.size() + " product-tax-junctions");
+
+            // The signal must always be notified once!
+            mSignal.countDown();
+        }
+    }
+
+    /**
+     * Generate the application order history (carts).
+     */
+    private class OrderHistoryWorker implements Runnable {
+
+        @NonNull
+        private final CountDownLatch mSignal;
+
+        private OrderHistoryWorker(@NonNull CountDownLatch signal) {
+            mSignal = signal;
+        }
+
+        @Override
+        public void run() {
+            List<CartEntity> cartEntities = TestDataRepository.getInstance()
+                    .getCarts(Environment.GroovyDemo);
+
+            List<CartProductEntity> cartProductEntities = new ArrayList<>();
+            List<CartTaxEntity> cartTaxEntities = new ArrayList<>();
+            List<Cart> calculatedCarts = new ArrayList<>();
+            for (CartEntity cartEntity : cartEntities) {
+                Cart cart = new Cart(cartEntity);
+
+                cart.setProducts(TestDataRepository.getInstance()
+                        .getCartProducts(Environment.GroovyDemo, cartEntity));
+                cart.setTaxes(TestDataRepository.getInstance()
+                        .getCartTaxes(Environment.GroovyDemo, cartEntity));
+
+                // Perform calculations on cart objects.
+                new CartCalculator(cart).calculate();
+                calculatedCarts.add(cart);
+
+                cartProductEntities.addAll(cart.getProducts());
+                cartTaxEntities.addAll(cart.getTaxes());
+            }
+
+            // Update our cart entities with the calculated results.
+            cartEntities.clear();
+            cartEntities.addAll(calculatedCarts);
+
+            GroovyDatabase databaseInstance = DatabaseHelper.getInstance().getDatabase();
+
+            // Insert entities into database instance.
+            databaseInstance.getCartDao()
+                    .insertCarts(
+                            cartEntities.toArray(new CartEntity[0]));
+            databaseInstance.getCartProductDao()
+                    .insertCartProducts(
+                            cartProductEntities.toArray(new CartProductEntity[0]));
+            databaseInstance.getCartTaxDao()
+                    .insertCartTaxes(
+                            cartTaxEntities.toArray(new CartTaxEntity[0]));
+
+            // Optional verification that data exists.
+            List<Cart> cartResults =
+                    databaseInstance.getCartDao().getCarts();
+            List<CartProductEntity> cartProductResults =
+                    databaseInstance.getCartProductDao().getCartProducts();
+            List<CartTaxEntity> cartTaxResults =
+                    databaseInstance.getCartTaxDao().getCartTaxes();
+
+            LogHelper.write(Level.CONFIG, TAG, "Successfully generated order history data ..." +
+                    "\n" + cartResults.size() + " carts" +
+                    "\n" + cartProductResults.size() + " cart products" +
+                    "\n" + cartTaxResults.size() + " cart taxes");
 
             // The signal must always be notified once!
             mSignal.countDown();
