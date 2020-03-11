@@ -21,6 +21,9 @@ out/
 .gradle/
 build/
 
+# Personal API Keys
+apikeys.gradle
+
 # Local configuration file (sdk path, etc)
 local.properties
 

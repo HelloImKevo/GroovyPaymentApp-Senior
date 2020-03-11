@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply from: 'constants.gradle'
 
 android {
     compileSdkVersion 29
@@ -10,9 +11,22 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField STRING, STRIPE_API_KEY_FIELD, NULL
     }
 
     buildTypes {
+        debug {
+            minifyEnabled false
+
+            if (project.file("$project.rootDir/app/apikeys.gradle").exists()) {
+                apply from: "$project.rootDir/app/apikeys.gradle"
+                if (project.hasProperty('STRIPE_API_KEY')) {
+                    buildConfigField STRING, STRIPE_API_KEY_FIELD, STRIPE_API_KEY
+                }
+            }
+        }
+
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'

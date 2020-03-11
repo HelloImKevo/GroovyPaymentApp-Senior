@@ -1,0 +1,13 @@
+ext {
+    // data types
+    INT = 'int'
+    BOOL = 'boolean'
+    STRING = 'String'
+
+    // values (general)
+    TRUE = 'true'
+    FALSE = 'false'
+    NULL = 'null'
+
+    STRIPE_API_KEY_FIELD = 'STRIPE_API_KEY'
+}
