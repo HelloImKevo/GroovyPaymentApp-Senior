@@ -13,6 +13,10 @@
     <string name="common_acknowledged">Acknowledged</string>
     <string name="common_order_history">Order History</string>
     <string name="common_secret_functions">Secret Functions</string>
+    <string name="common_lorem_ipsum_description">Lorem ipsum dolor sit amet, consectetur
+        adipiscing elit. Integer commodo, nisi a rutrum dapibus, urna elit cursus mi, ut
+        elementum lacus elit nec diam. Nullam laoreet dui id dui facilisis lacinia. Sed convallis
+        feugiat ex, interdum tincidunt sapien consequat ut.</string>
 
     <!-- Login -->
     <string name="prompt_email">Email</string>
@@ -53,6 +57,17 @@
     <!-- Order Entry -->
     <string name="order_entry_subtitle">Add products to the order.</string>
     <string name="order_entry_subtitle_checkout">Click the top-right icon to checkout.</string>
+
+    <!-- Order History -->
+    <string name="order_history_subtitle">Recent orders listed below.</string>
+    <string name="order_history_alert_title">Not Implemented</string>
+    <string name="order_history_alert_button">Sure.</string>
+    <string name="order_history_alert_message">Order History functionality not implemented.
+        Please stop clicking on the list items.</string>
+    <string name="order_history_alert_warning_title">Stop it</string>
+    <string name="order_history_alert_warning_button">Whatever.</string>
+    <string name="order_history_alert_warning_message">You were warned not to click the list items.
+        Administrators have been notified.</string>
 
     <!-- Checkout -->
     <string name="checkout_subtitle">How will you pay?</string>

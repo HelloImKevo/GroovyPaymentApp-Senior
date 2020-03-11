@@ -104,7 +104,7 @@
         <item name="android:textSize">@dimen/text_size_xlarge</item>
     </style>
 
-    <style name="TextView.Bold.Large" parent="@style/TextView.Label">
+    <style name="TextView.Large.Bold" parent="@style/TextView.Label">
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">@dimen/text_size_large</item>
     </style>

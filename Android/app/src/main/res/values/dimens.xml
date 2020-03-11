@@ -59,6 +59,11 @@
     <dimen name="product_list_icon_padding">8dp</dimen>
     <dimen name="product_list_item_height">80dp</dimen>
 
+    <!-- Order History -->
+    <dimen name="cart_list_icon_size">56dp</dimen>
+    <dimen name="cart_list_icon_padding">6dp</dimen>
+    <dimen name="cart_list_item_height">100dp</dimen>
+
     <!-- Checkout -->
     <dimen name="payment_type_list_icon_size">112dp</dimen>
     <dimen name="payment_type_list_icon_padding">8dp</dimen>

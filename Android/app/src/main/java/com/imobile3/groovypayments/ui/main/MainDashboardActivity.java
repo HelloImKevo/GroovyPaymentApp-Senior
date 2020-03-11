@@ -9,6 +9,7 @@ import com.imobile3.groovypayments.ui.adapter.MainDashboardButton;
 import com.imobile3.groovypayments.ui.adapter.MainDashboardButtonAdapter;
 import com.imobile3.groovypayments.ui.misc.SecretFunctionsActivity;
 import com.imobile3.groovypayments.ui.orderentry.OrderEntryActivity;
+import com.imobile3.groovypayments.ui.orderhistory.OrderHistoryActivity;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -72,11 +73,14 @@ public class MainDashboardActivity extends BaseActivity {
                 startActivity(new Intent(this, OrderEntryActivity.class));
                 break;
 
+            case OrderHistory:
+                startActivity(new Intent(this, OrderHistoryActivity.class));
+                break;
+
             case SecretFunctions:
                 startActivity(new Intent(this, SecretFunctionsActivity.class));
                 break;
 
-            case OrderHistory:
             case Management:
             case TimeTracking:
             case Placeholder1:

@@ -9,6 +9,8 @@ import com.imobile3.groovypayments.data.model.Product;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import java.text.SimpleDateFormat;
+import java.util.Locale;
 import java.util.Objects;
 
 public final class CartRules {
@@ -51,5 +53,23 @@ public final class CartRules {
                 }
             }
         }
+    }
+
+    public String getFormattedDate(@NonNull Locale locale) {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy @ h:mm a", locale);
+        return dateFormat.format(mCart.getDateCreated());
+    }
+
+    public String getOrderHistoryDescription() {
+        StringBuilder builder = new StringBuilder();
+        if (mCart.getProducts() != null) {
+            for (CartProductEntity product : mCart.getProducts()) {
+                if (builder.length() != 0) {
+                    builder.append(", ");
+                }
+                builder.append(product.getName());
+            }
+        }
+        return builder.toString();
     }
 }

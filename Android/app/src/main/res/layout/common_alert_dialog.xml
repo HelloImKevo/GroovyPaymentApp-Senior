@@ -26,12 +26,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/bg_alert_dialog_message"
-        android:ellipsize="end"
-        android:gravity="start|center_vertical"
+        android:gravity="start"
         android:lineSpacingMultiplier="1.2"
         android:padding="@dimen/padding_xlarge"
         android:textSize="@dimen/text_size_medium"
-        tools:text="Lorem ipsum dolor sit amet" />
+        tools:text="@string/common_lorem_ipsum_description" />
 
     <RelativeLayout
         android:layout_width="match_parent"

@@ -166,14 +166,14 @@ public class TestDataRepository {
         }
         // Generate Point-of-Sale Demo order history.
         else if (Environment.GroovyDemo == environment) {
-            results.add(CartBuilder.build(CART_ID_1, new Date(1857000000L)));
-            results.add(CartBuilder.build(CART_ID_2, new Date(1858000000L)));
-            results.add(CartBuilder.build(CART_ID_3, new Date(1859000000L)));
-            results.add(CartBuilder.build(CART_ID_4, new Date(1860000000L)));
-            results.add(CartBuilder.build(CART_ID_5, new Date(1861000000L)));
-            results.add(CartBuilder.build(CART_ID_6, new Date(1862000000L)));
-            results.add(CartBuilder.build(CART_ID_7, new Date(1863000000L)));
-            results.add(CartBuilder.build(CART_ID_8, new Date(1864000000L)));
+            results.add(CartBuilder.build(CART_ID_1, new Date(1457040005823L)));
+            results.add(CartBuilder.build(CART_ID_2, new Date(1458050008193L)));
+            results.add(CartBuilder.build(CART_ID_3, new Date(1459060007655L)));
+            results.add(CartBuilder.build(CART_ID_4, new Date(1460070008873L)));
+            results.add(CartBuilder.build(CART_ID_5, new Date(1461080007781L)));
+            results.add(CartBuilder.build(CART_ID_6, new Date(1462090000058L)));
+            results.add(CartBuilder.build(CART_ID_7, new Date(1465042006398L)));
+            results.add(CartBuilder.build(CART_ID_8, new Date(1468081004457L)));
         }
 
         return results;
