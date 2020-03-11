@@ -1,6 +1,6 @@
 package com.imobile3.groovypayments.rules;
 
-import android.content.Context;
+import com.imobile3.groovypayments.data.model.Cart;
 
 import androidx.annotation.NonNull;
 
@@ -13,11 +13,9 @@ public final class CurrencyRules {
     public CurrencyRules() {
     }
 
-    public String getCartTotal(
-            @NonNull Context context,
-            @NonNull Locale locale) {
+    public String getCartTotal(@NonNull Cart cart, @NonNull Locale locale) {
         String symbol = Currency.getInstance(locale).getSymbol();
-        BigDecimal total = BigDecimal.ZERO.movePointLeft(2);
+        BigDecimal total = new BigDecimal(cart.getGrandTotal()).movePointLeft(2);
         return symbol + total;
     }
 }

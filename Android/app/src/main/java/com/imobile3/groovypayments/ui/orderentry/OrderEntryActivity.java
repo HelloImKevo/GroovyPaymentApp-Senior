@@ -6,6 +6,7 @@ import android.view.View;
 
 import com.imobile3.groovypayments.R;
 import com.imobile3.groovypayments.data.model.Product;
+import com.imobile3.groovypayments.manager.CartManager;
 import com.imobile3.groovypayments.rules.CurrencyRules;
 import com.imobile3.groovypayments.ui.BaseActivity;
 import com.imobile3.groovypayments.ui.adapter.ProductListAdapter;
@@ -56,7 +57,8 @@ public class OrderEntryActivity extends BaseActivity {
     protected void setUpMainNavBar() {
         super.setUpMainNavBar();
         mMainNavBar.showBackButton();
-        mMainNavBar.showTitle(new CurrencyRules().getCartTotal(this, Locale.US));
+        mMainNavBar.showTitle(new CurrencyRules()
+                .getCartTotal(CartManager.getInstance().getCart(), Locale.US));
         mMainNavBar.showSubtitle(getString(R.string.order_entry_subtitle));
         mMainNavBar.showCheckoutButton();
         mMainNavBar.getCheckoutButton().setOnClickListener(

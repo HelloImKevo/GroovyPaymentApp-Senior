@@ -32,6 +32,10 @@ public class Cart extends CartEntity {
     public Cart() {
     }
 
+    public Cart(CartEntity other) {
+        super(other);
+    }
+
     public List<CartProductEntity> getProducts() {
         return mProducts;
     }

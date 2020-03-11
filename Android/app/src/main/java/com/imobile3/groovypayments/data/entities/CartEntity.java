@@ -41,6 +41,14 @@ public class CartEntity {
     public CartEntity() {
     }
 
+    public CartEntity(CartEntity other) {
+        mId = other.mId;
+        mDateCreated = other.mDateCreated;
+        mSubtotal = other.mSubtotal;
+        mTaxTotal = other.mTaxTotal;
+        mGrandTotal = other.mGrandTotal;
+    }
+
     public long getId() {
         return mId;
     }
