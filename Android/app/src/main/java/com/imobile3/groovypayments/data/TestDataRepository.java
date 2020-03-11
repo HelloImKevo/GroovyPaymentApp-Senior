@@ -1,10 +1,16 @@
 package com.imobile3.groovypayments.data;
 
+import com.imobile3.groovypayments.data.entities.CartEntity;
+import com.imobile3.groovypayments.data.entities.CartProductEntity;
+import com.imobile3.groovypayments.data.entities.CartTaxEntity;
 import com.imobile3.groovypayments.data.entities.ProductEntity;
 import com.imobile3.groovypayments.data.entities.ProductTaxJunctionEntity;
 import com.imobile3.groovypayments.data.entities.TaxEntity;
 import com.imobile3.groovypayments.data.enums.GroovyColor;
 import com.imobile3.groovypayments.data.enums.GroovyIcon;
+import com.imobile3.groovypayments.data.utils.CartBuilder;
+import com.imobile3.groovypayments.data.utils.CartProductBuilder;
+import com.imobile3.groovypayments.data.utils.CartTaxBuilder;
 import com.imobile3.groovypayments.data.utils.ProductBuilder;
 import com.imobile3.groovypayments.data.utils.TaxBuilder;
 
@@ -135,6 +141,63 @@ public class TestDataRepository {
     //endregion
 
     //region Public Utilities
+
+    @NonNull
+    public List<CartEntity> getCarts(@NonNull Environment environment) {
+        List<CartEntity> results = new ArrayList<>();
+
+        if (Environment.InstrumentationTest == environment) {
+            results.add(CartBuilder.build(201L,
+                    new Date(180000000L),
+                    900L, 100L, 1000L));
+
+            results.add(CartBuilder.build(202L,
+                    new Date(185000000L),
+                    700L, 150L, 850L));
+        }
+
+        return results;
+    }
+
+    @NonNull
+    public List<CartProductEntity> getCartProducts(
+            @NonNull Environment environment,
+            @NonNull CartEntity cart) {
+        List<CartProductEntity> results = new ArrayList<>();
+
+        if (Environment.InstrumentationTest == environment) {
+            results.add(CartProductBuilder.build((cart.getId() * 2) + 1L,
+                    cart.getId(),
+                    "Test Cheeseburger",
+                    500L, 1));
+
+            results.add(CartProductBuilder.build((cart.getId() * 2) + 2L,
+                    cart.getId(),
+                    "Test Soda",
+                    125L, 1));
+        }
+
+        return results;
+    }
+
+    @NonNull
+    public List<CartTaxEntity> getCartTaxes(
+            @NonNull Environment environment,
+            @NonNull CartEntity cart) {
+        List<CartTaxEntity> results = new ArrayList<>();
+
+        if (Environment.InstrumentationTest == environment) {
+            results.add(CartTaxBuilder.build((cart.getId() * 2) + 101L,
+                    cart.getId(),
+                    "Test Tax 2%", "0.02"));
+
+            results.add(CartTaxBuilder.build((cart.getId() * 2) + 102L,
+                    cart.getId(),
+                    "Test Tax 4%", "0.04"));
+        }
+
+        return results;
+    }
 
     @NonNull
     public List<ProductEntity> getProducts(@NonNull Environment environment) {
