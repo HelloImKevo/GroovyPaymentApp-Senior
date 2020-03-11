@@ -39,6 +39,17 @@
         under construction. Feel free to demonstrate your skills and build it.</string>
     <string name="main_dashboard_subtitle">Where would you like to go?</string>
 
+    <!-- Secret Functions -->
+    <string name="secret_functions_subtitle">Top secret area.</string>
+    <string name="secret_functions_reset_database">Reset Database</string>
+    <string name="secret_functions_erase_cart">Erase Cart</string>
+    <string name="secret_functions_alert_title">Function Executed</string>
+    <string name="secret_functions_alert_button">Copy that.</string>
+    <string name="secret_functions_alert_reset_database">Demo Database successfully reset
+        (all original Demo data has been restored). This message will self-destruct.</string>
+    <string name="secret_functions_alert_erase_cart">Your current Cart instance has been erase.
+        It\'s almost as if your Cart never existed&#8230;</string>
+
     <!-- Order Entry -->
     <string name="order_entry_subtitle">Add products to the order.</string>
     <string name="order_entry_subtitle_checkout">Click the top-right icon to checkout.</string>

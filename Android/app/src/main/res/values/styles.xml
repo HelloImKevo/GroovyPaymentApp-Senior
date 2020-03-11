@@ -40,6 +40,14 @@
         <item name="android:background">@color/red_thunderbird</item>
     </style>
 
+    <style name="Button.Orange" parent="@style/Button">
+        <item name="android:background">@color/orange_california</item>
+    </style>
+
+    <style name="Button.Purple" parent="@style/Button">
+        <item name="android:background">@color/purple_wisteria</item>
+    </style>
+
     <style name="Button.Keypad" parent="@style/Button">
         <item name="android:background">@drawable/transparent_ripple_button</item>
         <item name="android:textSize">@dimen/text_size_keypad</item>

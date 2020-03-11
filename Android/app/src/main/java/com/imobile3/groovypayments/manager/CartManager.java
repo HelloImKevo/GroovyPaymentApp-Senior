@@ -1,5 +1,8 @@
 package com.imobile3.groovypayments.manager;
 
+import android.os.Handler;
+import android.os.Looper;
+
 import com.imobile3.groovypayments.calculation.CartCalculator;
 import com.imobile3.groovypayments.concurrent.GroovyExecutors;
 import com.imobile3.groovypayments.data.DatabaseHelper;
@@ -94,6 +97,8 @@ public class CartManager {
         }
 
         new CartCalculator(cart).calculate();
+
+        saveCurrentCart();
     }
 
     private void addTax(TaxEntity tax) {
@@ -149,6 +154,70 @@ public class CartManager {
             List<CartTaxEntity> taxes = mCartToSave.getTaxes();
             DatabaseHelper.getInstance().getDatabase().getCartTaxDao()
                     .insertCartTaxes(taxes.toArray(new CartTaxEntity[0]));
+        }
+    }
+
+    //endregion
+
+    //region Erase the Cart
+
+    public interface EraseCartCallback {
+
+        void onCartErased();
+    }
+
+    public void eraseCurrentCart(@NonNull final EraseCartCallback callback) {
+        if (mCart == null) {
+            LogHelper.writeWithTrace(Level.WARNING, TAG,
+                    "Current cart is null - nothing to erase");
+            callback.onCartErased();
+            return;
+        }
+
+        // Execute task on an available background thread.
+        GroovyExecutors.getInstance().getDiskIo()
+                .execute(new EraseCartWorker(mCart, new EraseCartCallback() {
+                    @Override
+                    public void onCartErased() {
+                        // Nullify the last in-memory reference. Bon voyage!
+                        mCart = null;
+
+                        // Fire input callback on main thread.
+                        final Handler mainThreadHandler = new Handler(Looper.getMainLooper());
+                        mainThreadHandler.post(callback::onCartErased);
+                    }
+                }));
+    }
+
+    private class EraseCartWorker implements Runnable {
+
+        @NonNull
+        private final Cart mCartToDelete;
+        @NonNull
+        private final EraseCartCallback mCallback;
+
+        EraseCartWorker(@NonNull Cart cart, @NonNull EraseCartCallback callback) {
+            mCartToDelete = cart;
+            mCallback = callback;
+        }
+
+        @Override
+        public void run() {
+            // Delete cart taxes.
+            List<CartTaxEntity> taxes = mCartToDelete.getTaxes();
+            DatabaseHelper.getInstance().getDatabase().getCartTaxDao()
+                    .deleteCartTaxes(taxes.toArray(new CartTaxEntity[0]));
+
+            // Delete cart products.
+            List<CartProductEntity> products = mCartToDelete.getProducts();
+            DatabaseHelper.getInstance().getDatabase().getCartProductDao()
+                    .deleteCartProducts(products.toArray(new CartProductEntity[0]));
+
+            // Delete the cart.
+            DatabaseHelper.getInstance().getDatabase().getCartDao()
+                    .deleteCarts(mCartToDelete);
+
+            mCallback.onCartErased();
         }
     }
 
