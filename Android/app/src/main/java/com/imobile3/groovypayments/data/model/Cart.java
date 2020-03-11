@@ -51,4 +51,8 @@ public class Cart extends CartEntity {
     public void setTaxes(List<CartTaxEntity> taxes) {
         mTaxes = taxes;
     }
+
+    public boolean hasProducts() {
+        return mProducts != null && !mProducts.isEmpty();
+    }
 }

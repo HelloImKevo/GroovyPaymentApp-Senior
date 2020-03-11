@@ -7,7 +7,6 @@ import android.view.View;
 import com.imobile3.groovypayments.R;
 import com.imobile3.groovypayments.data.model.Product;
 import com.imobile3.groovypayments.manager.CartManager;
-import com.imobile3.groovypayments.rules.CurrencyRules;
 import com.imobile3.groovypayments.ui.BaseActivity;
 import com.imobile3.groovypayments.ui.adapter.ProductListAdapter;
 import com.imobile3.groovypayments.ui.checkout.CheckoutActivity;
@@ -57,9 +56,6 @@ public class OrderEntryActivity extends BaseActivity {
     protected void setUpMainNavBar() {
         super.setUpMainNavBar();
         mMainNavBar.showBackButton();
-        mMainNavBar.showTitle(new CurrencyRules()
-                .getCartTotal(CartManager.getInstance().getCart(), Locale.US));
-        mMainNavBar.showSubtitle(getString(R.string.order_entry_subtitle));
         mMainNavBar.showCheckoutButton();
         mMainNavBar.getCheckoutButton().setOnClickListener(
                 new View.OnClickListener() {
@@ -68,6 +64,7 @@ public class OrderEntryActivity extends BaseActivity {
                         handleCheckoutClick();
                     }
                 });
+        updateTitle();
     }
 
     @Override
@@ -87,7 +84,17 @@ public class OrderEntryActivity extends BaseActivity {
     }
 
     private void handleProductClick(@NonNull Product product) {
-        // TODO: Handle product click. Example: Add product to the cart.
+        CartManager.getInstance().addProduct(product);
+        updateTitle();
+    }
+
+    private void updateTitle() {
+        mMainNavBar.showTitle(CartManager.getInstance().getFormattedGrandTotal(Locale.US));
+        if (CartManager.getInstance().getCart().hasProducts()) {
+            mMainNavBar.showSubtitle(getString(R.string.order_entry_subtitle_checkout));
+        } else {
+            mMainNavBar.showSubtitle(getString(R.string.order_entry_subtitle));
+        }
     }
 
     private void handleCheckoutClick() {

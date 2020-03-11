@@ -5,6 +5,7 @@ import com.imobile3.groovypayments.data.entities.CartProductEntity;
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
+import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 import androidx.room.Update;
 
@@ -16,7 +17,7 @@ public interface CartProductDao {
     @Query("SELECT * FROM cart_product")
     List<CartProductEntity> getCartProducts();
 
-    @Insert // Default to OnConflictStrategy.ABORT
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insertCartProducts(CartProductEntity... values);
 
     @Update

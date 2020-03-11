@@ -6,6 +6,7 @@ import com.imobile3.groovypayments.data.model.Cart;
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
+import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 import androidx.room.Transaction;
 import androidx.room.Update;
@@ -22,7 +23,7 @@ public interface CartDao {
     @Query("SELECT * FROM cart")
     List<Cart> getCarts();
 
-    @Insert // Default to OnConflictStrategy.ABORT
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insertCarts(CartEntity... values);
 
     @Update
