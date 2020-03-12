@@ -116,24 +116,25 @@ public abstract class BaseActivity extends AppCompatActivity {
             @StringRes int title,
             @StringRes int message,
             @StringRes int neutralText) {
-        showAlertDialog(getString(title), getString(message), getString(neutralText));
+        showAlertDialog(getString(title), getString(message), getString(neutralText), null);
     }
 
     protected void showAlertDialog(
             @StringRes int title,
             @NonNull String message,
             @StringRes int neutralText) {
-        showAlertDialog(getString(title), message, getString(neutralText));
+        showAlertDialog(getString(title), message, getString(neutralText), null);
     }
 
     protected void showAlertDialog(
             String title,
             String message,
-            String neutralText) {
+            String neutralText,
+            @Nullable View.OnClickListener neutralListener) {
         CommonAlertDialog dialog = new CommonAlertDialog(this);
         dialog.setTitle(title);
         dialog.setMessage(message);
-        dialog.setNeutralButton(neutralText, null);
+        dialog.setNeutralButton(neutralText, neutralListener);
         dialog.show();
     }
 

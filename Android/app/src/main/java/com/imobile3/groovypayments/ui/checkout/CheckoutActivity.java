@@ -10,6 +10,7 @@ import android.widget.TextView;
 import com.imobile3.groovypayments.MainApplication;
 import com.imobile3.groovypayments.R;
 import com.imobile3.groovypayments.data.model.PaymentType;
+import com.imobile3.groovypayments.logging.LogHelper;
 import com.imobile3.groovypayments.manager.CartManager;
 import com.imobile3.groovypayments.network.WebServiceManager;
 import com.imobile3.groovypayments.network.domainobjects.PaymentResponseHelper;
@@ -37,6 +38,7 @@ import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Objects;
+import java.util.logging.Level;
 
 public class CheckoutActivity extends BaseActivity {
 
@@ -178,14 +180,20 @@ public class CheckoutActivity extends BaseActivity {
                 activity.showAlertDialog(
                         "Payment completed",
                         JsonHelper.toPrettyJson(paymentIntent),
-                        "OK");
-                // TODO: Move on to the "Checkout Complete" screen!
+                        "OK",
+                        new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                activity.handleCheckoutComplete();
+                            }
+                        });
             } else if (status == PaymentIntent.Status.RequiresPaymentMethod) {
                 // Payment failed
                 activity.showAlertDialog(
                         "Payment failed",
                         Objects.requireNonNull(paymentIntent.getLastPaymentError()).getMessage(),
-                        "Uh-Oh!");
+                        "Uh-Oh!",
+                        null);
             }
         }
 
@@ -197,7 +205,7 @@ public class CheckoutActivity extends BaseActivity {
             }
 
             // Payment request failed – allow retrying using the same payment method
-            activity.showAlertDialog("Error", e.toString(), "Woopsie!");
+            activity.showAlertDialog("Error", e.toString(), "Woopsie!", null);
         }
     }
 
@@ -214,7 +222,8 @@ public class CheckoutActivity extends BaseActivity {
                             showAlertDialog(
                                     "Client Secret Error",
                                     "Error: " + message,
-                                    "OK");
+                                    "OK",
+                                    null);
                         }
 
                         @Override
@@ -359,4 +368,13 @@ public class CheckoutActivity extends BaseActivity {
     }
 
     //endregion
+
+    private void handleCheckoutComplete() {
+        LogHelper.writeWithTrace(Level.FINE, TAG,
+                "Proceeding to the Checkout Complete screen");
+
+        startActivity(new Intent(this, CheckoutCompleteActivity.class));
+        // Remove this activity from the stack.
+        finish();
+    }
 }

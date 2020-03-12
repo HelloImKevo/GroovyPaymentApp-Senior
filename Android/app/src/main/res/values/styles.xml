@@ -104,8 +104,16 @@
         <item name="android:textSize">@dimen/text_size_xlarge</item>
     </style>
 
+    <style name="TextView.Header.Bold" parent="@style/TextView.Label.Bold">
+        <item name="android:textSize">@dimen/text_size_header</item>
+    </style>
+
     <style name="TextView.XHeader.Bold" parent="@style/TextView.Label.Bold">
         <item name="android:textSize">@dimen/text_size_xheader</item>
+    </style>
+
+    <style name="TextView.Huge.Bold" parent="@style/TextView.Label.Bold">
+        <item name="android:textSize">@dimen/text_size_huge</item>
     </style>
 
     <style name="TextView.Large.Bold" parent="@style/TextView.Label">

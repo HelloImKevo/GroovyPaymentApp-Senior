@@ -47,6 +47,12 @@ public class OrderEntryActivity extends BaseActivity {
     }
 
     @Override
+    protected void onResume() {
+        super.onResume();
+        updateTitle();
+    }
+
+    @Override
     public void onBackPressed() {
         super.onBackPressed();
         finish();

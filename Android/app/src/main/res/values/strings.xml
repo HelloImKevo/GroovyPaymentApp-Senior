@@ -75,6 +75,12 @@
     <string name="checkout_with_credit">With Credit</string>
     <string name="checkout_pay_cash">Pay (Cash)</string>
     <string name="checkout_pay_credit">Pay (Credit)</string>
+    <string name="checkout_complete_title_message">Congratulations! Your payment was
+        approved!</string>
+    <string name="checkout_complete_subtitle">Order Complete!</string>
+    <string name="checkout_complete_customer_message">Thanks for shopping with us - click the
+        button below to return to the Order Entry screen.</string>
+    <string name="checkout_complete_groovy">Groovy!</string>
 
     <!-- Payment Types -->
     <string name="credit">Credit</string>

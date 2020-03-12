@@ -164,6 +164,14 @@ public class CartManager {
         return new CurrencyRules().getCartTotal(getCart(), locale);
     }
 
+    /**
+     * Invoke when the order is complete.
+     */
+    public void clearCurrentCart() {
+        mCart = null;
+        LogHelper.writeWithTrace(Level.FINE, TAG, "Cart reference cleared");
+    }
+
     //region Save the Cart
 
     public void saveCurrentCart() {
@@ -219,6 +227,9 @@ public class CartManager {
         void onCartErased();
     }
 
+    /**
+     * Delete the entire cart model from the local database.
+     */
     public void eraseCurrentCart(@NonNull final EraseCartCallback callback) {
         if (mCart == null) {
             LogHelper.writeWithTrace(Level.WARNING, TAG,
