@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Button -->
     <style name="Button" parent="android:Widget.Button">
@@ -99,6 +99,13 @@
         <item name="android:textSize">@dimen/text_size_small</item>
     </style>
 
+    <style name="TextView.Monospace.Bold" parent="@style/TextView.Label">
+        <item name="android:fontFamily">serif-monospace</item>
+        <item name="android:textIsSelectable">true</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/text_size_medium</item>
+    </style>
+
     <style name="TextView.XLarge.Bold" parent="@style/TextView.Label">
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">@dimen/text_size_xlarge</item>
@@ -149,4 +156,8 @@
         <item name="android:textSize">@dimen/text_size_header</item>
     </style>
 
+    <!-- Stripe UI -->
+    <style name="Stripe.CardInputWidget.EditText" parent="Stripe.Base.CardInputWidget.EditText" tools:ignore="PrivateResource">
+        <item name="android:textSize">19sp</item>
+    </style>
 </resources>
