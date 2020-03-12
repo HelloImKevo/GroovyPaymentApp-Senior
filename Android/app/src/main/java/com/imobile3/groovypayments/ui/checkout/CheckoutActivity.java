@@ -7,9 +7,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.imobile3.groovypayments.MainApplication;
 import com.imobile3.groovypayments.R;
 import com.imobile3.groovypayments.data.model.PaymentType;
-import com.imobile3.groovypayments.manager.ApiKeyManager;
 import com.imobile3.groovypayments.manager.CartManager;
 import com.imobile3.groovypayments.network.WebServiceManager;
 import com.imobile3.groovypayments.ui.BaseActivity;
@@ -87,6 +87,10 @@ public class CheckoutActivity extends BaseActivity {
         mBtnPayWithCredit = findViewById(R.id.btn_pay_with_credit);
         mBtnPayWithCredit.setOnClickListener(v -> handlePayWithCreditClick());
         mCreditCardInputWidget = findViewById(R.id.credit_card_input_widget);
+
+        // Web Services must be initialized for payment processing.
+        WebServiceManager.getInstance().init(
+                MainApplication.getInstance().getWebServiceConfig());
 
         loadPaymentTypes();
     }
@@ -198,7 +202,6 @@ public class CheckoutActivity extends BaseActivity {
             // TODO: Migrate this stuff to the ViewModel
             WebServiceManager.getInstance().generateClientSecret(
                     getApplicationContext(),
-                    ApiKeyManager.getInstance().getStripeApiServerKey(),
                     CartManager.getInstance().getCart().getGrandTotal(),
                     new WebServiceManager.ClientSecretCallback() {
                         @Override

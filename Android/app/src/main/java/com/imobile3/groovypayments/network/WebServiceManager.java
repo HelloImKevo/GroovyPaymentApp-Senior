@@ -61,12 +61,21 @@ public class WebServiceManager {
         return sInstance;
     }
 
-    // TODO: Refactor all this to use an abstracted "InitPayload"
+    public void init(WebServiceConfig config) {
+        if (mInitialized) {
+            LogHelper.writeWithTrace(Level.FINE, TAG, "Web services already initialized");
+            return;
+        }
 
-    /**
-     * @param baseUrl Example: {@code "https://api.stripe.com"}.
-     */
-    public void init(Context applicationContext, String baseUrl, String publishableApiKey) {
+        if (config == null
+                || config.getApplicationContext() == null
+                || config.getBaseUrl() == null
+                || config.getPublishableApiKey() == null
+                || config.getSecretApiKey() == null) {
+            throw new IllegalStateException("Application environment is not set up correctly" +
+                    " - missing one or more required attributes for payment processing");
+        }
+
         HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
         interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
 
@@ -75,16 +84,18 @@ public class WebServiceManager {
                 .build();
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(baseUrl)
+                .baseUrl(config.getBaseUrl())
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(client)
                 .build();
 
-        // TODO: Need to init the Secret Key
         // Initialize the Android Client SDK.
-        PaymentConfiguration.init(applicationContext, publishableApiKey);
+        PaymentConfiguration.init(
+                config.getApplicationContext(), config.getPublishableApiKey());
 
-        // TODO: Initialize the Java Server SDK (set Stripe.AppInfo)
+        // Initialize the Java Server SDK.
+        Stripe.apiKey = config.getSecretApiKey();
+        Stripe.setAppInfo(config.getAppName(), config.getAppVersion());
 
         mStripeApi = retrofit.create(StripeApi.class);
         mInitialized = true;
@@ -110,15 +121,8 @@ public class WebServiceManager {
 
     public void generateClientSecret(
             Context applicationContext,
-            String secretApiKey,
             long amount,
             @NonNull final ClientSecretCallback callback) {
-        if (secretApiKey == null) {
-            secretApiKey = "";
-        }
-
-        Stripe.apiKey = secretApiKey;
-
         ClientSecretTask clientSecretTask =
                 new ClientSecretTask(applicationContext, "usd", amount, callback);
 

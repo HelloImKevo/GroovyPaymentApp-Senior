@@ -4,8 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.imobile3.groovypayments.R;
-import com.imobile3.groovypayments.manager.ApiKeyManager;
-import com.imobile3.groovypayments.network.WebServiceManager;
 import com.imobile3.groovypayments.ui.BaseActivity;
 import com.imobile3.groovypayments.ui.adapter.MainDashboardButton;
 import com.imobile3.groovypayments.ui.adapter.MainDashboardButtonAdapter;
@@ -48,12 +46,6 @@ public class MainDashboardActivity extends BaseActivity {
         if (savedInstanceState == null) {
             // showFragmentNow(R.id.container, MainFragment.newInstance(), MainFragment.TAG);
         }
-
-        // TODO: Temporarily initialize Stripe WebServices.
-        WebServiceManager.getInstance().init(
-                getApplicationContext(),
-                "https://api.stripe.com",
-                ApiKeyManager.getInstance().getStripeApiClientKey());
     }
 
     @Override

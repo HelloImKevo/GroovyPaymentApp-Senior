@@ -20,6 +20,10 @@ import android.app.Application;
 
 import com.imobile3.groovypayments.data.DatabaseHelper;
 import com.imobile3.groovypayments.logging.LogHelper;
+import com.imobile3.groovypayments.manager.ApiKeyManager;
+import com.imobile3.groovypayments.network.WebServiceConfig;
+
+import androidx.annotation.NonNull;
 
 /**
  * @author Kevin Schanz
@@ -47,5 +51,16 @@ public class MainApplication extends Application {
 
     public boolean isDebugMode() {
         return BuildConfig.DEBUG;
+    }
+
+    @NonNull
+    public WebServiceConfig getWebServiceConfig() {
+        return new WebServiceConfig()
+                .setApplicationContext(this)
+                .setBaseUrl("https://api.stripe.com")
+                .setPublishableApiKey(ApiKeyManager.getInstance().getStripeApiClientKey())
+                .setSecretApiKey(ApiKeyManager.getInstance().getStripeApiServerKey())
+                .setAppName(getString(R.string.app_name))
+                .setAppVersion(BuildConfig.VERSION_NAME);
     }
 }
