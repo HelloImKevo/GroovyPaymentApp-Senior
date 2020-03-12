@@ -38,6 +38,12 @@ public class CartEntity {
     @ColumnInfo(name = "grand_total")
     private long mGrandTotal;
 
+    /**
+     * Cart total paid (in pennies).
+     */
+    @ColumnInfo(name = "total_paid")
+    private long mTotalPaid;
+
     public CartEntity() {
     }
 
@@ -47,6 +53,7 @@ public class CartEntity {
         mSubtotal = other.mSubtotal;
         mTaxTotal = other.mTaxTotal;
         mGrandTotal = other.mGrandTotal;
+        mTotalPaid = other.mTotalPaid;
     }
 
     public long getId() {
@@ -87,5 +94,13 @@ public class CartEntity {
 
     public void setGrandTotal(long grandTotal) {
         mGrandTotal = grandTotal;
+    }
+
+    public long getTotalPaid() {
+        return mTotalPaid;
+    }
+
+    public void setTotalPaid(long totalPaid) {
+        mTotalPaid = totalPaid;
     }
 }

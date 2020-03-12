@@ -17,6 +17,7 @@
 package com.imobile3.groovypayments.data.model;
 
 import com.imobile3.groovypayments.data.entities.CartEntity;
+import com.imobile3.groovypayments.data.entities.CartPaymentEntity;
 import com.imobile3.groovypayments.data.entities.CartProductEntity;
 import com.imobile3.groovypayments.data.entities.CartTaxEntity;
 
@@ -29,6 +30,15 @@ import java.util.List;
  * @author Kevin Schanz
  */
 public class Cart extends CartEntity {
+
+    /**
+     * List of the payments associated with this cart.
+     */
+    @Relation(
+            parentColumn = "cart_id",
+            entityColumn = "cart_payment_id",
+            associateBy = @Junction(CartPaymentEntity.class))
+    private List<CartPaymentEntity> mPayments;
 
     /**
      * List of the products associated with this cart.
@@ -53,6 +63,14 @@ public class Cart extends CartEntity {
 
     public Cart(CartEntity other) {
         super(other);
+    }
+
+    public List<CartPaymentEntity> getPayments() {
+        return mPayments;
+    }
+
+    public void setPayments(List<CartPaymentEntity> payments) {
+        mPayments = payments;
     }
 
     public List<CartProductEntity> getProducts() {

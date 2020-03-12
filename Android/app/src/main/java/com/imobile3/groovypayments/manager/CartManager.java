@@ -22,6 +22,7 @@ import android.os.Looper;
 import com.imobile3.groovypayments.calculation.CartCalculator;
 import com.imobile3.groovypayments.concurrent.GroovyExecutors;
 import com.imobile3.groovypayments.data.DatabaseHelper;
+import com.imobile3.groovypayments.data.entities.CartPaymentEntity;
 import com.imobile3.groovypayments.data.entities.CartProductEntity;
 import com.imobile3.groovypayments.data.entities.CartTaxEntity;
 import com.imobile3.groovypayments.data.entities.TaxEntity;
@@ -80,6 +81,7 @@ public class CartManager {
 
     private Cart initNewCart(long id) {
         Cart cart = new Cart();
+        cart.setPayments(new ArrayList<>());
         cart.setProducts(new ArrayList<>());
         cart.setTaxes(new ArrayList<>());
         cart.setId(id);
@@ -164,6 +166,11 @@ public class CartManager {
             DatabaseHelper.getInstance().getDatabase().getCartDao()
                     .insertCarts(mCartToSave);
 
+            // Save cart payments.
+            List<CartPaymentEntity> payments = mCartToSave.getPayments();
+            DatabaseHelper.getInstance().getDatabase().getCartPaymentDao()
+                    .insertCartPayments(payments.toArray(new CartPaymentEntity[0]));
+
             // Save cart products.
             List<CartProductEntity> products = mCartToSave.getProducts();
             DatabaseHelper.getInstance().getDatabase().getCartProductDao()
@@ -222,6 +229,11 @@ public class CartManager {
 
         @Override
         public void run() {
+            // Delete cart payments.
+            List<CartPaymentEntity> payments = mCartToDelete.getPayments();
+            DatabaseHelper.getInstance().getDatabase().getCartPaymentDao()
+                    .deleteCartPayments(payments.toArray(new CartPaymentEntity[0]));
+
             // Delete cart taxes.
             List<CartTaxEntity> taxes = mCartToDelete.getTaxes();
             DatabaseHelper.getInstance().getDatabase().getCartTaxDao()
