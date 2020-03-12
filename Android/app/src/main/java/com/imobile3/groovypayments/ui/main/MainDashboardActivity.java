@@ -81,6 +81,7 @@ public class MainDashboardActivity extends BaseActivity {
                 startActivity(new Intent(this, SecretFunctionsActivity.class));
                 break;
 
+            case UserProfile:
             case Management:
             case TimeTracking:
             case Placeholder1:
@@ -97,6 +98,7 @@ public class MainDashboardActivity extends BaseActivity {
         List<MainDashboardButton> dashboardButtons = new ArrayList<>();
         dashboardButtons.add(MainDashboardButton.OrderEntry);
         dashboardButtons.add(MainDashboardButton.OrderHistory);
+        dashboardButtons.add(MainDashboardButton.UserProfile);
         dashboardButtons.add(MainDashboardButton.SecretFunctions);
         dashboardButtons.add(MainDashboardButton.Management);
         dashboardButtons.add(MainDashboardButton.TimeTracking);

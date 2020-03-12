@@ -15,6 +15,13 @@ public enum MainDashboardButton {
             R.color.green_emerald,
             R.drawable.dashboard_icon_bg_green),
 
+    UserProfile(
+            R.string.common_user_profile,
+            R.string.user_profile_description,
+            R.drawable.ic_person,
+            R.color.blue_dodger_blue,
+            R.drawable.dashboard_icon_bg_blue_light),
+
     Management(
             R.string.common_management,
             R.string.management_description,
@@ -26,8 +33,8 @@ public enum MainDashboardButton {
             R.string.common_time_tracking,
             R.string.time_tracking_description,
             R.drawable.ic_alarm_clock,
-            R.color.blue_dodger_blue,
-            R.drawable.dashboard_icon_bg_light_blue),
+            R.color.blue_royal_blue,
+            R.drawable.dashboard_icon_bg_blue),
 
     OrderHistory(
             R.string.common_order_history,

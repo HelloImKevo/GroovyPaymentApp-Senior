@@ -13,6 +13,7 @@
     <string name="common_acknowledged">Acknowledged</string>
     <string name="common_order_history">Order History</string>
     <string name="common_secret_functions">Secret Functions</string>
+    <string name="common_user_profile">User Profile</string>
     <string name="common_lorem_ipsum_description">Lorem ipsum dolor sit amet, consectetur
         adipiscing elit. Integer commodo, nisi a rutrum dapibus, urna elit cursus mi, ut
         elementum lacus elit nec diam. Nullam laoreet dui id dui facilisis lacinia. Sed convallis
@@ -32,6 +33,7 @@
     <!-- Main Dashboard -->
     <string name="order_entry_description">Browse the store inventory or sell products to the
         customer.</string>
+    <string name="user_profile_description">View or edit your current user settings.</string>
     <string name="management_description">Manage your Point-of-Sale settings.</string>
     <string name="time_tracking_description">Clock in / out and view your recent activity.</string>
     <string name="order_history_description">Take a look at historical orders fulfilled on this
