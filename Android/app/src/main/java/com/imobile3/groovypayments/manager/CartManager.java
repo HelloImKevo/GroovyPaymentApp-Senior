@@ -26,11 +26,14 @@ import com.imobile3.groovypayments.data.entities.CartPaymentEntity;
 import com.imobile3.groovypayments.data.entities.CartProductEntity;
 import com.imobile3.groovypayments.data.entities.CartTaxEntity;
 import com.imobile3.groovypayments.data.entities.TaxEntity;
+import com.imobile3.groovypayments.data.enums.GroovyPaymentType;
 import com.imobile3.groovypayments.data.model.Cart;
 import com.imobile3.groovypayments.data.model.Product;
+import com.imobile3.groovypayments.data.utils.CartPaymentBuilder;
 import com.imobile3.groovypayments.data.utils.CartProductBuilder;
 import com.imobile3.groovypayments.data.utils.CartTaxBuilder;
 import com.imobile3.groovypayments.logging.LogHelper;
+import com.imobile3.groovypayments.network.domainobjects.PaymentResponseDto;
 import com.imobile3.groovypayments.rules.CartRules;
 import com.imobile3.groovypayments.rules.CurrencyRules;
 
@@ -131,6 +134,30 @@ public class CartManager {
             mCart.setTaxes(new ArrayList<>());
         }
         mCart.getTaxes().add(CartTaxBuilder.from(mCart, tax));
+    }
+
+    public void addCreditPayment(@NonNull PaymentResponseDto paymentResponse) {
+        if (mCart == null) {
+            throw new IllegalStateException("Cart is null");
+        }
+
+        if (mCart.getPayments() == null) {
+            mCart.setPayments(new ArrayList<>());
+        }
+
+        long approvedAmount = paymentResponse.getApprovedAmount();
+        LogHelper.writeWithTrace(Level.CONFIG, TAG,
+                "Adding payment with approved amount: " + new CurrencyRules()
+                        .getFormattedAmount(approvedAmount, Locale.US));
+
+        mCart.getPayments().add(CartPaymentBuilder.from(
+                mCart, GroovyPaymentType.Credit,
+                approvedAmount,
+                paymentResponse.getGatewayMessage()));
+
+        new CartCalculator(mCart).calculate();
+
+        saveCurrentCart();
     }
 
     public String getFormattedGrandTotal(@NonNull Locale locale) {

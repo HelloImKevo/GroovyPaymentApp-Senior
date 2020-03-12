@@ -32,6 +32,12 @@ public final class CurrencyRules {
     public CurrencyRules() {
     }
 
+    public String getFormattedAmount(long pennies, @NonNull Locale locale) {
+        String symbol = Currency.getInstance(locale).getSymbol();
+        BigDecimal total = new BigDecimal(pennies).movePointLeft(2);
+        return symbol + total;
+    }
+
     public String getCartTotal(@NonNull Cart cart, @NonNull Locale locale) {
         String symbol = Currency.getInstance(locale).getSymbol();
         BigDecimal total = new BigDecimal(cart.getGrandTotal()).movePointLeft(2);

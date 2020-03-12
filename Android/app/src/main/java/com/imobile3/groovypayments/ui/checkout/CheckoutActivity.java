@@ -12,6 +12,7 @@ import com.imobile3.groovypayments.R;
 import com.imobile3.groovypayments.data.model.PaymentType;
 import com.imobile3.groovypayments.manager.CartManager;
 import com.imobile3.groovypayments.network.WebServiceManager;
+import com.imobile3.groovypayments.network.domainobjects.PaymentResponseHelper;
 import com.imobile3.groovypayments.ui.BaseActivity;
 import com.imobile3.groovypayments.ui.adapter.PaymentTypeListAdapter;
 import com.imobile3.groovypayments.utils.AnimUtil;
@@ -170,6 +171,10 @@ public class CheckoutActivity extends BaseActivity {
             PaymentIntent.Status status = paymentIntent.getStatus();
             if (status == PaymentIntent.Status.Succeeded) {
                 // Payment completed successfully
+
+                CartManager.getInstance().addCreditPayment(
+                        PaymentResponseHelper.transform(paymentIntent));
+
                 activity.showAlertDialog(
                         "Payment completed",
                         JsonHelper.toPrettyJson(paymentIntent),
