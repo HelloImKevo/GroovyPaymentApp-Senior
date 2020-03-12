@@ -21,7 +21,7 @@ import com.imobile3.groovypayments.data.model.Cart;
 import androidx.annotation.NonNull;
 
 import java.math.BigDecimal;
-import java.util.Currency;
+import java.text.NumberFormat;
 import java.util.Locale;
 
 /**
@@ -32,15 +32,15 @@ public final class CurrencyRules {
     public CurrencyRules() {
     }
 
+    @NonNull
     public String getFormattedAmount(long pennies, @NonNull Locale locale) {
-        String symbol = Currency.getInstance(locale).getSymbol();
-        BigDecimal total = new BigDecimal(pennies).movePointLeft(2);
-        return symbol + total;
+        NumberFormat currencyFormat = NumberFormat.getCurrencyInstance(locale);
+        BigDecimal dollarsAndCentsValue = new BigDecimal(pennies).movePointLeft(2);
+        return currencyFormat.format(dollarsAndCentsValue);
     }
 
+    @NonNull
     public String getCartTotal(@NonNull Cart cart, @NonNull Locale locale) {
-        String symbol = Currency.getInstance(locale).getSymbol();
-        BigDecimal total = new BigDecimal(cart.getGrandTotal()).movePointLeft(2);
-        return symbol + total;
+        return getFormattedAmount(cart.getGrandTotal(), locale);
     }
 }
