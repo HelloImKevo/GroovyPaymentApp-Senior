@@ -5,10 +5,16 @@ import android.widget.Button;
 
 import com.imobile3.groovypayments.R;
 import com.imobile3.groovypayments.data.GroovyDemoManager;
+import com.imobile3.groovypayments.logging.LogHelper;
 import com.imobile3.groovypayments.manager.CartManager;
 import com.imobile3.groovypayments.ui.BaseActivity;
+import com.imobile3.groovypayments.ui.dialog.ProgressDialog;
+
+import java.util.logging.Level;
 
 public class SecretFunctionsActivity extends BaseActivity {
+
+    private ProgressDialog mProgressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,6 +22,8 @@ public class SecretFunctionsActivity extends BaseActivity {
         setContentView(R.layout.secret_functions_activity);
         setUpMainNavBar();
         setUpButtons();
+
+        mProgressDialog = new ProgressDialog(this);
     }
 
     @Override
@@ -46,18 +54,38 @@ public class SecretFunctionsActivity extends BaseActivity {
     }
 
     private void handleResetDatabaseClick() {
-        GroovyDemoManager.getInstance().resetDatabase(() ->
-                showAlertDialog(
-                        R.string.secret_functions_alert_title,
-                        R.string.secret_functions_alert_reset_database,
-                        R.string.secret_functions_alert_button));
+        showProgressDialog();
+
+        GroovyDemoManager.getInstance().resetDatabase(() -> {
+            dismissProgressDialog();
+
+            showAlertDialog(
+                    R.string.secret_functions_alert_title,
+                    R.string.secret_functions_alert_reset_database,
+                    R.string.secret_functions_alert_button);
+        });
     }
 
     private void handleEraseCartClick() {
-        CartManager.getInstance().eraseCurrentCart(() ->
-                showAlertDialog(
-                        R.string.secret_functions_alert_title,
-                        R.string.secret_functions_alert_erase_cart,
-                        R.string.secret_functions_alert_button));
+        showProgressDialog();
+
+        CartManager.getInstance().eraseCurrentCart(() -> {
+            dismissProgressDialog();
+
+            showAlertDialog(
+                    R.string.secret_functions_alert_title,
+                    R.string.secret_functions_alert_erase_cart,
+                    R.string.secret_functions_alert_button);
+        });
+    }
+
+    private void showProgressDialog() {
+        LogHelper.invoked(Level.CONFIG, TAG);
+        mProgressDialog.show();
+    }
+
+    private void dismissProgressDialog() {
+        LogHelper.invoked(Level.CONFIG, TAG);
+        mProgressDialog.dismiss();
     }
 }

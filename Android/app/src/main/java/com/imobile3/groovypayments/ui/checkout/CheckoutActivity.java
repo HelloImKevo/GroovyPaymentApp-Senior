@@ -16,6 +16,7 @@ import com.imobile3.groovypayments.network.WebServiceManager;
 import com.imobile3.groovypayments.network.domainobjects.PaymentResponseHelper;
 import com.imobile3.groovypayments.ui.BaseActivity;
 import com.imobile3.groovypayments.ui.adapter.PaymentTypeListAdapter;
+import com.imobile3.groovypayments.ui.dialog.ProgressDialog;
 import com.imobile3.groovypayments.utils.AnimUtil;
 import com.imobile3.groovypayments.utils.JsonHelper;
 import com.imobile3.groovypayments.utils.SoftKeyboardHelper;
@@ -60,6 +61,8 @@ public class CheckoutActivity extends BaseActivity {
     // Test Card Numbers: https://stripe.com/docs/testing
     private CardInputWidget mCreditCardInputWidget;
 
+    private ProgressDialog mProgressDialog;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -90,6 +93,8 @@ public class CheckoutActivity extends BaseActivity {
         mBtnPayWithCredit = findViewById(R.id.btn_pay_with_credit);
         mBtnPayWithCredit.setOnClickListener(v -> handlePayWithCreditClick());
         mCreditCardInputWidget = findViewById(R.id.credit_card_input_widget);
+
+        mProgressDialog = new ProgressDialog(this);
 
         // Web Services must be initialized for payment processing.
         WebServiceManager.getInstance().init(
@@ -169,6 +174,8 @@ public class CheckoutActivity extends BaseActivity {
                 return;
             }
 
+            activity.dismissProgressDialog();
+
             PaymentIntent paymentIntent = result.getIntent();
             PaymentIntent.Status status = paymentIntent.getStatus();
             if (status == PaymentIntent.Status.Succeeded) {
@@ -212,6 +219,8 @@ public class CheckoutActivity extends BaseActivity {
     private void handlePayWithCreditClick() {
         PaymentMethodCreateParams params = mCreditCardInputWidget.getPaymentMethodCreateParams();
         if (params != null) {
+            showProgressDialog();
+
             // TODO: Migrate this stuff to the ViewModel
             WebServiceManager.getInstance().generateClientSecret(
                     getApplicationContext(),
@@ -219,6 +228,8 @@ public class CheckoutActivity extends BaseActivity {
                     new WebServiceManager.ClientSecretCallback() {
                         @Override
                         public void onClientSecretError(@NonNull String message) {
+                            dismissProgressDialog();
+
                             showAlertDialog(
                                     "Client Secret Error",
                                     "Error: " + message,
@@ -368,6 +379,16 @@ public class CheckoutActivity extends BaseActivity {
     }
 
     //endregion
+
+    private void showProgressDialog() {
+        LogHelper.invoked(Level.CONFIG, TAG);
+        mProgressDialog.show();
+    }
+
+    private void dismissProgressDialog() {
+        LogHelper.invoked(Level.CONFIG, TAG);
+        mProgressDialog.dismiss();
+    }
 
     private void handleCheckoutComplete() {
         LogHelper.writeWithTrace(Level.FINE, TAG,
