@@ -1,14 +1,30 @@
 package com.imobile3.groovypayments.ui.checkout;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
 import com.imobile3.groovypayments.R;
 import com.imobile3.groovypayments.data.model.PaymentType;
+import com.imobile3.groovypayments.manager.ApiKeyManager;
+import com.imobile3.groovypayments.manager.CartManager;
+import com.imobile3.groovypayments.network.WebServiceManager;
 import com.imobile3.groovypayments.ui.BaseActivity;
 import com.imobile3.groovypayments.ui.adapter.PaymentTypeListAdapter;
 import com.imobile3.groovypayments.utils.AnimUtil;
+import com.imobile3.groovypayments.utils.JsonHelper;
 import com.imobile3.groovypayments.utils.SoftKeyboardHelper;
+import com.stripe.android.ApiResultCallback;
+import com.stripe.android.PaymentConfiguration;
+import com.stripe.android.PaymentIntentResult;
+import com.stripe.android.Stripe;
+import com.stripe.android.model.ConfirmPaymentIntentParams;
+import com.stripe.android.model.PaymentIntent;
+import com.stripe.android.model.PaymentMethodCreateParams;
+import com.stripe.android.view.CardInputWidget;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -16,15 +32,30 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.lang.ref.WeakReference;
 import java.util.ArrayList;
+import java.util.Locale;
+import java.util.Objects;
 
 public class CheckoutActivity extends BaseActivity {
 
     private CheckoutViewModel mViewModel;
     private PaymentTypeListAdapter mPaymentTypeListAdapter;
     private RecyclerView mPaymentTypeListRecyclerView;
+
+    // Cash
     private View mPayWithCashView;
+    private TextView mLblCashAmount;
+    private Button mBtnPayWithCash;
+
+    // Credit
     private View mPayWithCreditView;
+    private TextView mLblCreditAmount;
+    private Button mBtnPayWithCredit;
+
+    // Android SDK Docs: https://stripe.com/docs/payments/accept-a-payment#android
+    // Test Card Numbers: https://stripe.com/docs/testing
+    private CardInputWidget mCreditCardInputWidget;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,8 +75,18 @@ public class CheckoutActivity extends BaseActivity {
         mPaymentTypeListRecyclerView.setAdapter(mPaymentTypeListAdapter);
         mPaymentTypeListRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
+        // Cash
         mPayWithCashView = findViewById(R.id.pay_with_cash_view);
+        mLblCashAmount = findViewById(R.id.label_cash_amount);
+        mBtnPayWithCash = findViewById(R.id.btn_pay_with_cash);
+        mBtnPayWithCash.setOnClickListener(v -> handlePayWithCashClick());
+
+        // Credit
         mPayWithCreditView = findViewById(R.id.pay_with_credit_view);
+        mLblCreditAmount = findViewById(R.id.label_credit_amount);
+        mBtnPayWithCredit = findViewById(R.id.btn_pay_with_credit);
+        mBtnPayWithCredit.setOnClickListener(v -> handlePayWithCreditClick());
+        mCreditCardInputWidget = findViewById(R.id.credit_card_input_widget);
 
         loadPaymentTypes();
     }
@@ -63,10 +104,130 @@ public class CheckoutActivity extends BaseActivity {
     }
 
     @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        // Handle the result of stripe.confirmPayment
+        final Context context = getApplicationContext();
+        Stripe stripe = new Stripe(context,
+                PaymentConfiguration.getInstance(context).getPublishableKey());
+        stripe.onPaymentResult(requestCode, data, new PaymentResultCallback(this));
+    }
+
+    /*
+    Example:
+    {
+        "amount": 2532,
+        "amount_capturable": 0,
+        "amount_received": 0,
+        "capture_method": "automatic",
+        "charges": {
+            "data": [],
+            "hasMore": false,
+            "object": "list",
+            "url": "/v1/charges?payment_intent\u003dpi_1GLroFK4qYdXjx43ClPBuv2o"
+        },
+        "client_secret": "pi_1GLroFK4qYdXjx43ClPBuv2o_secret_7aekJHI4zy1k8i2Uo3XSdMLnV",
+        "confirmation_method": "automatic",
+        "created": 1584022491,
+        "currency": "usd",
+        "id": "pi_1GLroFK4qYdXjx43ClPBuv2o",
+        "livemode": false,
+        "metadata": {},
+        "object": "payment_intent",
+        "payment_method_options": {
+            "card": {
+                "request_three_d_secure": "automatic"
+            }
+        },
+        "payment_method_types": [
+            "card"
+        ],
+        "status": "requires_payment_method"
+    }
+     */
+    private static final class PaymentResultCallback
+            implements ApiResultCallback<PaymentIntentResult> {
+        @NonNull
+        private final WeakReference<CheckoutActivity> activityRef;
+
+        PaymentResultCallback(@NonNull CheckoutActivity activity) {
+            activityRef = new WeakReference<>(activity);
+        }
+
+        @Override
+        public void onSuccess(@NonNull PaymentIntentResult result) {
+            final CheckoutActivity activity = activityRef.get();
+            if (activity == null) {
+                return;
+            }
+
+            PaymentIntent paymentIntent = result.getIntent();
+            PaymentIntent.Status status = paymentIntent.getStatus();
+            if (status == PaymentIntent.Status.Succeeded) {
+                // Payment completed successfully
+                activity.showAlertDialog(
+                        "Payment completed",
+                        JsonHelper.toPrettyJson(paymentIntent),
+                        "OK");
+                // TODO: Move on to the "Checkout Complete" screen!
+            } else if (status == PaymentIntent.Status.RequiresPaymentMethod) {
+                // Payment failed
+                activity.showAlertDialog(
+                        "Payment failed",
+                        Objects.requireNonNull(paymentIntent.getLastPaymentError()).getMessage(),
+                        "Uh-Oh!");
+            }
+        }
+
+        @Override
+        public void onError(@NonNull Exception e) {
+            final CheckoutActivity activity = activityRef.get();
+            if (activity == null) {
+                return;
+            }
+
+            // Payment request failed – allow retrying using the same payment method
+            activity.showAlertDialog("Error", e.toString(), "Woopsie!");
+        }
+    }
+
+    private void handlePayWithCreditClick() {
+        PaymentMethodCreateParams params = mCreditCardInputWidget.getPaymentMethodCreateParams();
+        if (params != null) {
+            // TODO: Migrate this stuff to the ViewModel
+            WebServiceManager.getInstance().generateClientSecret(
+                    getApplicationContext(),
+                    ApiKeyManager.getInstance().getStripeApiServerKey(),
+                    CartManager.getInstance().getCart().getGrandTotal(),
+                    new WebServiceManager.ClientSecretCallback() {
+                        @Override
+                        public void onClientSecretError(@NonNull String message) {
+                            showAlertDialog(
+                                    "Client Secret Error",
+                                    "Error: " + message,
+                                    "OK");
+                        }
+
+                        @Override
+                        public void onClientSecretGenerated(@NonNull String clientSecret) {
+                            ConfirmPaymentIntentParams confirmParams = ConfirmPaymentIntentParams
+                                    .createWithPaymentMethodCreateParams(params, clientSecret);
+
+                            final Context context = getApplicationContext();
+                            Stripe stripe = new Stripe(context,
+                                    PaymentConfiguration.getInstance(context).getPublishableKey());
+                            stripe.confirmPayment(CheckoutActivity.this, confirmParams);
+                        }
+                    });
+        }
+    }
+
+    @Override
     protected void setUpMainNavBar() {
         super.setUpMainNavBar();
         mMainNavBar.showBackButton();
-        mMainNavBar.showLogo();
+        mMainNavBar.showTitle(CartManager.getInstance().getFormattedGrandTotal(Locale.US));
         mMainNavBar.showSubtitle(getString(R.string.checkout_subtitle));
     }
 
@@ -96,6 +257,20 @@ public class CheckoutActivity extends BaseActivity {
                 showPayWithCreditView();
                 break;
         }
+
+        updateAmounts();
+    }
+
+    private void updateAmounts() {
+        mLblCashAmount.setText(CartManager.getInstance().getFormattedGrandTotal(Locale.US));
+        mLblCreditAmount.setText(CartManager.getInstance().getFormattedGrandTotal(Locale.US));
+    }
+
+    private void handlePayWithCashClick() {
+        showAlertDialog(
+                R.string.common_under_construction,
+                R.string.under_construction_alert_message,
+                R.string.common_acknowledged);
     }
 
     //region (Animated) View Transitions

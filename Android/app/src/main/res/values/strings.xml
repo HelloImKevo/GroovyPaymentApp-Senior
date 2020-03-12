@@ -71,6 +71,10 @@
 
     <!-- Checkout -->
     <string name="checkout_subtitle">How will you pay?</string>
+    <string name="checkout_with_cash">With Cash</string>
+    <string name="checkout_with_credit">With Credit</string>
+    <string name="checkout_pay_cash">Pay (Cash)</string>
+    <string name="checkout_pay_credit">Pay (Credit)</string>
 
     <!-- Payment Types -->
     <string name="credit">Credit</string>

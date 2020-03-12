@@ -23,12 +23,14 @@ public class GroovyExecutors {
 
     private GroovyExecutors() {
         mDiskIo = Executors.newFixedThreadPool(4);
+        mNetwork = Executors.newFixedThreadPool(1);
         mMainThread = new MainThreadExecutor();
     }
 
     //endregion
 
     private Executor mDiskIo;
+    private Executor mNetwork;
     private Executor mMainThread;
 
     private class MainThreadExecutor implements Executor {
@@ -43,6 +45,11 @@ public class GroovyExecutors {
     @NonNull
     public Executor getDiskIo() {
         return mDiskIo;
+    }
+
+    @NonNull
+    public Executor getNetwork() {
+        return mNetwork;
     }
 
     @NonNull

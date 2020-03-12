@@ -9,5 +9,9 @@ ext {
     FALSE = 'false'
     NULL = 'null'
 
-    STRIPE_API_KEY_FIELD = 'STRIPE_API_KEY'
+    // Publishable API Key for the Android Client
+    STRIPE_API_CLIENT_KEY_FIELD = 'STRIPE_API_CLIENT_KEY'
+
+    // Secret API Key for the Java Server
+    STRIPE_API_SERVER_KEY_FIELD = 'STRIPE_API_SERVER_KEY'
 }

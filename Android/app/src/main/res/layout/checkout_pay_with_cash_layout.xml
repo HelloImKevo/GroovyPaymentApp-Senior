@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -10,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_xlarge"
-        android:text="Pay with Cash"
+        android:text="@string/checkout_with_cash"
         android:textAllCaps="true"
         android:textColor="@color/green_emerald"
         app:layout_constraintEnd_toEndOf="parent"
@@ -21,21 +22,21 @@
         android:id="@+id/field_container"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/title">
 
-        <EditText
+        <TextView
+            android:id="@+id/label_cash_amount"
+            style="@style/TextView.XHeader.Bold"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginEnd="24dp"
-            android:hint="How Much?"
-            android:inputType="numberDecimal"
-            android:selectAllOnFocus="true"
-            android:textSize="@dimen/text_size_header" />
+            android:gravity="center_horizontal"
+            tools:text="$25.00" />
     </LinearLayout>
 
     <LinearLayout
@@ -45,7 +46,7 @@
         android:layout_marginTop="@dimen/margin_xlarge"
         android:layout_marginBottom="@dimen/margin_xlarge"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/btn_login"
+        app:layout_constraintBottom_toTopOf="@+id/btn_pay_with_cash"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/field_container">
@@ -56,14 +57,14 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/btn_login"
+        android:id="@+id/btn_pay_with_cash"
         style="@style/Button.Green"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="start"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
-        android:text="PAY!"
+        android:text="@string/checkout_pay_cash"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -14,7 +14,7 @@
     <dimen name="text_size_large">20sp</dimen>
     <dimen name="text_size_xlarge">22sp</dimen>
     <dimen name="text_size_header">28sp</dimen>
-    <dimen name="text_size_xheader">40sp</dimen>
+    <dimen name="text_size_xheader">46sp</dimen>
     <dimen name="text_size_huge">56sp</dimen>
     <dimen name="text_size_keypad">32sp</dimen>
 
