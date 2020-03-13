@@ -45,6 +45,12 @@
         under construction. Feel free to demonstrate your skills and build it.</string>
     <string name="main_dashboard_subtitle">Where would you like to go?</string>
 
+    <!-- User Profile -->
+    <string name="user_profile_subtitle_format">Welcome %1$s.</string>
+    <string name="user_profile_username">Username:</string>
+    <string name="user_profile_email">Email:</string>
+    <string name="user_profile_hours_week">Hours (Week):</string>
+
     <!-- Secret Functions -->
     <string name="secret_functions_subtitle">Top secret area.</string>
     <string name="secret_functions_reset_database">Reset Database</string>

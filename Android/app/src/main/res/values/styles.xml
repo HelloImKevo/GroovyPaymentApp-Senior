@@ -106,6 +106,10 @@
         <item name="android:textSize">@dimen/text_size_medium</item>
     </style>
 
+    <style name="TextView.Large.Monospace.Bold" parent="@style/TextView.Monospace.Bold">
+        <item name="android:textSize">@dimen/text_size_large</item>
+    </style>
+
     <style name="TextView.XLarge.Bold" parent="@style/TextView.Label">
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">@dimen/text_size_xlarge</item>
