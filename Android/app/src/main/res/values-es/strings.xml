@@ -13,6 +13,12 @@
     <string name="common_under_construction">En Obra</string>
     <string name="common_acknowledged">Admitido</string>
     <string name="common_order_history">Historial de pedidos</string>
+    <string name="common_secret_functions">Funciones Secretas</string>
+    <string name="common_user_profile">Perfil del Usuario</string>
+    <string name="common_lorem_ipsum_description">Lorem ipsum dolor sit amet, consectetur
+        adipiscing elit. Integer commodo, nisi a rutrum dapibus, urna elit cursus mi, ut
+        elementum lacus elit nec diam. Nullam laoreet dui id dui facilisis lacinia. Sed convallis
+        feugiat ex, interdum tincidunt sapien consequat ut.</string>
 
     <!-- Login -->
     <string name="prompt_email">Email</string>
@@ -28,21 +34,65 @@
     <!-- Main Dashboard -->
     <string name="order_entry_description">Explore el inventario de la tienda o venda
         productos al cliente.</string>
+    <string name="user_profile_description">Ver o editar su configuración de usuario
+        actual.</string>
     <string name="management_description">Administre su configuración de punto de venta.</string>
     <string name="time_tracking_description">Registre la entrada / salida y vea su actividad
         reciente.</string>
     <string name="order_history_description">Eche un vistazo a los pedidos históricos cumplidos
         en este punto de venta.</string>
+    <string name="secret_functions_description">Área súper secreta donde puede realizar funciones
+        especiales, como restablecer la base de datos de demostración.</string>
     <string name="placeholder_description">Este es un marcador de posición temporal.</string>
     <string name="under_construction_alert_message">Esta área de la aplicación aún está en
         construcción. Siéntase libre de demostrar sus habilidades y construirlo.</string>
     <string name="main_dashboard_subtitle">¿Dónde te gustaría ir?</string>
 
+    <!-- User Profile -->
+    <string name="user_profile_subtitle_format">Bienvenido %1$s.</string>
+    <string name="user_profile_username">Nombre de usuario:</string>
+    <string name="user_profile_email">Email:</string>
+    <string name="user_profile_hours_week">Horas (Semana):</string>
+
+    <!-- Secret Functions -->
+    <string name="secret_functions_subtitle">Área de alto secreto.</string>
+    <string name="secret_functions_reset_database">Restablecer base de datos</string>
+    <string name="secret_functions_erase_cart">Borrar Carro</string>
+    <string name="secret_functions_alert_title">Función Ejecutada</string>
+    <string name="secret_functions_alert_button">Entendido.</string>
+    <string name="secret_functions_alert_reset_database">La base de datos de demostración se
+        restableció correctamente (se han restaurado todos los datos de demostración originales).
+        Este mensaje se autodestruirá.</string>
+    <string name="secret_functions_alert_erase_cart">Su instancia actual del carrito ha sido
+        borrada. Es casi como si tu carrito nunca existiera&#8230;</string>
+
     <!-- Order Entry -->
     <string name="order_entry_subtitle">Añadir productos al pedido.</string>
+    <string name="order_entry_subtitle_checkout">Haga clic en el icono superior derecho para
+        finalizar la compra.</string>
+
+    <!-- Order History -->
+    <string name="order_history_subtitle">Pedidos recientes listados a continuación.</string>
+    <string name="order_history_alert_title">No implementado</string>
+    <string name="order_history_alert_button">Seguro.</string>
+    <string name="order_history_alert_message">Funcionalidad del historial de pedidos no
+        implementada. Por favor, deje de hacer clic en los elementos de la lista.</string>
+    <string name="order_history_alert_warning_title">Para</string>
+    <string name="order_history_alert_warning_button">Lo que sea.</string>
+    <string name="order_history_alert_warning_message">Se le advirtió que no haga clic en los
+        elementos de la lista. Los administradores han sido notificados.</string>
 
     <!-- Checkout -->
     <string name="checkout_subtitle">¿Cómo vas a pagar?</string>
+    <string name="checkout_with_cash">Con Efectivo</string>
+    <string name="checkout_with_credit">Con Crédito</string>
+    <string name="checkout_pay_cash">Pagar (Efectivo)</string>
+    <string name="checkout_pay_credit">Pagar (Crédito)</string>
+    <string name="checkout_complete_title_message">¡Felicidades! Su pago fue aprobado!</string>
+    <string name="checkout_complete_subtitle">¡Orden completada!</string>
+    <string name="checkout_complete_customer_message">Gracias por comprar con nosotros: haga
+        clic en el botón a continuación para volver a la pantalla de Entrada de pedidos.</string>
+    <string name="checkout_complete_groovy">¡Maravilloso!</string>
 
     <!-- Payment Types -->
     <string name="credit">Crédito</string>
@@ -60,4 +110,15 @@
     <string name="keypad_9">9</string>
     <string name="keypad_00">00</string>
     <string name="keypad_0">0</string>
+
+    <!-- Progress / Tasks -->
+    <string-array name="progress_dialog_messages">
+        <item>Analizando los números&#8230;</item>
+        <item>Evaluar datos&#8230;</item>
+        <item>Analizando valores&#8230;</item>
+        <item>Ejecutando algoritmos&#8230;</item>
+        <item>Comprobando con bancos&#8230;</item>
+        <item>Usando Machine Learning&#8230;</item>
+        <item>Contando frijoles&#8230;</item>
+    </string-array>
 </resources>
