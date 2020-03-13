@@ -7,6 +7,7 @@ import com.imobile3.groovypayments.data.dao.CartTaxDao;
 import com.imobile3.groovypayments.data.dao.ProductDao;
 import com.imobile3.groovypayments.data.dao.ProductTaxJunctionDao;
 import com.imobile3.groovypayments.data.dao.TaxDao;
+import com.imobile3.groovypayments.data.dao.UserDao;
 import com.imobile3.groovypayments.data.entities.CartEntity;
 import com.imobile3.groovypayments.data.entities.CartPaymentEntity;
 import com.imobile3.groovypayments.data.entities.CartProductEntity;
@@ -14,6 +15,7 @@ import com.imobile3.groovypayments.data.entities.CartTaxEntity;
 import com.imobile3.groovypayments.data.entities.ProductEntity;
 import com.imobile3.groovypayments.data.entities.ProductTaxJunctionEntity;
 import com.imobile3.groovypayments.data.entities.TaxEntity;
+import com.imobile3.groovypayments.data.entities.UserEntity;
 
 import androidx.room.Database;
 import androidx.room.RoomDatabase;
@@ -28,7 +30,8 @@ import static com.imobile3.groovypayments.data.GroovyDatabase.VERSION;
                 CartTaxEntity.class,
                 ProductEntity.class,
                 ProductTaxJunctionEntity.class,
-                TaxEntity.class})
+                TaxEntity.class,
+                UserEntity.class})
 public abstract class GroovyDatabase extends RoomDatabase {
 
     public static final int VERSION = 1;
@@ -47,4 +50,6 @@ public abstract class GroovyDatabase extends RoomDatabase {
     public abstract TaxDao getTaxDao();
 
     public abstract ProductTaxJunctionDao getProductTaxJunctionDao();
+
+    public abstract UserDao getUserDao();
 }
