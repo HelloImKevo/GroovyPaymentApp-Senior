@@ -124,7 +124,7 @@ git push
 
 | Requirements | Business Mock |
 | :--- | --- |
-| Currently, there is no way to complete the Checkout flow, because we <br>haven't implemented **Cash** or Credit support. The "Pay with Cash" screen has a <br>10-digit Keypad, but it isn't wired up. <br><br>:warning: **Bonus points for allowing the User to over-pay or under-pay, and show <br>the User how much Change is Due to the Customer.** | ![Checkout with Cash](ScreenMocks/Groovy-14-CheckoutCash.png) |
+| Currently, there is no way to complete the Checkout flow, because we <br>haven't implemented **Cash** or Credit support. The "Pay with Cash" screen has a <br>10-digit Keypad, but it isn't wired up. <br><br>:warning: **Bonus points for allowing the User to over-pay or under-pay, and <br>show the User how much Change is Due to the Customer.** | ![Checkout with Cash](ScreenMocks/Groovy-14-CheckoutCash.png) |
 
 ## Task ID: #008 - Generate the Client Secret... On the Client!  
 #### Estimated LOE (Level of Effort): 2 Hours  
@@ -140,7 +140,7 @@ git push
 
 | Requirements | Business Mock |
 | :--- | --- |
-| Currently, there is no way to complete the Checkout flow, because we <br>haven't implemented Cash or **Credit** support. The "Pay with Credit" screen has <br>a Stripe `CardInputWidget`, but it isn't wired up. <br><br>Every Stripe payment requires a **Client Secret** string to be generated (the <br>**Client Secret** is derived from the transaction amount, the currency type, and your <br>**Publishable API Key**), so you'll need to generate a **Client Secret** when the User <br>clicks the `PAY (CREDIT)` button, and then process the payment using <br>`com.stripe.android.Stripe.confirmPayment()`. <br><br>References: <br>https://stripe.com/docs/payments/accept-a-payment#android  <br>https://stripe.com/docs/testing   | ![Checkout with Credit](ScreenMocks/Groovy-17-CheckoutCredit.png) |
+| Currently, there is no way to complete the Checkout flow, because we <br>haven't implemented Cash or **Credit** support. The "Pay with Credit" screen <br>has a Stripe `CardInputWidget`, but it isn't wired up. <br><br>Every Stripe payment requires a **Client Secret** string to be generated (the <br>**Client Secret** is derived from the transaction amount, the currency type, and your <br>**Publishable API Key**), so you'll need to generate a **Client Secret** when the User <br>clicks the `PAY (CREDIT)` button, and then process the payment using <br>`com.stripe.android.Stripe.confirmPayment()`. <br><br>References: <br>https://stripe.com/docs/payments/accept-a-payment#android  <br>https://stripe.com/docs/testing   | ![Checkout with Credit](ScreenMocks/Groovy-17-CheckoutCredit.png) |
 | Consider logging or displaying the response from Stripe. | ![Credit Success](ScreenMocks/Groovy-16-StripeCreditSuccess.png) |
 
 ## Task ID: #010 - Navigate to the Checkout Complete Screen  
@@ -149,7 +149,7 @@ git push
 
 | Requirements | Business Mock |
 | :--- | --- |
-| When the Customer finishes paying for the Order, navigate to the Checkout <br>Complete screen. | ![Checkout Complete](ScreenMocks/Groovy-18-CheckoutComplete.png) |
+| When the Customer finishes paying for the Order, navigate to the <br>Checkout Complete screen. | ![Checkout Complete](ScreenMocks/Groovy-18-CheckoutComplete.png) |
 
 ## Task ID: #011 - User Database Schema & Proper Login  
 #### Estimated LOE (Level of Effort): 6 Hours  
@@ -164,6 +164,10 @@ git push
 
 ## Task ID: #013 - Tables, and Charts, and Graphs, Oh My!  
 #### Estimated LOE (Level of Effort): 8 Hours  
+
+| Requirements | Business Mock |
+| :--- | --- |
+| Use any open-source Charts & Graphs library to represent any type of data you'd like. <br><br>References: <br>https://github.com/PhilJay/MPAndroidChart  <br>https://github.com/AnyChart/AnyChart-Android    | ![Daily Reports](ScreenMocks/Groovy-08-DailyReports.png) |
 
 ## Git Workflow References
 
