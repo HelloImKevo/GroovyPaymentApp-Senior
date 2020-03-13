@@ -9,43 +9,43 @@ This App is intended for Senior candidates. There are Android and iOS variants o
 * Create your own repository to store this project and all of your work.  
 * Clone this repository (**SkeletonPaymentApp-Senior**) to your local machine, and then push all the contents to your repository using the instructions and CLI commands below for guidance:  
 
-```
-# Navigate to your Github dashboard. Go to 'Your Repositories'.
-# Create a New Repository. Name it anything you'd like.
-# You can make it public or private.
-# Do not initialize the repository with a README.
-# Do not add a .gitignore. Do not add a license.
+```diff
++ # Navigate to your Github dashboard. Go to 'Your Repositories'.
++ # Create a New Repository. Name it anything you'd like.
++ # You can make it public or private.
++ # Do not initialize the repository with a README.
++ # Do not add a .gitignore. Do not add a license.
 
-# Clone this source repo onto your local machine.
++ # Clone this source repo onto your local machine.
 git clone git@github.com:HelloImKevo/SkeletonPaymentApp-Senior.git
 
-# Navigate into the new Git project directory.
++ # Navigate into the new Git project directory.
 cd SkeletonPaymentApp-Senior
 
-# Check what the current remote repository URL is:
++ # Check what the current remote repository URL is:
 git config --get remote.origin.url
 
-# Change the remote repository URL to your personal repository:
++ # Change the remote repository URL to your personal repository:
 git remote set-url origin git@github.com:YOUR_USERNAME/YOUR_REPOSITORY.git
 git config --get remote.origin.url
 
-# Push the entire contents of the Groovy Mobile Payments project to your personal repository:
++ # Push the entire contents of the Groovy Mobile Payments project to your personal repository:
 git push
 
-# If you want to validate your Git environment is set up correctly, make a change to any file, then:
++ # If you want to validate your Git environment is set up correctly, make a change to any file, then:
 git add .
 git commit -a -m "Minor update to <file_name> file"
 
-# Should say something like 'Your branch is ahead of 'origin/master' by 1 commit'.
++ # Should say something like 'Your branch is ahead of 'origin/master' by 1 commit'.
 git status
 
-# Push your new commit to your remote Git repository for funsies.
++ # Push your new commit to your remote Git repository for funsies.
 git push
 ```  
 
 * More repository management discussions: https://stackoverflow.com/questions/18200248/cloning-a-repo-from-someone-elses-github-and-pushing-it-to-a-repo-on-my-github
 * Your repository can be **public** or **private**, but if it's private you'll need to adjust the repository settings to invite one or two of us as collaborators so we can review your commits.
-* Create a Stripe Developer account over at: https://dashboard.stripe.com/register  
+* Create a **Stripe Developer Account** over at: https://dashboard.stripe.com/register  
 * Grab your **Publishable** and **Secret** API keys from your dashboard: https://dashboard.stripe.com/test/apikeys  
 * The Stripe SDK architecture is built around the expectation of using a Client-Server model, where the Client (Mobile App) uses a **Publishable** API key, and the Server uses a **Secret** API key to generate a **Client Secret** string. We don't have a Server for this test application, so we emulate the "Server" within our app. The Android and iOS applications both use asynchronous utilities for generating a **Client Secret** using the Stripe **Secret** API key.  
 
@@ -61,10 +61,10 @@ git push
 
 # Submission Guidelines  
 * After you push commits to the project, our team will review your work and provide **Constructive Feedback** on how to improve your code readability, code organization, your approach to solving the problem, or sometimes we will just banter about random technology trends or the latest data breaches.  
-* Oftentimes, code style is **Subjective**, and there's no right or wrong answer, and that's okay! If you disagree with our feedback, let us know why you wrote it that way - we look forward to learning new things and better practices from you.  
+* Oftentimes, code style is **Subjective**, and there's no right or wrong answer, and that's okay! If you disagree with our feedback, let us know why you wrote it that way - we look forward to learning new things and better practices from you :grin:  
 * Code style and consistency is important to us - we take pride in every line of code we write, and encourage you to do the same. The **Android** team generally adheres to all AOSP Contributor Guidelines (See: [Android README](Android/README.md)) and the **iOS** team generally adheres to all iOS Contributor Guidelines (See: [iOS README](iOS/README.md)).  
-* Android submissions can be written in Kotlin or Java.  
-* iOS submissions can be written in Swift or Objective-C.  
+* Android submissions can be written in **Kotlin** or **Java**.  
+* iOS submissions can be written in **Swift** or **Objective-C**.  
 * We are more interested in the **Quality** of your submissions, rather than the quantity of submissions.  Quality is assessed using some of these parameters:  
   * Is the code style consistent? (Do variables follow the same standard conventions? Is the code formatted with the same indentation levels?)  
   * Are the methods / functions designed to be small and focused? (It is, however, recognized that long methods are sometimes appropriate.)  
@@ -88,7 +88,7 @@ git push
 
 | Requirements | Business Mock |
 | :--- | --- |
-| The application currently **crashes** when a `Placeholder` button is clicked on the<br>main dashboard.<br><br>Design an alert dialog that is shown with an `"Under Construction"` type of message<br>instead of crashing. | ![Construction Dialog](ScreenMocks/Groovy-04-UnderConstruction.png) |
+| The application currently **crashes** when a `Placeholder` button is clicked on <br>the main dashboard.<br><br>Design an alert dialog that is shown with an `"Under Construction"` type <br>of message instead of crashing. | ![Construction Dialog](ScreenMocks/Groovy-04-UnderConstruction.png) |
 
 ## Task ID: #002 - Generating Test Data & Populating the Database
 #### Estimated LOE (Level of Effort): 2 Hours  
@@ -98,14 +98,14 @@ git push
 
 | Requirements | Business Mock |
 | :--- | --- |
-| Users of this application have complained that the Product list looks very bland.<br>(We've gotten lots of negative feedback on the Google Play Store and Apple App Store)<br><br>Update the style of the products to match this new mock from the Design team as closely<br>as possible (or use your creativity to implement a better design). | ![Order Entry](ScreenMocks/Groovy-13-OrderEntry.png) |
+| Users of this application have complained that the Product list looks very <br>bland. (We've gotten lots of negative feedback on the Google Play Store and Apple App Store)<br><br>Update the style of the products to match this new mock from the Design <br>team as closely as possible (or use your creativity to implement a better design). | ![Order Entry](ScreenMocks/Groovy-13-OrderEntry.png) |
 
 ## Task ID: #004 - Language Translation of Your Choice
 #### Estimated LOE (Level of Effort): 2 Hours  
 
 | Requirements | Business Mock |
 | :--- | --- |
-| Google Play Store users have left us lots of negative feedback because the application<br>only supports English and Spanish.<br><br>For this task, localize all of the app's string resources to another language<br>of your choice. Go through the app and extract any hard-coded strings as necessary.<br><br>**You do not need to worry about the names and descriptions of database entities.** | ![Spanish](ScreenMocks/Groovy-09-Spanish.png) |
+| Google Play Store users have left us lots of negative feedback because the <br>application only supports English and Spanish.<br><br>For this task, localize all of the app's string resources to another language<br>of your choice. Go through the app and extract any hard-coded strings as necessary.<br><br>**You do not need to worry about the names and descriptions of database entities.** | ![Spanish](ScreenMocks/Groovy-09-Spanish.png) |
 | The system language can be changed at Runtime under System settings. | ![System Language](ScreenMocks/Groovy-07-SystemLanguage.png) |
 
 ## Task ID: #005 - Database-Driven Payment Types  
@@ -117,14 +117,26 @@ git push
 ## Task ID: #007 - Checkout with Cash Payments!  
 #### Estimated LOE (Level of Effort): 4 Hours  
 
+| Requirements | Business Mock |
+| :--- | --- |
+| Currently, there is no way to complete the Checkout flow, because we haven't <br>implemented **Cash** or Credit support. The "Pay with Cash" screen has a 10-digit <br>Keypad, but it isn't wired up. <br><br>**Bonus points for allowing the User to over-pay or under-pay, and show the <br>User how much Change is Due to the Customer.** | ![Checkout with Cash](ScreenMocks/Groovy-14-CheckoutCash.png) |
+
 ## Task ID: #008 - Generate the Client Secret... On the Client!  
-#### Estimated LOE (Level of Effort): 4 Hours  
+#### Estimated LOE (Level of Effort): 2 Hours  
+
+| Requirements | Code Sample / Business Mock |
+| :--- | :---: |
+| We don't have a Server for this test application, so we emulate the "Server" <br>within our app. The Android and iOS applications both use asynchronous utilities <br>for generating a **Client Secret** using your Stripe **Secret** API key. Most of the <br>necessary code already exists, and there is an **Instrumentation Test** available for <br>you to get an idea of how this works - you just need to call our asynchronous <br>method and handle the resulting callbacks. | ![Client Secret](ScreenMocks/Groovy-19-ClientSecretCode.png) |
+| Be sure to gracefully handle any errors that might occur. | ![Error](ScreenMocks/Groovy-15-ClientSecretError.png) |
 
 ## Task ID: #009 - Pay with a Credit Card Number  
+#### Depends on Client Secret mechanism
 #### Estimated LOE (Level of Effort): 4 Hours  
-References:  
-https://stripe.com/docs/payments/accept-a-payment#android  
-https://stripe.com/docs/testing  
+
+| Requirements | Business Mock |
+| :--- | --- |
+| Currently, there is no way to complete the Checkout flow, because we haven't <br>implemented Cash or **Credit** support. The "Pay with Credit" screen has a Stripe <br>`CardInputWidget`, but it isn't wired up. <br><br>Every Stripe payment requires a **Client Secret** string to be generated (the **Client <br>Secret** is derived from the transaction amount, the currency type, and your <br>**Publishable API Key**), so you'll need to generate a **Client Secret** when the User <br>clicks the `PAY (CREDIT)` button, and then process the payment using <br>`com.stripe.android.Stripe.confirmPayment()`. <br><br>References: <br>https://stripe.com/docs/payments/accept-a-payment#android  <br>https://stripe.com/docs/testing   | ![Checkout with Credit](ScreenMocks/Groovy-17-CheckoutCredit.png) |
+| Consider logging or displaying the response from Stripe. | ![Credit Success](ScreenMocks/Groovy-16-StripeCreditSuccess.png) |
 
 ## Task ID: #009 - User Database Schema  
 #### Estimated LOE (Level of Effort): 6 Hours  
@@ -153,7 +165,7 @@ https://gist.github.com/Chaser324/ce0505fbed06b947d962
 # Useful References
 
 ### Game-Icons.net  
-Many thanks to the contributors and maintainers over at game-icons.net - it has been an extremely helpful resource in prototyping mobile applications.  
+Many thanks to the contributors and maintainers over at game-icons.net :joy: it has been an extremely helpful resource in prototyping mobile applications.  
 https://game-icons.net  
 
 ### Stripe
