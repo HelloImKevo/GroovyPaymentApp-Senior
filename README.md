@@ -119,6 +119,10 @@ git push
 ## Task ID: #006 - Display the Order History  
 #### Estimated LOE (Level of Effort): 3 Hours  
 
+| Requirements | Business Mock |
+| :--- | --- |
+| Load the `Cart` models from the database and display them in Order History. | ![Order Entry](ScreenMocks/Groovy-12-OrderHistory.png) |
+
 ## Task ID: #007 - Checkout with Cash Payments!  
 #### Estimated LOE (Level of Effort): 4 Hours  
 
