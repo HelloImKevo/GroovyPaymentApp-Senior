@@ -34,7 +34,7 @@ public final class CurrencyRules {
 
     @NonNull
     public String getFormattedAmount(long pennies, @NonNull Locale locale) {
-        NumberFormat currencyFormat = NumberFormat.getCurrencyInstance(locale);
+        NumberFormat currencyFormat = NumberFormat.getCurrencyInstance(Locale.US);
         BigDecimal dollarsAndCentsValue = new BigDecimal(pennies).movePointLeft(2);
         return currencyFormat.format(dollarsAndCentsValue);
     }
