@@ -128,7 +128,7 @@ git push
 
 | Requirements | Business Mock |
 | :--- | --- |
-| Currently, there is no way to complete the Checkout flow, because we <br>haven't implemented **Cash** or Credit support. The "Pay with Cash" screen has a <br>10-digit Keypad, but it isn't wired up. <br><br>:warning: **Bonus points for allowing the User to over-pay or under-pay, and <br>show the User how much Change is Due to the Customer.** | ![Checkout with Cash](ScreenMocks/Groovy-14-CheckoutCash.png) |
+| Currently, there is no way to complete the Checkout flow, because we <br>haven't implemented **Cash** or Credit support. The "Pay with Cash" screen has <br>a 10-digit Keypad, but it isn't wired up. <br><br>:warning: **Bonus points for allowing the User to over-pay or under-pay, and <br>show the User how much Change is Due to the Customer.** | ![Checkout with Cash](ScreenMocks/Groovy-14-CheckoutCash.png) |
 
 ## Task ID: #008 - Generate the Client Secret... On the Client!  
 #### Estimated LOE (Level of Effort): 2 Hours  
