@@ -70,11 +70,11 @@ public class CartListAdapter
                 ContextCompat.getDrawable(mContext, GroovyColor.Orange.colorRes));
 
         // Configure labels and description.
-        holder.labelTotal.setText(new CurrencyRules().getCartTotal(item, Locale.US));
+        holder.labelTotal.setText(new CurrencyRules().getCartTotal(item, Locale.getDefault()));
         holder.labelTotal.setTextColor(
                 StateListHelper.getTextColorSelector(mContext, R.color.black_space));
 
-        holder.labelDate.setText(rules.getFormattedDate(Locale.US));
+        holder.labelDate.setText(rules.getFormattedDate(Locale.getDefault()));
 
         holder.description.setText(rules.getOrderHistoryDescription());
         holder.description.setTextColor(

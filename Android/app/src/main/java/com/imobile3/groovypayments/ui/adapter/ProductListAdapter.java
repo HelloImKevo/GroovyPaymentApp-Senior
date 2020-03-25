@@ -70,7 +70,7 @@ public class ProductListAdapter
         holder.label.setText(item.getName());
         holder.label.setTextColor(
                 StateListHelper.getTextColorSelector(mContext, R.color.black_space));
-        holder.description.setText(rules.getDescription(Locale.US));
+        holder.description.setText(rules.getDescription(Locale.getDefault()));
         holder.description.setTextColor(
                 StateListHelper.getTextColorSelector(mContext, R.color.gray_down_pour));
     }

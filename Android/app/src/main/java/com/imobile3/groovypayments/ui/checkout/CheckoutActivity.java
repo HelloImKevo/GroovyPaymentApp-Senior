@@ -255,7 +255,8 @@ public class CheckoutActivity extends BaseActivity {
     protected void setUpMainNavBar() {
         super.setUpMainNavBar();
         mMainNavBar.showBackButton();
-        mMainNavBar.showTitle(CartManager.getInstance().getFormattedGrandTotal(Locale.US));
+        mMainNavBar.showTitle(CartManager.getInstance()
+                .getFormattedGrandTotal(Locale.getDefault()));
         mMainNavBar.showSubtitle(getString(R.string.checkout_subtitle));
     }
 
@@ -290,8 +291,10 @@ public class CheckoutActivity extends BaseActivity {
     }
 
     private void updateAmounts() {
-        mLblCashAmount.setText(CartManager.getInstance().getFormattedGrandTotal(Locale.US));
-        mLblCreditAmount.setText(CartManager.getInstance().getFormattedGrandTotal(Locale.US));
+        String formattedGrandTotal = CartManager.getInstance()
+                .getFormattedGrandTotal(Locale.getDefault());
+        mLblCashAmount.setText(formattedGrandTotal);
+        mLblCreditAmount.setText(formattedGrandTotal);
     }
 
     private void handlePayWithCashClick() {

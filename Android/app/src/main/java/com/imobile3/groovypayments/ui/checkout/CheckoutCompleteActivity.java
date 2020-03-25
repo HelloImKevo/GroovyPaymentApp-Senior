@@ -39,7 +39,7 @@ public class CheckoutCompleteActivity extends BaseActivity {
 
     private void setUpViews() {
         TextView lblAmount = findViewById(R.id.label_amount);
-        lblAmount.setText(CartManager.getInstance().getFormattedGrandTotal(Locale.US));
+        lblAmount.setText(CartManager.getInstance().getFormattedGrandTotal(Locale.getDefault()));
 
         Button btnGroovy = findViewById(R.id.btn_groovy);
         btnGroovy.setOnClickListener(v -> completeCheckout());

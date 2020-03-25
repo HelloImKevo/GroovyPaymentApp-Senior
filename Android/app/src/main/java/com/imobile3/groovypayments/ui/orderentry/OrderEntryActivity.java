@@ -95,7 +95,8 @@ public class OrderEntryActivity extends BaseActivity {
     }
 
     private void updateTitle() {
-        mMainNavBar.showTitle(CartManager.getInstance().getFormattedGrandTotal(Locale.US));
+        mMainNavBar.showTitle(CartManager.getInstance()
+                .getFormattedGrandTotal(Locale.getDefault()));
         if (CartManager.getInstance().getCart().hasProducts()) {
             mMainNavBar.showSubtitle(getString(R.string.order_entry_subtitle_checkout));
         } else {
