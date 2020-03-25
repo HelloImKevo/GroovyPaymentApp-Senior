@@ -39,6 +39,8 @@
 
     <!-- Order Entry -->
     <string name="order_entry_subtitle">Ajoutez des produits à la commande.</string>
+    <string name="order_entry_subtitle_checkout">Cliquez sur l\'icône en haut à droite pour
+        vérifier.</string>
 
     <!-- Checkout -->
     <string name="checkout_subtitle">Comment paierez-vous?</string>
