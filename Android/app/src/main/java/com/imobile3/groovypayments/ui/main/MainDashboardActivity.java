@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.imobile3.groovypayments.R;
+import com.imobile3.groovypayments.logging.LogHelper;
 import com.imobile3.groovypayments.ui.BaseActivity;
 import com.imobile3.groovypayments.ui.adapter.MainDashboardButton;
 import com.imobile3.groovypayments.ui.adapter.MainDashboardButtonAdapter;
@@ -18,6 +19,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
 
 public class MainDashboardActivity extends BaseActivity {
 
@@ -87,14 +89,16 @@ public class MainDashboardActivity extends BaseActivity {
                 break;
 
             case Management:
+                LogHelper.writeWithTrace(Level.INFO, TAG, "Management area not implemented");
+                break;
+
             case TimeTracking:
+                LogHelper.writeWithTrace(Level.INFO, TAG, "Time Tracking area not implemented");
+                break;
+
             case Placeholder1:
             case Placeholder2:
-                showAlertDialog(
-                        R.string.common_under_construction,
-                        R.string.under_construction_alert_message,
-                        R.string.common_acknowledged);
-                break;
+                throw new RuntimeException("User clicked a Placeholder button");
         }
     }
 
