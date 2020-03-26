@@ -26,6 +26,8 @@ import com.imobile3.groovypayments.network.WebServiceConfig;
 import androidx.annotation.NonNull;
 
 /**
+ * Main application singleton class.
+ *
  * @author Kevin Schanz
  */
 public class MainApplication extends Application {
