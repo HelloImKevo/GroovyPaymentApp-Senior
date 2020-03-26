@@ -24,6 +24,8 @@ import java.util.logging.Level;
 import java.util.logging.LogRecord;
 
 /**
+ * Collection of logging utilities.
+ *
  * @author Kevin Schanz
  */
 @SuppressWarnings({"ConstantConditions", "WeakerAccess", "unused", "FieldCanBeLocal"})
