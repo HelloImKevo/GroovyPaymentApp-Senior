@@ -44,7 +44,13 @@ git push
 ```  
 
 * More repository management discussions: https://stackoverflow.com/questions/18200248/cloning-a-repo-from-someone-elses-github-and-pushing-it-to-a-repo-on-my-github
-* Your repository can be **public** or **private**, but if it's private you'll need to adjust the repository settings to invite one or two of us as collaborators so we can review your commits.
+* Your repository can be **public** or **private**, but if it's private you'll need to adjust the repository settings to invite one or two of us as collaborators so we can review your commits.  
+
+#### Pull Requests and Code Review  
+* This is **optional**, but if you want good feedback on your submitted solutions you can create a **Pull Request** (in _your_ repository) and notify us when it is ready for review. There's an example Pull Request in **this** repository for reference: https://github.com/HelloImKevo/SkeletonPaymentApp-Senior/pull/2  
+* Additional information can be found under the [Git Workflow References](#git-workflow-references) section.
+
+#### Stripe SDK Setup  
 * Create a **Stripe Developer Account** over at: https://dashboard.stripe.com/register  
 * Grab your **Publishable** and **Secret** API keys from your dashboard: https://dashboard.stripe.com/test/apikeys  
 * The Stripe SDK architecture is built around the expectation of using a Client-Server model, where the Client (Mobile App) uses a **Publishable** API key, and the Server uses a **Secret** API key to generate a **Client Secret** string. We don't have a Server for this test application, so we emulate the "Server" within our app. The Android and iOS applications both use asynchronous utilities for generating a **Client Secret** using the Stripe **Secret** API key.  
@@ -56,7 +62,7 @@ git push
 # Expectations
 * Okay, **phew**. If you made it this far, you're in good shape :+1: hopefully that stuff didn't take too much time (it gets easier with practice).  
 * This project is comes with a **[Business Requirements Document (BRD)](#business-requirements-document-brd)** that is modeled after real-world business requirements. It is effectively a coding assessment designed to help us identify your **Skills** and **Areas of Expertise** and **Attention to Detail**, while providing you a little bit of exposure to the payments industry and our **Git Workflow**.  
-* We recommend spending **about 8 Hours** implementing solutions to any number of the **[Business Requirements](#business-requirements-document-brd)** listed below, but you are welcome to spend as much time as you'd like to accomplish any number of the tasks.  
+* We recommend spending **about 8 Hours** implementing solutions to any number of the [Business Requirements](#business-requirements-document-brd) listed below, but you are welcome to spend as much time as you'd like to accomplish any number of the tasks.  
 * It is suggested that you work on tasks that demonstrate your strengths as a developer. For example, if you've got a lot of familiarity with **Encryption & Decryption** mechanisms, you might want to implement an encryption framework for the `User.Password` model data for the login flow. Alternatively, if you enjoy working with multi-threaded systems, feel free to rewrite the **SQL Database** implementation or the asynchronous network calls to the Stripe API.  
 
 # Submission Review Guidelines  
@@ -177,16 +183,29 @@ git push
 
 Useful git commands for quickly traversing repos:  
 ```
+# Display all remote branches
+git branch --remote
+
+# Concise view of git history
+git log --oneline
+
 # Pushing from a local repository to GitHub hosted remote
 git remote add origin git@github.com:USERNAME/REPO-NAME.git
 
 # Clone your fork to your local machine
 git clone git@github.com:USERNAME/FORKED-PROJECT.git
+
+# Creating a new remote branch
+git checkout master
+git pull
+git checkout -b pr-task-solution
+git push -u origin pr-task-solution
 ```
 
 ## GitHub Standard Fork & Pull Request Workflow  
-Useful link about project forks:  
-https://gist.github.com/Chaser324/ce0505fbed06b947d962  
+* Github pull request reviews documentation: https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-request-reviews  
+* Useful link about project forks: https://gist.github.com/Chaser324/ce0505fbed06b947d962  
+* Great YouTube video tutorial "Creating a Simple Github Pull Request" by Jake Vanderplas: https://www.youtube.com/watch?v=rgbCcBNZcdQ  
 
 # Useful References
 
