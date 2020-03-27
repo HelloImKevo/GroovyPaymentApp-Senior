@@ -42,7 +42,11 @@ public class SplashActivity extends BaseActivity {
 
     private void startLoginActivity() {
         new Handler().postDelayed(
-                () -> startActivity(new Intent(SplashActivity.this, LoginActivity.class)), 500L);
+                () -> {
+                    SplashActivity.this.startActivity(
+                            new Intent(SplashActivity.this, LoginActivity.class));
+                    finish();
+                }, 500L);
     }
 
     @Override
