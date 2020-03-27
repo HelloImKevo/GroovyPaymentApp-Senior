@@ -183,11 +183,21 @@ git push
 
 Useful git commands for quickly traversing repos:  
 ```
+# Display your git configuration
+git config --list
+git config --global -l
+
 # Display all remote branches
 git branch --remote
 
 # Concise view of git history
 git log --oneline
+
+# Visual graph of git history
+git log --oneline --graph --all --decorate --abbrev-commit
+
+# See how many lines of code you've changed
+git diff --shortstat
 
 # Pushing from a local repository to GitHub hosted remote
 git remote add origin git@github.com:USERNAME/REPO-NAME.git
@@ -200,6 +210,28 @@ git checkout master
 git pull
 git checkout -b pr-task-solution
 git push -u origin pr-task-solution
+
+# List all remote pull requests
+git ls-remote origin 'pull/*/head'
+
+# Fetch a specific pull request into a local branch and with a custom name
+git fetch origin pull/2/head:pr-new-feature
+
+# Remove a git ignored file that is being tracked
+git rm -r --cached .
+git add .
+
+# Stash your local changes
+git add .
+git stash save "Implement solution for Task 001 - Work in progress"
+git stash apply stash@{1}
+
+# Preview your stashed changes
+git stash list
+git stash show -p stash@{1}
+
+# Un-commit and stage changes from most recent commit
+git reset --soft HEAD~1
 ```
 
 ## GitHub Standard Fork & Pull Request Workflow  
