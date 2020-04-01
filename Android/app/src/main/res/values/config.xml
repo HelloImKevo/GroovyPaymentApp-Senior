@@ -6,4 +6,5 @@
 
     <!-- Animation Values -->
     <item name="anim_duration" format="integer" type="integer">500</item>
+    <item name="slide_up_anim_duration" format="integer" type="integer">1000</item>
 </resources>
