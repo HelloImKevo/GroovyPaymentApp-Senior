@@ -211,12 +211,6 @@ git pull
 git checkout -b pr-task-solution
 git push -u origin pr-task-solution
 
-# List all remote pull requests
-git ls-remote origin 'pull/*/head'
-
-# Fetch a specific pull request into a local branch and with a custom name
-git fetch origin pull/2/head:pr-new-feature
-
 # Remove a git ignored file that is being tracked
 git rm -r --cached .
 git add .
@@ -238,6 +232,17 @@ git reset --soft HEAD~1
 * Github pull request reviews documentation: https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-request-reviews  
 * Useful link about project forks: https://gist.github.com/Chaser324/ce0505fbed06b947d962  
 * Great YouTube video tutorial "Creating a Simple Github Pull Request" by Jake Vanderplas: https://www.youtube.com/watch?v=rgbCcBNZcdQ  
+
+```
+# List all remote pull requests
+git ls-remote origin 'pull/*/head'
+
+# Fetch a specific pull request into a local branch and with a custom name
+git fetch origin pull/2/head:pr-new-feature
+
+# Fetch a pull request from a fork repo and patch it as a local branch
+git fetch git@github.com:vikvelma/ForkedPaymentApp.git refs/pull/3/head:pr-forked-feature
+```
 
 # Useful References
 
