@@ -72,6 +72,8 @@
             android:permission="${applicationId}.permission.START_ACTIVITY"
             android:screenOrientation="behind"
             android:windowSoftInputMode="stateHidden|adjustPan" />
+
+        <activity android:name=".ui.chart.PieChartActivity" />
     </application>
 
 </manifest>

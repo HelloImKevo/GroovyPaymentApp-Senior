@@ -50,12 +50,12 @@ public enum MainDashboardButton {
             R.color.purple_wisteria,
             R.drawable.dashboard_icon_bg_purple_light),
 
-    Placeholder1(
-            R.string.common_under_construction,
-            R.string.placeholder_description,
-            R.drawable.ic_strongbox,
-            R.color.purple_magic,
-            R.drawable.dashboard_icon_bg_purple),
+    DailyReport(
+            R.string.reports,
+            R.string.reports_description,
+            R.drawable.ic_assessment,
+            R.color.yellow_ripe_lemon,
+            R.drawable.dashboard_icon_bg_yellow),
 
     Placeholder2(
             R.string.common_under_construction,

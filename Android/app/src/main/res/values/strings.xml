@@ -18,6 +18,7 @@
         adipiscing elit. Integer commodo, nisi a rutrum dapibus, urna elit cursus mi, ut
         elementum lacus elit nec diam. Nullam laoreet dui id dui facilisis lacinia. Sed convallis
         feugiat ex, interdum tincidunt sapien consequat ut.</string>
+    <string name="reports">Reports</string>
 
     <!-- Login -->
     <string name="prompt_email">Email</string>
@@ -44,6 +45,8 @@
     <string name="under_construction_alert_message">This area of the application is still
         under construction. Feel free to demonstrate your skills and build it.</string>
     <string name="main_dashboard_subtitle">Where would you like to go?</string>
+    <string name="reports_description">View products popularity chart based on daily
+        report.</string>
 
     <!-- User Profile -->
     <string name="user_profile_subtitle_format">Welcome %1$s.</string>
@@ -76,6 +79,10 @@
     <string name="order_history_alert_warning_button">Whatever.</string>
     <string name="order_history_alert_warning_message">You were warned not to click the list items.
         Administrators have been notified.</string>
+
+    <!--Daily Report-->
+    <string name="daily_report_subtitle">Daily Report</string>
+    <string name="daily_report_product_popularity">Product Popularity</string>
 
     <!-- Checkout -->
     <string name="checkout_subtitle">How will you pay?</string>
