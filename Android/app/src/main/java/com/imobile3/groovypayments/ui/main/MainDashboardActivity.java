@@ -8,6 +8,7 @@ import com.imobile3.groovypayments.logging.LogHelper;
 import com.imobile3.groovypayments.ui.BaseActivity;
 import com.imobile3.groovypayments.ui.adapter.MainDashboardButton;
 import com.imobile3.groovypayments.ui.adapter.MainDashboardButtonAdapter;
+import com.imobile3.groovypayments.ui.chart.PieChartActivity;
 import com.imobile3.groovypayments.ui.misc.SecretFunctionsActivity;
 import com.imobile3.groovypayments.ui.orderentry.OrderEntryActivity;
 import com.imobile3.groovypayments.ui.orderhistory.OrderHistoryActivity;
@@ -96,7 +97,10 @@ public class MainDashboardActivity extends BaseActivity {
                 LogHelper.writeWithTrace(Level.INFO, TAG, "Time Tracking area not implemented");
                 break;
 
-            case Placeholder1:
+            case DailyReport:
+                startActivity(new Intent(this, PieChartActivity.class));
+                break;
+
             case Placeholder2:
                 throw new RuntimeException("User clicked a Placeholder button");
         }
@@ -110,7 +114,7 @@ public class MainDashboardActivity extends BaseActivity {
         dashboardButtons.add(MainDashboardButton.SecretFunctions);
         dashboardButtons.add(MainDashboardButton.Management);
         dashboardButtons.add(MainDashboardButton.TimeTracking);
-        dashboardButtons.add(MainDashboardButton.Placeholder1);
+        dashboardButtons.add(MainDashboardButton.DailyReport);
         dashboardButtons.add(MainDashboardButton.Placeholder2);
         return dashboardButtons;
     }
