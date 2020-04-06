@@ -83,6 +83,7 @@
     <!--Daily Report-->
     <string name="daily_report_subtitle">Daily Report</string>
     <string name="daily_report_product_popularity">Product Popularity</string>
+    <string name="daily_report_progress_message">Loading chart</string>
 
     <!-- Checkout -->
     <string name="checkout_subtitle">How will you pay?</string>
