@@ -88,6 +88,7 @@
     <!--Daily Report-->
     <string name="daily_report_subtitle">Reporte Diario</string>
     <string name="daily_report_product_popularity">Popularidad del producto</string>
+    <string name="daily_report_progress_message">Cargando gráfico</string>
 
     <!-- Checkout -->
     <string name="checkout_subtitle">¿Cómo vas a pagar?</string>

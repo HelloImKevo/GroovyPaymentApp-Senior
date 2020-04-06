@@ -18,6 +18,7 @@ import java.util.TimerTask;
 public class ProgressDialog extends Dialog {
 
     private TextView mLblMessage;
+    private String mProgressMessage;
 
     private final Timer mTimer = new Timer();
     private final Handler mHandler = new Handler();
@@ -44,7 +45,7 @@ public class ProgressDialog extends Dialog {
                 mHandler.post(new Runnable() {
                     @Override
                     public void run() {
-                        mLblMessage.setText(getRandomMessage());
+                        mLblMessage.setText(getMessage());
                     }
                 });
             }
@@ -63,5 +64,13 @@ public class ProgressDialog extends Dialog {
         String[] messages = getContext().getResources()
                 .getStringArray(R.array.progress_dialog_messages);
         return messages[new Random().nextInt(messages.length)];
+    }
+
+    private String getMessage() {
+        return mProgressMessage != null ? mProgressMessage : getRandomMessage();
+    }
+
+    public void setMessage(String message) {
+        mProgressMessage = message;
     }
 }
