@@ -1,7 +1,5 @@
 package com.imobile3.groovypayments.ui.chart;
 
-import com.anychart.chart.common.dataentry.DataEntry;
-import com.anychart.chart.common.dataentry.ValueDataEntry;
 import com.imobile3.groovypayments.data.CartRepository;
 
 import androidx.lifecycle.LiveData;
@@ -19,17 +17,9 @@ public class PieChartViewModel extends ViewModel {
         mCartRepository = repository;
     }
 
-    // Dummy data
-    LiveData<List<DataEntry>> getProductList() {
-        final MutableLiveData<List<DataEntry>> observable =
+    LiveData<List<String>> getProductList() {
+        final MutableLiveData<List<String>> observable =
                 new MutableLiveData<>(new ArrayList<>());
-        List<DataEntry> data = new ArrayList<>();
-        data.add(new ValueDataEntry("Cappuccino", 312));
-        data.add(new ValueDataEntry("Latte", 522));
-        data.add(new ValueDataEntry("Hot Chocolate", 701));
-        data.add(new ValueDataEntry("Mocha", 421));
-        data.add(new ValueDataEntry("Tea", 200));
-        observable.setValue(data);
 
         return observable;
     }
