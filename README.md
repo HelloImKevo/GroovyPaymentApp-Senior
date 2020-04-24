@@ -177,7 +177,7 @@ git push
 
 | Requirements | Business Mock |
 | :--- | --- |
-| Use any open-source Charts & Graphs library to represent any type of data you'd like. <br><br>References: <br>https://github.com/PhilJay/MPAndroidChart  <br>https://github.com/AnyChart/AnyChart-Android    | ![Daily Reports](ScreenMocks/Groovy-08-DailyReports.png) |
+| Use any open-source Charts & Graphs library to represent any type of data you'd like. <br><br>References: <br>https://github.com/PhilJay/MPAndroidChart  <br>https://github.com/AnyChart/AnyChart-Android    | ![Daily Reports](ScreenMocks/Groovy-21-DailyReports.png) |
 
 ## Git Workflow References
 
