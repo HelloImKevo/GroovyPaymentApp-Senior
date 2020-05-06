@@ -7,9 +7,13 @@ This App is intended for Senior candidates. There are Android and iOS variants o
 
 # First Steps: Repo & Project Setup
 * Create your own repository to store this project and all of your work.  
-* Clone this repository (**SkeletonPaymentApp-Senior**) to your local machine, and then push all the contents to your repository using the instructions and CLI commands below for guidance:  
+* **Fork** or **Clone** this repository (**SkeletonPaymentApp-Senior**) to your local machine, and then push your work to your repository using the instructions and CLI commands below for guidance:  
 
 ```
+# Fork this project, and clone your fork to your local machine
+git clone git@github.com:USERNAME/FORKED-PROJECT.git
+
+# To make a full copy (duplicate) of this repo without forking:
 # Navigate to your Github dashboard. Go to 'Your Repositories'.
 # Create a New Repository. Name it anything you'd like.
 # You can make it public or private.
@@ -43,7 +47,9 @@ git status
 git push
 ```  
 
-* More repository management discussions: https://stackoverflow.com/questions/18200248/cloning-a-repo-from-someone-elses-github-and-pushing-it-to-a-repo-on-my-github
+* More repository management discussions:  
+  * Forking: https://help.github.com/en/github/getting-started-with-github/fork-a-repo
+  * Duplicating: https://stackoverflow.com/questions/18200248/cloning-a-repo-from-someone-elses-github-and-pushing-it-to-a-repo-on-my-github
 * Your repository can be **public** or **private**, but if it's private you'll need to adjust the repository settings to invite one or two of us as collaborators so we can review your commits.  
 
 #### Pull Requests and Code Review  
@@ -89,7 +95,7 @@ git push
 # Business Requirements Document (BRD)  
 
 ## Task ID: #001 - Main Dashboard Crash  
-#### Estimated LOE (Level of Effort): 2 Hours  
+#### Estimated LOE (Level of Effort): 1 Hour  
 
 [//]: # (Line breaks must be added to control text wrapping for multi-line rows, otherwise the image will get squashed)
 
@@ -173,7 +179,7 @@ git push
 #### Estimated LOE (Level of Effort): 6 Hours  
 
 ## Task ID: #013 - Tables, and Charts, and Graphs, Oh My!  
-#### Estimated LOE (Level of Effort): 8 Hours  
+#### Estimated LOE (Level of Effort): 6 Hours  
 
 | Requirements | Business Mock |
 | :--- | --- |
