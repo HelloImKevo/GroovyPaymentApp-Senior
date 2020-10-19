@@ -4,20 +4,24 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.imobile3.groovypayments.R;
 import com.imobile3.groovypayments.data.model.Product;
+import com.imobile3.groovypayments.rules.ProductRules;
 import com.imobile3.groovypayments.utils.StateListHelper;
 
 import org.jetbrains.annotations.NotNull;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class ProductListAdapter
         extends RecyclerView.Adapter<ProductListAdapter.ViewHolder> {
@@ -51,10 +55,24 @@ public class ProductListAdapter
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         Product item = mItems.get(position);
+        ProductRules rules = new ProductRules(item);
 
+        // Primary list item container pressed / default state.
+        holder.container.setBackground(
+                StateListHelper.getBgColorSelector(mContext, rules.getColor().colorRes));
+
+        // Configure the icon and background circle.
+        holder.icon.setImageResource(rules.getIcon().drawableRes);
+        holder.icon.setBackground(
+                ContextCompat.getDrawable(mContext, rules.getColor().colorRes));
+
+        // Configure label and description.
         holder.label.setText(item.getName());
         holder.label.setTextColor(
                 StateListHelper.getTextColorSelector(mContext, R.color.black_space));
+        holder.description.setText(rules.getDescription(Locale.getDefault()));
+        holder.description.setTextColor(
+                StateListHelper.getTextColorSelector(mContext, R.color.gray_down_pour));
     }
 
     @Override
@@ -64,12 +82,15 @@ public class ProductListAdapter
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         ViewGroup container;
-        TextView label;
+        ImageView icon;
+        TextView label, description;
 
         ViewHolder(View itemView) {
             super(itemView);
             container = itemView.findViewById(R.id.container);
+            icon = itemView.findViewById(R.id.icon);
             label = itemView.findViewById(R.id.label);
+            description = itemView.findViewById(R.id.description);
             container.setOnClickListener(this);
         }
 
