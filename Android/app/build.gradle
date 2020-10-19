@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply from: 'constants.gradle'
-
+def STRIPE_API_CLIENT_KEY_FIELD_VALUE = "\"pk_test_51HdrkpHmQ5CSwBEftL7sVnj2SSKRUb2O9L9GpJhndSiQLNUCpwby9o7ToWDTyGXMCGpfQ0kkxpOQy9hIz3sson1H00C53I4FB0\""
+def STRIPE_API_SERVER_KEY_FIELD_VALUE = "\"sk_test_51HdrkpHmQ5CSwBEfEW8ehAY0pceyh78jc0Wi0e3rfbzj2WjOnRbyvf1I0kBCZamPT7H3230vuRPZZ4keil04YMXE00pZjfgGnY\""
 android {
     compileSdkVersion 29
 
@@ -12,23 +13,15 @@ android {
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
-        buildConfigField STRING, STRIPE_API_CLIENT_KEY_FIELD, NULL
-        buildConfigField STRING, STRIPE_API_SERVER_KEY_FIELD, NULL
+        buildConfigField STRING, STRIPE_API_CLIENT_KEY_FIELD, STRIPE_API_CLIENT_KEY_FIELD_VALUE
+        buildConfigField STRING, STRIPE_API_SERVER_KEY_FIELD, STRIPE_API_SERVER_KEY_FIELD_VALUE
     }
 
     buildTypes {
         debug {
             minifyEnabled false
-
-            if (project.file("$project.rootDir/app/apikeys.gradle").exists()) {
-                apply from: "$project.rootDir/app/apikeys.gradle"
-                if (project.hasProperty('STRIPE_API_CLIENT_KEY')) {
-                    buildConfigField STRING, STRIPE_API_CLIENT_KEY_FIELD, STRIPE_API_CLIENT_KEY
-                }
-                if (project.hasProperty('STRIPE_API_SERVER_KEY')) {
-                    buildConfigField STRING, STRIPE_API_SERVER_KEY_FIELD, STRIPE_API_SERVER_KEY
-                }
-            }
+            buildConfigField STRING, STRIPE_API_CLIENT_KEY_FIELD, STRIPE_API_CLIENT_KEY_FIELD_VALUE
+            buildConfigField STRING, STRIPE_API_SERVER_KEY_FIELD, STRIPE_API_SERVER_KEY_FIELD_VALUE
         }
 
         release {

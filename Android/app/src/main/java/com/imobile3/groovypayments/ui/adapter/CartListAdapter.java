@@ -12,6 +12,7 @@ import com.imobile3.groovypayments.data.enums.GroovyColor;
 import com.imobile3.groovypayments.data.enums.GroovyIcon;
 import com.imobile3.groovypayments.data.model.Cart;
 import com.imobile3.groovypayments.rules.CartRules;
+import com.imobile3.groovypayments.rules.CurrencyRules;
 import com.imobile3.groovypayments.utils.StateListHelper;
 
 import org.jetbrains.annotations.NotNull;
@@ -23,6 +24,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class CartListAdapter
         extends RecyclerView.Adapter<CartListAdapter.ViewHolder> {
@@ -58,10 +60,21 @@ public class CartListAdapter
         Cart item = mItems.get(position);
         CartRules rules = new CartRules(item);
 
+        // Primary list item container pressed / default state.
+        holder.container.setBackground(
+                StateListHelper.getBgColorSelector(mContext, GroovyColor.Orange.colorRes));
+
         // Configure the icon and background circle.
         holder.icon.setImageResource(GroovyIcon.Bookmarklet.drawableRes);
         holder.icon.setBackground(
                 ContextCompat.getDrawable(mContext, GroovyColor.Orange.colorRes));
+
+        // Configure labels and description.
+        holder.labelTotal.setText(new CurrencyRules().getCartTotal(item, Locale.getDefault()));
+        holder.labelTotal.setTextColor(
+                StateListHelper.getTextColorSelector(mContext, R.color.black_space));
+
+        holder.labelDate.setText(rules.getFormattedDate(Locale.getDefault()));
 
         holder.description.setText(rules.getOrderHistoryDescription());
         holder.description.setTextColor(

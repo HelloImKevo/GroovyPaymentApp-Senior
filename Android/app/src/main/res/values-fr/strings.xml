@@ -1,0 +1,75 @@
+<resources>
+    <string name="app_name">Groovy Mobile Payments</string>
+
+    <!-- Common -->
+    <string name="common_ok">Accepter</string>
+    <string name="common_cancel">Canceller</string>
+    <string name="common_back">Retour</string>
+    <string name="common_change">Changer</string>
+    <string name="common_order_entry">Créer un Commande</string>
+    <string name="common_management">Gestion</string>
+    <string name="common_time_tracking">Suivi du Temp</string>
+    <string name="common_under_construction">En Construction</string>
+    <string name="common_acknowledged">Reconnu</string>
+    <string name="common_order_history">Historique des commandes</string>
+
+    <!-- Login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Mot de Passe</string>
+    <string name="action_sign_in">Se connecter ou s\'inscrire</string>
+    <string name="skip_login">Sauter la Connexion</string>
+    <string name="action_sign_in_short">Se Connecter</string>
+    <string name="welcome">"Bienvenu! "</string>
+    <string name="invalid_username">Ce nom d\'utilisateur n\'est pas valide</string>
+    <string name="invalid_password">Le mot de passe doit être > 5 caractères</string>
+    <string name="login_failed">"Échec de Connexion"</string>
+
+    <!-- Main Dashboard -->
+    <string name="order_entry_description">Rechercher l\'inventoire du magasin ou vendre des
+        produits aux clients.</string>
+    <string name="management_description">Gérer les réglages du Point de Vente.</string>
+    <string name="time_tracking_description">Pointer / dépointer et voir votre activité
+        récente.</string>
+    <string name="order_history_description">Jetez un œil aux commandes historiques exécutées
+        sur ce point de vente.</string>
+    <string name="placeholder_description">Ceci est un espace réservé temporaire.</string>
+    <string name="under_construction_alert_message">Cette zone de l\'application se trouve
+        en construction. N\'hésitez pas à démontrer vos compétences en la construisant.</string>
+    <string name="main_dashboard_subtitle">Où voudrais-tu aller?</string>
+
+    <!-- Order Entry -->
+    <string name="order_entry_subtitle">Ajoutez des produits à la commande.</string>
+    <string name="order_entry_subtitle_checkout">Cliquez sur l\'icône en haut à droite pour
+        vérifier.</string>
+
+    <!-- Checkout -->
+    <string name="checkout_subtitle">Comment paierez-vous?</string>
+
+    <!-- Payment Types -->
+    <string name="credit">Crédit</string>
+    <string name="cash">Espèces</string>
+
+    <!-- Keypad -->
+    <string name="keypad_1">1</string>
+    <string name="keypad_2">2</string>
+    <string name="keypad_3">3</string>
+    <string name="keypad_4">4</string>
+    <string name="keypad_5">5</string>
+    <string name="keypad_6">6</string>
+    <string name="keypad_7">7</string>
+    <string name="keypad_8">8</string>
+    <string name="keypad_9">9</string>
+    <string name="keypad_00">00</string>
+    <string name="keypad_0">0</string>
+
+    <!-- Progress / Tasks -->
+    <string-array name="progress_dialog_messages">
+        <item>Faisant des calculs&#8230;</item>
+        <item>Evaluant des données&#8230;</item>
+        <item>Analysant des valeurs&#8230;</item>
+        <item>Exécutant d\'algorithmes&#8230;</item>
+        <item>Verifiant auprès des Banques&#8230;</item>
+        <item>Utilisant Apprentissage Automatique&#8230;</item>
+        <item>Finalisant le décompte&#8230;</item>
+    </string-array>
+</resources>
