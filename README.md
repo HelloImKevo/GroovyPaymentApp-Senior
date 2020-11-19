@@ -94,15 +94,6 @@ git push
 
 # Business Requirements Document (BRD)  
 
-## Task ID: #001 - Main Dashboard Crash  
-#### Estimated LOE (Level of Effort): 1 Hour  
-
-[//]: # (Line breaks must be added to control text wrapping for multi-line rows, otherwise the image will get squashed)
-
-| Requirements | Business Mock |
-| :--- | --- |
-| The application currently **crashes** when a `Placeholder` button is clicked <br>on the main dashboard.<br><br>Design an alert dialog that is shown with an `"Under Construction"` type <br>of message instead of crashing. | ![Construction Dialog](ScreenMocks/Groovy-04-UnderConstruction.png) |
-
 ## Task ID: #002 - Generating Test Data & Populating the Database
 #### Estimated LOE (Level of Effort): 2 Hours  
 
