@@ -1,4 +1,4 @@
-# SkeletonPaymentApp-Senior
+# GroovyPaymentApp-Senior
 This App is intended for Senior candidates. There are Android and iOS variants of this mobile payment App in the respective project directories. This application may include intentional compiler errors out-of-the box, and many of the functions and screens described below are currently not implemented.
 
 | Login Screen | Order Entry |
@@ -7,7 +7,7 @@ This App is intended for Senior candidates. There are Android and iOS variants o
 
 # First Steps: Repo & Project Setup
 * Create your own repository to store this project and all of your work.  
-* **Fork** or **Clone** this repository (**SkeletonPaymentApp-Senior**) to your local machine, and then push your work to your repository using the instructions and CLI commands below for guidance:  
+* **Fork** or **Clone** this repository (**GroovyPaymentApp-Senior**) to your local machine, and then push your work to your repository using the instructions and CLI commands below for guidance:  
 
 ```
 # Fork this project, and clone your fork to your local machine
@@ -21,10 +21,10 @@ git clone git@github.com:USERNAME/FORKED-PROJECT.git
 # Do not add a .gitignore. Do not add a license.
 
 # Clone this source repo onto your local machine.
-git clone git@github.com:HelloImKevo/SkeletonPaymentApp-Senior.git
+git clone git@github.com:HelloImKevo/GroovyPaymentApp-Senior.git
 
 # Navigate into the new Git project directory.
-cd SkeletonPaymentApp-Senior
+cd GroovyPaymentApp-Senior
 
 # Check what the current remote repository URL is:
 git config --get remote.origin.url
@@ -53,7 +53,7 @@ git push
 * Your repository can be **public** or **private**, but if it's private you'll need to adjust the repository settings to invite one or two of us as collaborators so we can review your commits.  
 
 #### Pull Requests and Code Review  
-* This is **optional**, but if you want good feedback on your submitted solutions you can create a **Pull Request** (in _your_ repository) and notify us when it is ready for review. There's an example Pull Request in **this** repository for reference: https://github.com/HelloImKevo/SkeletonPaymentApp-Senior/pull/2  
+* This is **optional**, but if you want good feedback on your submitted solutions you can create a **Pull Request** (in _your_ repository) and notify us when it is ready for review. There's an example Pull Request in **this** repository for reference: https://github.com/HelloImKevo/GroovyPaymentApp-Senior/pull/2  
 * Additional information can be found under the [Git Workflow References](#git-workflow-references) section.
 
 #### Stripe SDK Setup  
