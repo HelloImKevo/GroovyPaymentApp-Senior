@@ -9,7 +9,13 @@ import androidx.room.PrimaryKey;
 @Entity(tableName = "cart_product",
         indices = {
                 @Index("cart_product_id"),
-                @Index("cart_id")})
+                @Index("cart_id")},
+        foreignKeys = {
+                @ForeignKey(
+                        entity = CartEntity.class,
+                        parentColumns = "cart_id",
+                        childColumns = "cart_id")
+        })
 public class CartProductEntity {
 
     @PrimaryKey
@@ -19,10 +25,6 @@ public class CartProductEntity {
     /**
      * Foreign key to the cart table.
      */
-    @ForeignKey(
-            entity = CartEntity.class,
-            parentColumns = "cart_id",
-            childColumns = "cart_id")
     @ColumnInfo(name = "cart_id")
     private long mCartId;
 

@@ -63,7 +63,7 @@ dependencies {
     annotationProcessor "androidx.lifecycle:lifecycle-compiler:$livedata_version"
 
     // Room Database
-    def room_version = "2.2.4"
+    def room_version = "2.5.1"
     implementation "androidx.room:room-runtime:$room_version"
     annotationProcessor "androidx.room:room-compiler:$room_version"
 

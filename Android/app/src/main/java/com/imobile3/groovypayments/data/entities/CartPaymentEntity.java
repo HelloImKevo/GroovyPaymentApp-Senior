@@ -33,7 +33,13 @@ import java.util.Date;
 @Entity(tableName = "cart_payment",
         indices = {
                 @Index("cart_payment_id"),
-                @Index("cart_id")})
+                @Index("cart_id")},
+        foreignKeys = {
+                @ForeignKey(
+                        entity = CartEntity.class,
+                        parentColumns = "cart_id",
+                        childColumns = "cart_id")
+        })
 public class CartPaymentEntity {
 
     @PrimaryKey
@@ -43,10 +49,6 @@ public class CartPaymentEntity {
     /**
      * Foreign key to the cart table.
      */
-    @ForeignKey(
-            entity = CartEntity.class,
-            parentColumns = "cart_id",
-            childColumns = "cart_id")
     @ColumnInfo(name = "cart_id")
     private long mCartId;
 

@@ -15,26 +15,28 @@ import androidx.room.Index;
         primaryKeys = {"product_id", "tax_id"},
         indices = {
                 @Index("product_id"),
-                @Index("tax_id")})
+                @Index("tax_id")},
+        foreignKeys = {
+                @ForeignKey(
+                        entity = ProductEntity.class,
+                        parentColumns = "product_id",
+                        childColumns = "product_id"),
+                @ForeignKey(
+                        entity = TaxEntity.class,
+                        parentColumns = "tax_id",
+                        childColumns = "tax_id")
+        })
 public class ProductTaxJunctionEntity {
 
     /**
      * Foreign key to the product table.
      */
-    @ForeignKey(
-            entity = ProductEntity.class,
-            parentColumns = "product_id",
-            childColumns = "product_id")
     @ColumnInfo(name = "product_id")
     private long mProductId;
 
     /**
      * Foreign key to the tax table.
      */
-    @ForeignKey(
-            entity = TaxEntity.class,
-            parentColumns = "tax_id",
-            childColumns = "tax_id")
     @ColumnInfo(name = "tax_id")
     private long mTaxId;
 
