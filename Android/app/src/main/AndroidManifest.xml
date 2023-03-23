@@ -15,7 +15,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".ui.SplashActivity">
+        <activity
+            android:name=".ui.SplashActivity"
+            android:exported="true">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,6 +29,7 @@
 
         <activity
             android:name=".ui.main.MainDashboardActivity"
+            android:exported="true"
             android:permission="${applicationId}.permission.START_ACTIVITY"
             android:screenOrientation="behind"
             android:windowSoftInputMode="stateHidden|adjustPan">
